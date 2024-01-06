@@ -1,129 +1,226 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Title			: Interrupt-Driven USART sample code
+;; Date			: 11/20/2013
+;; Version		: 1.1
+;; Target MCU	  : ATMega32
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;*****************************************************************
-;
-; Title			: Interrupt-Driven USART sample code
-; Date			: 11/20/2013
-; Version		: 1.1
-; Target MCU	  : ATMega32
-;
-;*****************************************************************
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; # Code Style
+;;
+;;   - No global register aliases.
+;;   - Capitalize all user-defined names (constants, register aliases, labels).
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-; define constants
-.equ	ZeroASCII = 48
-.equ	AASCII = 65
-.equ	BAUD_RATE	= 9600
-.equ	CPU_CLOCK	= 4000000
-.equ	BAUD_UBRR	= (CPU_CLOCK/(16*BAUD_RATE))-1
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; # Constants
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-.equ	MELOSIZE	= 100
+; Baud Rate in Bits Per Second (bps)
+.equ BAUD_RATE = 9600
+; System Oscillator Clock Frequency
+.equ F_OSC     = 4 * 1000 * 1000
+; Contents of the UBRRH and UBRRL Registers (0 - 4095)
+; Asynchronous Normal Mode (U2X = 0)
+.equ BAUD_UBRR = (F_OSC / (16 * BAUD_RATE)) - 1
 
-.equ	Fck = CPU_CLOCK/64
-; define register aliases
-.def	SENDCHAR	= R1
-.def	TEMP		= r16	; temporary register
-.def	TEMP1		= r17	; another temporary register
+; Maximum Command Length
+.equ CMD_MAX_LEN = 100
 
-; data segment
-        .dseg
-melody: .byte	MELOSIZE
+; ASCII Codes
+.equ ASCII_BACKSPACE = 0x08
+.equ ASCII_NEW_LINE  = 0x0A
+.equ ASCII_SPACE     = 0x20
+.equ ASCII_ZERO      = 48
+.equ ASCII_A         = 65
 
-; code segment
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; # Data Segment
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; Data Segment Start
+.dseg
+
+CMD    : .byte CMD_MAX_LEN
+CMD_IDX: .byte 1
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; # Interrupt Vector Table
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; Code Segment Start
 .cseg
-.org    $000
-	jmp		reset
-.org $012
-    jmp		tim1_ovf
-.org $01A 
-	jmp		USART_Receive
-//.org $01E
-//	jmp		USART_Receive
 
-; begin main code
-reset:
-	; initialize stack pointer
-	ldi 	TEMP, low(RAMEND)
-	out		SPL, TEMP
-	ldi 	TEMP, high(RAMEND)
-	out 	SPH, TEMP
+.org 0x0000
+	jmp RESET
+.org 0x001A 
+	jmp USART_RX_COMPLETE
 
-	; set baud rate
-	ldi	TEMP, low(BAUD_UBRR)
-	out	UBRRL, TEMP
-	ldi	TEMP, high(BAUD_UBRR)
-	out	UBRRH, TEMP
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; # Main Routine
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-	ldi TEMP, $FF
-	out DDRB, TEMP
-	;set timer1 PWM mode
-	ldi   TEMP,(1<<WGM10)+(1<<COM1B1)
-	out   TCCR1A,TEMP								; 8 bit Fast PWM non-inverting (Fck/256)
-	ldi   TEMP,(1<<WGM12)+(1<<CS10)+(1<<CS11)		; 8 bit Fast PWM non-inverting (Fck/256)
-	out   TCCR1B,TEMP								; prescaler = 64
-	
-	;enable timer1 / timer0 interrupt
-	ldi   TEMP,(1<<TOIE1)
-	out   TIMSK,TEMP
+RESET:
+	; Set Register Aliases
+	.def TEMP = R16
 
-	sbi UCSRB, TXCIE			; enable transmitter
-	sbi UCSRB, RXCIE			; enable receiver
-    sbi UCSRB, TXEN
-	sbi UCSRB, RXEN
-	; set frame format: 8 data, 2 stop bits	ldi TEMP, (1 << URSEL)|(1 << USBS)| (1 << UCSZ0)| (1 << UCSZ1)	mov UCSRC, TEMP
+	; Initialize Stack Pointer
+	ldi TEMP, HIGH(RAMEND)
+	out SPH, TEMP
+	ldi TEMP, LOW(RAMEND)
+	out SPL, TEMP
+
+	; Initialize USART BEGIN
+
+	; Set Baud Rate
+	ldi TEMP, HIGH(BAUD_UBRR)
+	out UBRRH, TEMP
+	ldi TEMP, LOW(BAUD_UBRR)
+	out UBRRL, TEMP
+
+	; TXEN  -> Enable Transmitter
+	; RXEN  -> Enable Receiver
+	; RXCIE -> Enable Rx Complete Interrupt
+	ldi TEMP, (1 << RXCIE) | (1 << RXEN) | (1 << TXEN)
+	out UCSRB, TEMP
+
+	; Set Frame Format:	; - 8 Data Bits	; - 2 Stop Bits	ldi TEMP, (1 << URSEL) | (1 << USBS) | (1 << UCSZ0) | (1 << UCSZ1)	out UCSRC, TEMP
+
+	; Initialize USART END
+
+	; Initialie command index to 0
+	ldi ZH, HIGH(CMD_IDX)
+	ldi ZL, LOW (CMD_IDX)
+	clr TEMP
+	st Z, TEMP
+
+	; Enable Global Interrupts
     sei
 
-mloop:
-	//rcall USART_Receive_nisr
-	rjmp mloop
+	RESET_LOOP:
+		rjmp RESET_LOOP
 
-/*USART_Receive_nisr:
-	; Wait for data to be received
-	sbis UCSRA, RXC
-    rjmp    USART_Receive_nisr
+	; Clear Register Aliases
+	.undef TEMP
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; # Interrupt Handlers
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+USART_RX_COMPLETE:
+	; Set Register Aliases
+	.def TEMP = R16
+	.def CHAR = R17
+	.def IDX  = R18
+
+	; Backup Registers
+	push TEMP
+	in TEMP, SREG
+	push TEMP
+	push ZH
+	push ZL
+	push YH
+	push YL
+	push CHAR
+	push IDX
+
+	; Read ASCII Character
+	in CHAR, UDR
+
+	cpi CHAR, ASCII_NEW_LINE
+
+	brne USART_RX_COMPLETE_NOT_DONE
 	
+	; TODO: Call parser and executor
+	nop
+	rjmp USART_RX_COMPLETE_RET
 
-	in		TEMP, UDR
-	inc		TEMP
-	mov		SENDCHAR, TEMP
-	rcall	putchar
+	USART_RX_COMPLETE_NOT_DONE:
+		ldi ZH, HIGH(CMD_IDX)
+		ldi ZL, LOW (CMD_IDX)
+		ld IDX, Z
 
-	ret*/
-; subroutines
-putchar:
-    sbis    UCSRA, UDRE		; loop until USR:UDRE is 1
-    rjmp    putchar
-    out     UDR, SENDCHAR
-    ret
+		cpi CHAR, ASCII_BACKSPACE
 
-; Interrupt Handler
+		brne USART_RX_COMPLETE_NOT_BACKSPACE
 
-tim1_ovf:
-	push   TEMP
-	in     TEMP,SREG
-	push   TEMP
+		cpi IDX, 0
+		breq USART_RX_COMPLETE_RET
 
-	pop     TEMP
-	out     SREG, TEMP
-	pop		TEMP
-	reti
+		dec IDX
+		st Z, IDX
+		; Echo backspace back
+		ldi R16, ASCII_BACKSPACE
+		rcall PUTCHAR
+		ldi R16, ASCII_SPACE
+		rcall PUTCHAR
+		ldi R16, ASCII_BACKSPACE
+		rcall PUTCHAR
 
-USART_Receive:
-	push	TEMP
-	in		TEMP,SREG
-	push	TEMP
+		rjmp USART_RX_COMPLETE_RET
 
-	; Wait for data to be received
-	ldi		TEMP, $08
-	out		PORTB, TEMP
+	USART_RX_COMPLETE_NOT_BACKSPACE:
+		; Handle full command buffer
+		cpi IDX, CMD_MAX_LEN
 
-	in		TEMP, UDR
-	inc		TEMP
-	mov		SENDCHAR, TEMP
-	rcall	putchar
+		brne USART_RX_COMPLETE_NOT_FULL
+
+		rjmp USART_RX_COMPLETE_RET
+
+	USART_RX_COMPLETE_NOT_FULL:
+		; Get next-character index
+		ldi YH, HIGH(CMD)
+		ldi YL, LOW(CMD)
+		add YL, IDX
+		clr TEMP
+		adc YH, TEMP
+
+		; Store character
+		st Y, CHAR
 	
-	ldi		TEMP, $10
-	out		PORTB, TEMP
+		; Increment index
+		inc IDX
+		st Z, IDX
+
+		; Echo character back
+		mov R16, CHAR
+		rcall PUTCHAR
+
+	USART_RX_COMPLETE_RET:
+		; Restore Registers
+		pop IDX
+		pop CHAR
+		pop YL
+		pop YH
+		pop ZL
+		pop ZH
+		pop TEMP
+		out SREG, TEMP
+		pop TEMP
+
+		reti
+
+	; Clear Register Aliases
+	.undef TEMP
+	.undef CHAR
+	.undef IDX
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; # Subroutines
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; Inputs:
+; - CHAR: R16
+PUTCHAR:
+	; Set Register Aliases
+	.def CHAR = R16
+
+	; Wait until sending is safe
+	sbis UCSRA, UDRE
+	rjmp PUTCHAR
+
+	out UDR, CHAR
 	
-	pop     TEMP
-	out     SREG, TEMP
-	pop     TEMP
-	reti
+	ret
+
+	.undef CHAR
