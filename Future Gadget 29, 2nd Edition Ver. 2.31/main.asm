@@ -1,8 +1,32 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Title			: Interrupt-Driven USART sample code
-;; Date			: 11/20/2013
-;; Version		: 1.1
-;; Target MCU	  : ATMega32
+;
+; Future Gadget 29, 2nd Edition Ver. 2.31
+;
+; COMP317 Final Project
+;
+; Authors:
+; - Ameer Taweel (0077340)
+; - Ahmed Jareer (0074982)
+;
+; Resources Usage:
+; - Program Size: TODO
+; - Data    Size: TODO
+; - Registers   : TODO
+;
+; Summary:
+;
+; Multiple times during this course, we faced a situation where the code works
+; in the debugger/simulator but not on the physical microcontroller. Debugging
+; and fixing such issues was hard because we couldn't inspect the system's
+; internal state.
+;
+; Therefore, built a system that is easy to inspect. It exposes a shell using
+; the ANSI standard over USART. The system has commands to check the system's
+; state, like memory regions and I/O pin values. Moreover, the system supports
+; periodic tasks, like logging a memory region every two minutes.
+;
+; It also has commands for modifying the system's state, like setting a memory
+; region or setting the mode of an I/O pin.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -28,11 +52,19 @@
 .equ CMD_MAX_LEN = 100
 
 ; ASCII Codes
+.equ ASCII_NULL      = 0x00
 .equ ASCII_BACKSPACE = 0x08
-.equ ASCII_NEW_LINE  = 0x0A
+.equ ASCII_NEW_LINE  = 0x0D
 .equ ASCII_SPACE     = 0x20
-.equ ASCII_ZERO      = 48
-.equ ASCII_A         = 65
+.equ ASCII_ZERO      = 0x30
+.equ ASCII_UPPER_E   = 0x45
+.equ ASCII_LOWER_G   = 0x67
+.equ ASCII_LOWER_I   = 0x69
+.equ ASCII_LOWER_O   = 0x6F
+.equ ASCII_LOWER_P   = 0x70
+.equ ASCII_LOWER_R   = 0x72
+.equ ASCII_LOWER_S   = 0x73
+.equ ASCII_LOWER_W   = 0x77
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; # Data Segment
@@ -127,19 +159,48 @@ USART_RX_COMPLETE:
 	; Read ASCII Character
 	in CHAR, UDR
 
+	; Read command index
+	ldi ZH, HIGH(CMD_IDX)
+	ldi ZL, LOW (CMD_IDX)
+	ld IDX, Z
+
 	cpi CHAR, ASCII_NEW_LINE
 
 	brne USART_RX_COMPLETE_NOT_DONE
+
+	ldi R16, ASCII_NEW_LINE
+	rcall PUTCHAR
+
+	; Empty command
+	cpi IDX, 0
+	breq USART_RX_COMPLETE_RET
 	
-	; TODO: Call parser and executor
-	nop
+	; r $begaddress $endaddress					-- read from sram
+	; w $begaddress $endaddress $bytestowrite	-- write to sram
+	; g $regname								-- read from register
+	; s $regname $byte							-- write to register
+	; o $name									-- read from io
+	; i $name $byte								-- write to io
+	; p $seconds $anyoftheabovecommands			-- repeat command
+	; TODO: dont forget to pass parameter
+	push R16
+	push R17
+	
+	ldi R16, LOW(CMD)
+	ldi R17, HIGH(CMD)
+	
+	rcall EXECUTE
+
+	pop R17
+	pop R16
+
+	; Reset index
+	clr IDX
+	st Z, IDX
+
 	rjmp USART_RX_COMPLETE_RET
 
 	USART_RX_COMPLETE_NOT_DONE:
-		ldi ZH, HIGH(CMD_IDX)
-		ldi ZL, LOW (CMD_IDX)
-		ld IDX, Z
-
 		cpi CHAR, ASCII_BACKSPACE
 
 		brne USART_RX_COMPLETE_NOT_BACKSPACE
@@ -163,11 +224,8 @@ USART_RX_COMPLETE:
 		; Handle full command buffer
 		cpi IDX, CMD_MAX_LEN
 
-		brne USART_RX_COMPLETE_NOT_FULL
+		breq USART_RX_COMPLETE_RET
 
-		rjmp USART_RX_COMPLETE_RET
-
-	USART_RX_COMPLETE_NOT_FULL:
 		; Get next-character index
 		ldi YH, HIGH(CMD)
 		ldi YL, LOW(CMD)
@@ -205,9 +263,110 @@ USART_RX_COMPLETE:
 	.undef CHAR
 	.undef IDX
 
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; # Subroutines
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Inputs:
+; - ADDRL: R16
+; - ADDRH: R17
+EXECUTE:
+	.def ADDRL = R16
+	.def ADDRH = R17
+	.def CHAR  = R18
+	.def TEMP  = R19
+	
+	push TEMP
+	push YL
+	push YH
+
+	; Read command index
+	ldi YH, HIGH(CMD_IDX)
+	ldi YL, LOW (CMD_IDX)
+	ld TEMP, Y
+
+	; Empty command
+	cpi TEMP, 2
+	brlo EXECUTE_INVALID
+
+	mov YH, ADDRH
+	mov YL,	ADDRL
+	ld	CHAR, Y
+	
+	inc YL
+	clr TEMP
+	adc YH, TEMP
+	ld	TEMP, Y
+
+	cpi TEMP, ASCII_SPACE
+	brne EXECUTE_INVALID
+
+	cpi CHAR, ASCII_LOWER_R
+	brne EXECUTE_W
+	rcall READ_SRAM
+	rjmp  EXECUTE_RET
+
+	EXECUTE_W:
+		cpi CHAR, ASCII_LOWER_W
+		brne EXECUTE_G
+		rcall WRITE_SRAM
+		rjmp  EXECUTE_RET
+	EXECUTE_G:
+		cpi CHAR, ASCII_LOWER_G
+		brne EXECUTE_S
+		rcall READ_REGISTER
+		rjmp  EXECUTE_RET
+	EXECUTE_S:
+		cpi CHAR, ASCII_LOWER_S
+		brne EXECUTE_O
+		rcall WRITE_REGISTER
+		rjmp  EXECUTE_RET
+	EXECUTE_O:
+		cpi CHAR, ASCII_LOWER_O
+		brne EXECUTE_I
+		rcall READ_IO
+		rjmp  EXECUTE_RET
+
+	EXECUTE_I:
+		cpi CHAR, ASCII_LOWER_I
+		brne EXECUTE_P
+		rcall WRITE_IO
+		rjmp  EXECUTE_RET
+
+	EXECUTE_P:
+		cpi CHAR, ASCII_LOWER_P
+		brne EXECUTE_INVALID
+		rcall REPEAT_CMD
+		rjmp  EXECUTE_RET
+	
+	EXECUTE_INVALID:
+		push R16
+		ldi R16, ASCII_UPPER_E
+		rcall PUTCHAR
+		ldi R16, ASCII_LOWER_R
+		rcall PUTCHAR
+		ldi R16, ASCII_LOWER_R
+		rcall PUTCHAR
+		ldi R16, ASCII_LOWER_O
+		rcall PUTCHAR
+		ldi R16, ASCII_LOWER_R
+		rcall PUTCHAR
+		ldi R16, ASCII_NEW_LINE
+		rcall PUTCHAR
+		pop R16
+
+	EXECUTE_RET:
+		pop YH
+		pop YL
+		pop TEMP
+	
+		ret
+
+	.undef ADDRL
+	.undef ADDRH
+	.undef CHAR
+	.undef TEMP
+
 
 ; Inputs:
 ; - CHAR: R16
@@ -224,3 +383,24 @@ PUTCHAR:
 	ret
 
 	.undef CHAR
+
+READ_SRAM:
+ret
+
+WRITE_SRAM:
+ret
+
+READ_REGISTER:
+ret
+
+WRITE_REGISTER:
+ret
+
+READ_IO:
+ret
+
+WRITE_IO:
+ret
+
+REPEAT_CMD:
+ret
