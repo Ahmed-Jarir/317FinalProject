@@ -53,11 +53,13 @@ ASCII_BYTE_TO_HEX:
 	.def CHAR = R16
 
 	; Number of pushes
-	.set STACK_OFFSET = 3
+	.set STACK_OFFSET = 5
 	; Backup Registers
 	push CHAR
 	push YH
 	push YL
+	push ZH
+	push ZL
 
 	; Load Stack Pointer
 	; Y <- SP
@@ -67,50 +69,20 @@ ASCII_BYTE_TO_HEX:
 	; Load ASCII Character
 	ldd CHAR, Y+(STACK_OFFSET + 3)
 
-	; IF (CHAR < ASCII_ZERO) THEN ERR
-	cpi CHAR, ASCII_ZERO
-	brlo ASCII_BYTE_TO_HEX_ERR
+	ldi ZH, HIGH(ASCII_TO_HEX_LOOKUP_TABLE << 1)
+	ldi ZL, LOW (ASCII_TO_HEX_LOOKUP_TABLE << 1)
 
-	; IF (CHAR <= ASCII_NINE) THEN DIGIT
-	cpi CHAR, ASCII_NINE + 1
-	brlo ASCII_BYTE_TO_HEX_DIGIT
+	add ZL, CHAR
+	ldi CHAR, 0
+	adc ZH, CHAR
 
-	; IF (CHAR < ASCII_UPPER_A) THEN ERR
-	cpi CHAR, ASCII_UPPER_A
-	brlo ASCII_BYTE_TO_HEX_ERR
+	lpm CHAR, Z
 
-	; IF (CHAR <= ASCII_UPPER_F) THEN UPPER CHAR
-	cpi CHAR, ASCII_UPPER_F + 1
-	brlo ASCII_BYTE_TO_HEX_UPPER_CHAR
-
-	; IF (CHAR < ASCII_LOWER_A) THEN ERR
-	cpi CHAR, ASCII_LOWER_A
-	brlo ASCII_BYTE_TO_HEX_ERR
-
-	; IF (CHAR <= ASCII_LOWER_F) THEN LOWER CHAR
-	cpi CHAR, ASCII_LOWER_F + 1
-	brlo ASCII_BYTE_TO_HEX_LOWER_CHAR
-
-	ASCII_BYTE_TO_HEX_DIGIT:
-		; CHAR <- CHAR - ASCII_ZERO
-		subi CHAR, ASCII_ZERO
-		; Return Hex Digit
-		std Y+(STACK_OFFSET + 3), CHAR
-		rjmp ASCII_BYTE_TO_HEX_RET
-
-	ASCII_BYTE_TO_HEX_UPPER_CHAR:
-		; CHAR <- CHAR - ASCII_UPPER_A + 10
-		subi CHAR, (ASCII_UPPER_A - 10)
-		; Return Hex Digit
-		std Y+(STACK_OFFSET + 3), CHAR
-		rjmp ASCII_BYTE_TO_HEX_RET
-
-	ASCII_BYTE_TO_HEX_LOWER_CHAR:
-		; CHAR <- CHAR - ASCII_LOWER_A + 10
-		subi CHAR, (ASCII_LOWER_A - 10)
-		; Return Hex Digit
-		std Y+(STACK_OFFSET + 3), CHAR
-		rjmp ASCII_BYTE_TO_HEX_RET
+	cpi CHAR, 16
+	; CHAR Invalid
+	brsh ASCII_BYTE_TO_HEX_ERR
+	std Y+(STACK_OFFSET + 3), CHAR
+	rjmp ASCII_BYTE_TO_HEX_RET
 
 	ASCII_BYTE_TO_HEX_ERR:
 		; Error Status <- True
@@ -119,6 +91,8 @@ ASCII_BYTE_TO_HEX:
 
 	ASCII_BYTE_TO_HEX_RET:
 		; Restore Registers
+		pop ZL
+		pop ZH
 		pop YL
 		pop YH
 		pop CHAR
@@ -448,3 +422,134 @@ HEX_BYTE_TO_ASCII:
 
 	.undef BYTE
 	.undef NIBBLE
+
+
+ASCII_TO_HEX_LOOKUP_TABLE:
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db   0,   1
+	.db   2,   3
+	.db   4,   5
+	.db   6,   7
+	.db   8,   9
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255,  10
+	.db  11,  12
+	.db  13,  14
+	.db  15,  16
+	.db  17,  18
+	.db  19,  20
+	.db  21,  22
+	.db  23,  24
+	.db  25,  26
+	.db  27,  28
+	.db  29,  30
+	.db  31,  32
+	.db  33,  34
+	.db  35, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255,  10
+	.db  11,  12
+	.db  13,  14
+	.db  15,  16
+	.db  17,  18
+	.db  19,  20
+	.db  21,  22
+	.db  23,  24
+	.db  25,  26
+	.db  27,  28
+	.db  29,  30
+	.db  31,  32
+	.db  33,  34
+	.db  35, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255
+	.db 255, 255

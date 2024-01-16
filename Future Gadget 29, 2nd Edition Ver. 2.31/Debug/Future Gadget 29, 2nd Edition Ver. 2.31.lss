@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.8  C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm Tue Jan 16 20:49:44 2024
+AVRASM ver. 2.2.8  C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm Tue Jan 16 22:52:17 2024
 
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m32def.inc'
 C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm(80): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\ascii.inc'
@@ -7,12 +7,18 @@ C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29,
 C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm(82): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\read-mem.inc'
 C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\read-mem.inc(18): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\ascii.inc'
 C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\read-mem.inc(19): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\io.inc'
+C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm(83): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\write-mem.inc'
+C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\write-mem.inc(18): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\ascii.inc'
+C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\write-mem.inc(19): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\io.inc'
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m32def.inc'
 C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm(80): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\ascii.inc'
 C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm(81): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\io.inc'
 C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm(82): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\read-mem.inc'
 C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\read-mem.inc(18): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\ascii.inc'
 C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\read-mem.inc(19): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\io.inc'
+C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm(83): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\write-mem.inc'
+C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\write-mem.inc(18): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\ascii.inc'
+C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\write-mem.inc(19): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\io.inc'
                                  
                                  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
                                  
@@ -900,9 +906,9 @@ C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29,
                                  .cseg
                                  
                                  .org 0x0000
-000000 940c 015b                 	jmp RESET
+000000 940c 024c                 	jmp RESET
                                  .org 0x001A 
-00001a 940c 016b                 	jmp USART_RX_COMPLETE
+00001a 940c 025c                 	jmp USART_RX_COMPLETE
                                  
                                  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
                                  ;; # Imports
@@ -963,77 +969,51 @@ C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29,
                                  	.def CHAR = R16
                                  
                                  	; Number of pushes
-                                 	.set STACK_OFFSET = 3
+                                 	.set STACK_OFFSET = 5
                                  	; Backup Registers
 00001c 930f                      	push CHAR
 00001d 93df                      	push YH
 00001e 93cf                      	push YL
+00001f 93ff                      	push ZH
+000020 93ef                      	push ZL
                                  
                                  	; Load Stack Pointer
                                  	; Y <- SP
-00001f b7de                      	in YH, SPH
-000020 b7cd                      	in YL, SPL
+000021 b7de                      	in YH, SPH
+000022 b7cd                      	in YL, SPL
                                  
                                  	; Load ASCII Character
-000021 810e                      	ldd CHAR, Y+(STACK_OFFSET + 3)
+000023 8508                      	ldd CHAR, Y+(STACK_OFFSET + 3)
                                  
-                                 	; IF (CHAR < ASCII_ZERO) THEN ERR
-000022 3300                      	cpi CHAR, ASCII_ZERO
-000023 f098                      	brlo ASCII_BYTE_TO_HEX_ERR
+000024 e0f1                      	ldi ZH, HIGH(ASCII_TO_HEX_LOOKUP_TABLE << 1)
+000025 e7e0                      	ldi ZL, LOW (ASCII_TO_HEX_LOOKUP_TABLE << 1)
                                  
-                                 	; IF (CHAR <= ASCII_NINE) THEN DIGIT
-000024 330a                      	cpi CHAR, ASCII_NINE + 1
-000025 f040                      	brlo ASCII_BYTE_TO_HEX_DIGIT
+000026 0fe0                      	add ZL, CHAR
+000027 e000                      	ldi CHAR, 0
+000028 1ff0                      	adc ZH, CHAR
                                  
-                                 	; IF (CHAR < ASCII_UPPER_A) THEN ERR
-000026 3401                      	cpi CHAR, ASCII_UPPER_A
-000027 f078                      	brlo ASCII_BYTE_TO_HEX_ERR
+000029 9104                      	lpm CHAR, Z
                                  
-                                 	; IF (CHAR <= ASCII_UPPER_F) THEN UPPER CHAR
-000028 3407                      	cpi CHAR, ASCII_UPPER_F + 1
-000029 f038                      	brlo ASCII_BYTE_TO_HEX_UPPER_CHAR
-                                 
-                                 	; IF (CHAR < ASCII_LOWER_A) THEN ERR
-00002a 3601                      	cpi CHAR, ASCII_LOWER_A
-00002b f058                      	brlo ASCII_BYTE_TO_HEX_ERR
-                                 
-                                 	; IF (CHAR <= ASCII_LOWER_F) THEN LOWER CHAR
-00002c 3607                      	cpi CHAR, ASCII_LOWER_F + 1
-00002d f030                      	brlo ASCII_BYTE_TO_HEX_LOWER_CHAR
-                                 
-                                 	ASCII_BYTE_TO_HEX_DIGIT:
-                                 		; CHAR <- CHAR - ASCII_ZERO
-00002e 5300                      		subi CHAR, ASCII_ZERO
-                                 		; Return Hex Digit
-00002f 830e                      		std Y+(STACK_OFFSET + 3), CHAR
-000030 c008                      		rjmp ASCII_BYTE_TO_HEX_RET
-                                 
-                                 	ASCII_BYTE_TO_HEX_UPPER_CHAR:
-                                 		; CHAR <- CHAR - ASCII_UPPER_A + 10
-000031 5307                      		subi CHAR, (ASCII_UPPER_A - 10)
-                                 		; Return Hex Digit
-000032 830e                      		std Y+(STACK_OFFSET + 3), CHAR
-000033 c005                      		rjmp ASCII_BYTE_TO_HEX_RET
-                                 
-                                 	ASCII_BYTE_TO_HEX_LOWER_CHAR:
-                                 		; CHAR <- CHAR - ASCII_LOWER_A + 10
-000034 5507                      		subi CHAR, (ASCII_LOWER_A - 10)
-                                 		; Return Hex Digit
-000035 830e                      		std Y+(STACK_OFFSET + 3), CHAR
-000036 c002                      		rjmp ASCII_BYTE_TO_HEX_RET
+00002a 3100                      	cpi CHAR, 16
+                                 	; CHAR Invalid
+00002b f410                      	brsh ASCII_BYTE_TO_HEX_ERR
+00002c 8708                      	std Y+(STACK_OFFSET + 3), CHAR
+00002d c002                      	rjmp ASCII_BYTE_TO_HEX_RET
                                  
                                  	ASCII_BYTE_TO_HEX_ERR:
                                  		; Error Status <- True
-000037 e001                      		ldi CHAR, 1
-000038 830f                      		std Y+(STACK_OFFSET + 4), CHAR
+00002e e001                      		ldi CHAR, 1
+00002f 8709                      		std Y+(STACK_OFFSET + 4), CHAR
                                  
                                  	ASCII_BYTE_TO_HEX_RET:
                                  		; Restore Registers
-000039 91cf                      		pop YL
-00003a 91df                      		pop YH
-00003b 910f                      		pop CHAR
+000030 91ef                      		pop ZL
+000031 91ff                      		pop ZH
+000032 91cf                      		pop YL
+000033 91df                      		pop YH
+000034 910f                      		pop CHAR
                                  
-00003c 9508                      		ret
+000035 9508                      		ret
                                  
                                  	.undef CHAR
                                  
@@ -1060,80 +1040,80 @@ C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29,
                                  	; Number of pushes
                                  	.set STACK_OFFSET = 6
                                  	; Backup Registers
-00003d 930f                      	push TEMP
-00003e 931f                      	push BYTE
-00003f 93df                      	push YH
-000040 93cf                      	push YL
-000041 93ff                      	push ZH
-000042 93ef                      	push ZL
+000036 930f                      	push TEMP
+000037 931f                      	push BYTE
+000038 93df                      	push YH
+000039 93cf                      	push YL
+00003a 93ff                      	push ZH
+00003b 93ef                      	push ZL
                                  
                                  	; Load Stack Pointer
                                  	; Y <- SP
-000043 b7de                      	in YH, SPH
-000044 b7cd                      	in YL, SPL
+00003c b7de                      	in YH, SPH
+00003d b7cd                      	in YL, SPL
                                  
                                  	; Load String Address
-000045 85fa                      	ldd ZH, Y+(STACK_OFFSET + 4)
-000046 85e9                      	ldd ZL, Y+(STACK_OFFSET + 3)
+00003e 85fa                      	ldd ZH, Y+(STACK_OFFSET + 4)
+00003f 85e9                      	ldd ZL, Y+(STACK_OFFSET + 3)
                                  
                                  	; Push Zero To Stack
-000047 e000                      	ldi TEMP, 0
-000048 930f                      	push TEMP
+000040 e000                      	ldi TEMP, 0
+000041 930f                      	push TEMP
                                  	; Load Most Significant ASCII Character
-000049 9101                      	ld TEMP, Z+
+000042 9101                      	ld TEMP, Z+
                                  	; Push ASCII Character To Stack
-00004a 930f                      	push TEMP
-00004b dfd0                      	rcall ASCII_BYTE_TO_HEX
+000043 930f                      	push TEMP
+000044 dfd7                      	rcall ASCII_BYTE_TO_HEX
                                  	; Get Return Value
-00004c 911f                      	pop BYTE
+000045 911f                      	pop BYTE
                                  	; Get Error Status
-00004d 910f                      	pop TEMP
+000046 910f                      	pop TEMP
                                  	; IF (SUBROUTINE ERR != 0) THEN ERR
-00004e 3000                      	cpi TEMP, 0
-00004f f481                      	brne ASCII_WORD_TO_HEX_ERR
+000047 3000                      	cpi TEMP, 0
+000048 f481                      	brne ASCII_WORD_TO_HEX_ERR
                                  
                                  	; Byte <- Byte << 4
-000050 0f11                      	lsl BYTE
-000051 0f11                      	lsl BYTE
-000052 0f11                      	lsl BYTE
-000053 0f11                      	lsl BYTE
+000049 0f11                      	lsl BYTE
+00004a 0f11                      	lsl BYTE
+00004b 0f11                      	lsl BYTE
+00004c 0f11                      	lsl BYTE
                                  
                                  	; Push Zero To Stack
-000054 e000                      	ldi TEMP, 0
-000055 930f                      	push TEMP
+00004d e000                      	ldi TEMP, 0
+00004e 930f                      	push TEMP
                                  	; Load Most Significant ASCII Character
-000056 8100                      	ld TEMP, Z
+00004f 8100                      	ld TEMP, Z
                                  	; Push ASCII Character To Stack
-000057 930f                      	push TEMP
-000058 dfc3                      	rcall ASCII_BYTE_TO_HEX
+000050 930f                      	push TEMP
+000051 dfca                      	rcall ASCII_BYTE_TO_HEX
                                  	; Get Return Value
-000059 910f                      	pop TEMP
+000052 910f                      	pop TEMP
                                  	; Append Return Value To Byte
-00005a 2b10                      	or BYTE, TEMP
+000053 2b10                      	or BYTE, TEMP
                                  	; Get Error Status
-00005b 910f                      	pop TEMP
+000054 910f                      	pop TEMP
                                  	; IF (SUBROUTINE ERR != 0) THEN ERR
-00005c 3000                      	cpi TEMP, 0
-00005d f411                      	brne ASCII_WORD_TO_HEX_ERR
+000055 3000                      	cpi TEMP, 0
+000056 f411                      	brne ASCII_WORD_TO_HEX_ERR
                                  
                                  	; Return Valid Value
-00005e 8719                      	std Y+(STACK_OFFSET + 3), BYTE
-00005f c002                      	rjmp ASCII_WORD_TO_HEX_RET
+000057 8719                      	std Y+(STACK_OFFSET + 3), BYTE
+000058 c002                      	rjmp ASCII_WORD_TO_HEX_RET
                                  
                                  	ASCII_WORD_TO_HEX_ERR:
-000060 e001                      		ldi TEMP, 1
-000061 870b                      		std Y+(STACK_OFFSET + 5), TEMP
+000059 e001                      		ldi TEMP, 1
+00005a 870b                      		std Y+(STACK_OFFSET + 5), TEMP
                                  
                                  	ASCII_WORD_TO_HEX_RET:
                                  		; Restore Registers
-000062 91ef                      		pop ZL
-000063 91ff                      		pop ZH
-000064 91cf                      		pop YL
-000065 91df                      		pop YH
-000066 911f                      		pop BYTE
-000067 910f                      		pop TEMP
+00005b 91ef                      		pop ZL
+00005c 91ff                      		pop ZH
+00005d 91cf                      		pop YL
+00005e 91df                      		pop YH
+00005f 911f                      		pop BYTE
+000060 910f                      		pop TEMP
                                  
-000068 9508                      		ret
+000061 9508                      		ret
                                  
                                  	.undef TEMP
                                  	.undef BYTE
@@ -1161,80 +1141,80 @@ C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29,
                                  	; Number of pushes
                                  	.set STACK_OFFSET = 7
                                  	; Backup Registers
-000069 930f                      	push TEMP
-00006a 931f                      	push BYTEH
-00006b 932f                      	push BYTEL
-00006c 93df                      	push YH
-00006d 93cf                      	push YL
-00006e 93ff                      	push ZH
-00006f 93ef                      	push ZL
+000062 930f                      	push TEMP
+000063 931f                      	push BYTEH
+000064 932f                      	push BYTEL
+000065 93df                      	push YH
+000066 93cf                      	push YL
+000067 93ff                      	push ZH
+000068 93ef                      	push ZL
                                  
                                  	; Load Stack Pointer
                                  	; Y <- SP
-000070 b7de                      	in YH, SPH
-000071 b7cd                      	in YL, SPL
+000069 b7de                      	in YH, SPH
+00006a b7cd                      	in YL, SPL
                                  
                                  	; Load String Address
-000072 85fb                      	ldd ZH, Y+(STACK_OFFSET + 4)
-000073 85ea                      	ldd ZL, Y+(STACK_OFFSET + 3)
+00006b 85fb                      	ldd ZH, Y+(STACK_OFFSET + 4)
+00006c 85ea                      	ldd ZL, Y+(STACK_OFFSET + 3)
                                  
                                  	; Push Arguments To Stack
-000074 e000                      	ldi TEMP, 0
-000075 930f                      	push TEMP
-000076 93ff                      	push ZH
-000077 93ef                      	push ZL
+00006d e000                      	ldi TEMP, 0
+00006e 930f                      	push TEMP
+00006f 93ff                      	push ZH
+000070 93ef                      	push ZL
                                  	; Parse High Bytes
-000078 dfc4                      	rcall ASCII_WORD_TO_HEX
+000071 dfc4                      	rcall ASCII_WORD_TO_HEX
                                  	; Get Return Value
-000079 911f                      	pop BYTEH
+000072 911f                      	pop BYTEH
                                  	; Discard Dummy Output
-00007a 910f                      	pop TEMP
+000073 910f                      	pop TEMP
                                  	; Get Error Status
-00007b 910f                      	pop TEMP
+000074 910f                      	pop TEMP
                                  	; IF (SUBROUTINE ERR != 0) THEN ERR
-00007c 3000                      	cpi TEMP, 0
-00007d f471                      	brne ASCII_QUAD_TO_HEX_ERR
+000075 3000                      	cpi TEMP, 0
+000076 f471                      	brne ASCII_QUAD_TO_HEX_ERR
                                  
                                  	; Advance To Low Bytes
-00007e 9632                      	adiw ZH:ZL, 2
+000077 9632                      	adiw ZH:ZL, 2
                                  
                                  	; Push Arguments To Stack
-00007f e000                      	ldi TEMP, 0
-000080 930f                      	push TEMP
-000081 93ff                      	push ZH
-000082 93ef                      	push ZL
+000078 e000                      	ldi TEMP, 0
+000079 930f                      	push TEMP
+00007a 93ff                      	push ZH
+00007b 93ef                      	push ZL
                                  	; Parse Low Bytes
-000083 dfb9                      	rcall ASCII_WORD_TO_HEX
+00007c dfb9                      	rcall ASCII_WORD_TO_HEX
                                  	; Get Return Value
-000084 912f                      	pop BYTEL
+00007d 912f                      	pop BYTEL
                                  	; Discard Dummy Output
-000085 910f                      	pop TEMP
+00007e 910f                      	pop TEMP
                                  	; Get Error Status
-000086 910f                      	pop TEMP
+00007f 910f                      	pop TEMP
                                  	; IF (SUBROUTINE ERR != 0) THEN ERR
-000087 3000                      	cpi TEMP, 0
-000088 f419                      	brne ASCII_QUAD_TO_HEX_ERR
+000080 3000                      	cpi TEMP, 0
+000081 f419                      	brne ASCII_QUAD_TO_HEX_ERR
                                  
                                  	; Return Valid Value
-000089 871b                      	std Y+(STACK_OFFSET + 4), BYTEH
-00008a 872a                      	std Y+(STACK_OFFSET + 3), BYTEL
-00008b c002                      	rjmp ASCII_QUAD_TO_HEX_RET
+000082 871b                      	std Y+(STACK_OFFSET + 4), BYTEH
+000083 872a                      	std Y+(STACK_OFFSET + 3), BYTEL
+000084 c002                      	rjmp ASCII_QUAD_TO_HEX_RET
                                  
                                  	ASCII_QUAD_TO_HEX_ERR:
-00008c e001                      		ldi TEMP, 1
-00008d 870c                      		std Y+(STACK_OFFSET + 5), TEMP
+000085 e001                      		ldi TEMP, 1
+000086 870c                      		std Y+(STACK_OFFSET + 5), TEMP
                                  
                                  	ASCII_QUAD_TO_HEX_RET:
                                  		; Restore Registers
-00008e 91ef                      		pop ZL
-00008f 91ff                      		pop ZH
-000090 91cf                      		pop YL
-000091 91df                      		pop YH
-000092 912f                      		pop BYTEL
-000093 911f                      		pop BYTEH
-000094 910f                      		pop TEMP
+000087 91ef                      		pop ZL
+000088 91ff                      		pop ZH
+000089 91cf                      		pop YL
+00008a 91df                      		pop YH
+00008b 912f                      		pop BYTEL
+00008c 911f                      		pop BYTEH
+00008d 910f                      		pop TEMP
                                  
-000095 9508                      		ret
+00008e 9508                      		ret
                                  
                                  	.undef TEMP
                                  	.undef BYTEH
@@ -1258,39 +1238,39 @@ C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29,
                                  	; Number of pushes
                                  	.set STACK_OFFSET = 3
                                  	; Backup Registers
-000096 930f                      	push NIBBLE
-000097 93df                      	push YH
-000098 93cf                      	push YL
+00008f 930f                      	push NIBBLE
+000090 93df                      	push YH
+000091 93cf                      	push YL
                                  
                                  	; Load Stack Pointer
                                  	; Y <- SP
-000099 b7de                      	in YH, SPH
-00009a b7cd                      	in YL, SPL
+000092 b7de                      	in YH, SPH
+000093 b7cd                      	in YL, SPL
                                  
                                  	; Load Hex Nibble
-00009b 810e                      	ldd NIBBLE, Y+(STACK_OFFSET + 3)
+000094 810e                      	ldd NIBBLE, Y+(STACK_OFFSET + 3)
                                  
-00009c 300a                      	cpi NIBBLE, 10
-00009d f010                      	brlo HEX_NIBBLE_TO_ASCII_DIGIT
+000095 300a                      	cpi NIBBLE, 10
+000096 f010                      	brlo HEX_NIBBLE_TO_ASCII_DIGIT
                                  
                                  	HEX_NIBBLE_TO_ASCII_CHAR:
                                  		; NIBBLE <- NIBBLE - 10 + ASCII_UPPER_A
-00009e 5c09                      		subi NIBBLE, (10 - ASCII_UPPER_A)
-00009f c001                      		rjmp HEX_NIBBLE_TO_ASCII_RET
+000097 5c09                      		subi NIBBLE, (10 - ASCII_UPPER_A)
+000098 c001                      		rjmp HEX_NIBBLE_TO_ASCII_RET
                                  
                                  	HEX_NIBBLE_TO_ASCII_DIGIT:
                                  		; NIBBLE <- NIBBLE + ASCII_ZERO
-0000a0 5d00                      		subi NIBBLE, (-ASCII_ZERO)
+000099 5d00                      		subi NIBBLE, (-ASCII_ZERO)
                                  
                                  	HEX_NIBBLE_TO_ASCII_RET:
-0000a1 830e                      		std Y+(STACK_OFFSET + 3), NIBBLE
+00009a 830e                      		std Y+(STACK_OFFSET + 3), NIBBLE
                                  
                                  		; Restore Registers
-0000a2 91cf                      		pop YL
-0000a3 91df                      		pop YH
-0000a4 910f                      		pop NIBBLE
+00009b 91cf                      		pop YL
+00009c 91df                      		pop YH
+00009d 910f                      		pop NIBBLE
                                  
-0000a5 9508                      		ret
+00009e 9508                      		ret
                                  
                                  	.undef NIBBLE
                                  
@@ -1314,51 +1294,182 @@ C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29,
                                  	; Number of pushes
                                  	.set STACK_OFFSET = 4
                                  	; Backup Registers
-0000a6 930f                      	push BYTE
-0000a7 931f                      	push NIBBLE
-0000a8 93df                      	push YH
-0000a9 93cf                      	push YL
+00009f 930f                      	push BYTE
+0000a0 931f                      	push NIBBLE
+0000a1 93df                      	push YH
+0000a2 93cf                      	push YL
                                  
                                  	; Load Stack Pointer
                                  	; Y <- SP
-0000aa b7de                      	in YH, SPH
-0000ab b7cd                      	in YL, SPL
+0000a3 b7de                      	in YH, SPH
+0000a4 b7cd                      	in YL, SPL
                                  
                                  	; Load Hex Byte
-0000ac 810f                      	ldd BYTE, Y+(STACK_OFFSET + 3)
+0000a5 810f                      	ldd BYTE, Y+(STACK_OFFSET + 3)
                                  
                                  	; Convert Least Significant Nibble
-0000ad 2f10                      	mov NIBBLE, BYTE
-0000ae 701f                      	andi NIBBLE, 0x0F
-0000af 931f                      	push NIBBLE
-0000b0 dfe5                      	rcall HEX_NIBBLE_TO_ASCII
-0000b1 911f                      	pop NIBBLE
+0000a6 2f10                      	mov NIBBLE, BYTE
+0000a7 701f                      	andi NIBBLE, 0x0F
+0000a8 931f                      	push NIBBLE
+0000a9 dfe5                      	rcall HEX_NIBBLE_TO_ASCII
+0000aa 911f                      	pop NIBBLE
                                  
                                  	; Output Least Significant Nibble
-0000b2 831f                      	std Y+(STACK_OFFSET + 3), NIBBLE
+0000ab 831f                      	std Y+(STACK_OFFSET + 3), NIBBLE
                                  
                                  	; Convert Most Significant Nibble
-0000b3 2f10                      	mov NIBBLE, BYTE
-0000b4 7f10                      	andi NIBBLE, 0xF0
-0000b5 9512                      	swap NIBBLE
-0000b6 931f                      	push NIBBLE
-0000b7 dfde                      	rcall HEX_NIBBLE_TO_ASCII
-0000b8 911f                      	pop NIBBLE
+0000ac 2f10                      	mov NIBBLE, BYTE
+0000ad 7f10                      	andi NIBBLE, 0xF0
+0000ae 9512                      	swap NIBBLE
+0000af 931f                      	push NIBBLE
+0000b0 dfde                      	rcall HEX_NIBBLE_TO_ASCII
+0000b1 911f                      	pop NIBBLE
                                  
                                  	; Output Most Significant Nibble
-0000b9 8718                      	std Y+(STACK_OFFSET + 4), NIBBLE
+0000b2 8718                      	std Y+(STACK_OFFSET + 4), NIBBLE
                                  
                                  	; Restore Registers
-0000ba 91cf                      	pop YL
-0000bb 91df                      	pop YH
-0000bc 911f                      	pop NIBBLE
-0000bd 910f                      	pop BYTE
+0000b3 91cf                      	pop YL
+0000b4 91df                      	pop YH
+0000b5 911f                      	pop NIBBLE
+0000b6 910f                      	pop BYTE
                                  
-0000be 9508                      	ret
+0000b7 9508                      	ret
                                  
                                  	.undef BYTE
-                                 .INCLUDE "io.inc"
+                                 	.undef NIBBLE
                                  
+                                 
+                                 ASCII_TO_HEX_LOOKUP_TABLE:
+0000b8 ffff                      	.db 255, 255
+0000b9 ffff                      	.db 255, 255
+0000ba ffff                      	.db 255, 255
+0000bb ffff                      	.db 255, 255
+0000bc ffff                      	.db 255, 255
+0000bd ffff                      	.db 255, 255
+0000be ffff                      	.db 255, 255
+0000bf ffff                      	.db 255, 255
+0000c0 ffff                      	.db 255, 255
+0000c1 ffff                      	.db 255, 255
+0000c2 ffff                      	.db 255, 255
+0000c3 ffff                      	.db 255, 255
+0000c4 ffff                      	.db 255, 255
+0000c5 ffff                      	.db 255, 255
+0000c6 ffff                      	.db 255, 255
+0000c7 ffff                      	.db 255, 255
+0000c8 ffff                      	.db 255, 255
+0000c9 ffff                      	.db 255, 255
+0000ca ffff                      	.db 255, 255
+0000cb ffff                      	.db 255, 255
+0000cc ffff                      	.db 255, 255
+0000cd ffff                      	.db 255, 255
+0000ce ffff                      	.db 255, 255
+0000cf ffff                      	.db 255, 255
+0000d0 0100                      	.db   0,   1
+0000d1 0302                      	.db   2,   3
+0000d2 0504                      	.db   4,   5
+0000d3 0706                      	.db   6,   7
+0000d4 0908                      	.db   8,   9
+0000d5 ffff                      	.db 255, 255
+0000d6 ffff                      	.db 255, 255
+0000d7 ffff                      	.db 255, 255
+0000d8 0aff                      	.db 255,  10
+0000d9 0c0b                      	.db  11,  12
+0000da 0e0d                      	.db  13,  14
+0000db 100f                      	.db  15,  16
+0000dc 1211                      	.db  17,  18
+0000dd 1413                      	.db  19,  20
+0000de 1615                      	.db  21,  22
+0000df 1817                      	.db  23,  24
+0000e0 1a19                      	.db  25,  26
+0000e1 1c1b                      	.db  27,  28
+0000e2 1e1d                      	.db  29,  30
+0000e3 201f                      	.db  31,  32
+0000e4 2221                      	.db  33,  34
+0000e5 ff23                      	.db  35, 255
+0000e6 ffff                      	.db 255, 255
+0000e7 ffff                      	.db 255, 255
+0000e8 0aff                      	.db 255,  10
+0000e9 0c0b                      	.db  11,  12
+0000ea 0e0d                      	.db  13,  14
+0000eb 100f                      	.db  15,  16
+0000ec 1211                      	.db  17,  18
+0000ed 1413                      	.db  19,  20
+0000ee 1615                      	.db  21,  22
+0000ef 1817                      	.db  23,  24
+0000f0 1a19                      	.db  25,  26
+0000f1 1c1b                      	.db  27,  28
+0000f2 1e1d                      	.db  29,  30
+0000f3 201f                      	.db  31,  32
+0000f4 2221                      	.db  33,  34
+0000f5 ff23                      	.db  35, 255
+0000f6 ffff                      	.db 255, 255
+0000f7 ffff                      	.db 255, 255
+0000f8 ffff                      	.db 255, 255
+0000f9 ffff                      	.db 255, 255
+0000fa ffff                      	.db 255, 255
+0000fb ffff                      	.db 255, 255
+0000fc ffff                      	.db 255, 255
+0000fd ffff                      	.db 255, 255
+0000fe ffff                      	.db 255, 255
+0000ff ffff                      	.db 255, 255
+000100 ffff                      	.db 255, 255
+000101 ffff                      	.db 255, 255
+000102 ffff                      	.db 255, 255
+000103 ffff                      	.db 255, 255
+000104 ffff                      	.db 255, 255
+000105 ffff                      	.db 255, 255
+000106 ffff                      	.db 255, 255
+000107 ffff                      	.db 255, 255
+000108 ffff                      	.db 255, 255
+000109 ffff                      	.db 255, 255
+00010a ffff                      	.db 255, 255
+00010b ffff                      	.db 255, 255
+00010c ffff                      	.db 255, 255
+00010d ffff                      	.db 255, 255
+00010e ffff                      	.db 255, 255
+00010f ffff                      	.db 255, 255
+000110 ffff                      	.db 255, 255
+000111 ffff                      	.db 255, 255
+000112 ffff                      	.db 255, 255
+000113 ffff                      	.db 255, 255
+000114 ffff                      	.db 255, 255
+000115 ffff                      	.db 255, 255
+000116 ffff                      	.db 255, 255
+000117 ffff                      	.db 255, 255
+000118 ffff                      	.db 255, 255
+000119 ffff                      	.db 255, 255
+00011a ffff                      	.db 255, 255
+00011b ffff                      	.db 255, 255
+00011c ffff                      	.db 255, 255
+00011d ffff                      	.db 255, 255
+00011e ffff                      	.db 255, 255
+00011f ffff                      	.db 255, 255
+000120 ffff                      	.db 255, 255
+000121 ffff                      	.db 255, 255
+000122 ffff                      	.db 255, 255
+000123 ffff                      	.db 255, 255
+000124 ffff                      	.db 255, 255
+000125 ffff                      	.db 255, 255
+000126 ffff                      	.db 255, 255
+000127 ffff                      	.db 255, 255
+000128 ffff                      	.db 255, 255
+000129 ffff                      	.db 255, 255
+00012a ffff                      	.db 255, 255
+00012b ffff                      	.db 255, 255
+00012c ffff                      	.db 255, 255
+00012d ffff                      	.db 255, 255
+00012e ffff                      	.db 255, 255
+00012f ffff                      	.db 255, 255
+000130 ffff                      	.db 255, 255
+000131 ffff                      	.db 255, 255
+000132 ffff                      	.db 255, 255
+000133 ffff                      	.db 255, 255
+000134 ffff                      	.db 255, 255
+000135 ffff                      	.db 255, 255
+000136 ffff                      	.db 255, 255
+                                 .INCLUDE "io.inc"
+000137 ffff                      
                                  ;; Include Guard
                                  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
                                  
@@ -1387,31 +1498,31 @@ C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29,
                                  	; Number of pushes
                                  	.set STACK_OFFSET = 3
                                  	; Backup Registers
-0000bf 930f                      	push CHAR
-0000c0 93df                      	push YH
-0000c1 93cf                      	push YL
+000138 930f                      	push CHAR
+000139 93df                      	push YH
+00013a 93cf                      	push YL
                                  
                                  	; Load Stack Pointer
                                  	; Y <- SP
-0000c2 b7de                      	in YH, SPH
-0000c3 b7cd                      	in YL, SPL
+00013b b7de                      	in YH, SPH
+00013c b7cd                      	in YL, SPL
                                  
                                  	; Load Character
-0000c4 810e                      	ldd CHAR, Y+(STACK_OFFSET + 3)
+00013d 810e                      	ldd CHAR, Y+(STACK_OFFSET + 3)
                                  
                                  	; Wait until sending is safe
                                  	PUTCHAR_WAIT_SAFE_SEND:	
-0000c5 9b5d                      		sbis UCSRA, UDRE
-0000c6 cffe                      		rjmp PUTCHAR_WAIT_SAFE_SEND
+00013e 9b5d                      		sbis UCSRA, UDRE
+00013f cffe                      		rjmp PUTCHAR_WAIT_SAFE_SEND
                                  
-0000c7 b90c                      	out UDR, CHAR
+000140 b90c                      	out UDR, CHAR
                                  	
                                  	; Restore Registers
-0000c8 91cf                      	pop YL
-0000c9 91df                      	pop YH
-0000ca 910f                      	pop CHAR
+000141 91cf                      	pop YL
+000142 91df                      	pop YH
+000143 910f                      	pop CHAR
                                  
-0000cb 9508                      	ret
+000144 9508                      	ret
                                  
                                  	.undef CHAR
                                  
@@ -1435,40 +1546,40 @@ C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29,
                                  	; Number of pushes
                                  	.set STACK_OFFSET = 5
                                  	; Backup Registers
-0000cc 930f                      	push CHAR
-0000cd 93df                      	push YH
-0000ce 93cf                      	push YL
-0000cf 93ff                      	push ZH
-0000d0 93ef                      	push ZL
+000145 930f                      	push CHAR
+000146 93df                      	push YH
+000147 93cf                      	push YL
+000148 93ff                      	push ZH
+000149 93ef                      	push ZL
                                  
                                  	; Load Stack Pointer
                                  	; Y <- SP
-0000d1 b7de                      	in YH, SPH
-0000d2 b7cd                      	in YL, SPL
+00014a b7de                      	in YH, SPH
+00014b b7cd                      	in YL, SPL
                                  
                                  	; Load String Address
-0000d3 85f9                      	ldd ZH, Y+(STACK_OFFSET + 4)
-0000d4 85e8                      	ldd ZL, Y+(STACK_OFFSET + 3)
+00014c 85f9                      	ldd ZH, Y+(STACK_OFFSET + 4)
+00014d 85e8                      	ldd ZL, Y+(STACK_OFFSET + 3)
                                  
                                  	PUTSTR_LOOP:
-0000d5 9104                      		lpm CHAR, Z
-0000d6 3000                      		cpi CHAR, 0
-0000d7 f029                      		breq PUTSTR_RET
-0000d8 930f                      		push CHAR
-0000d9 dfe5                      		rcall PUTCHAR
-0000da 910f                      		pop CHAR
-0000db 9631                      		adiw ZH:ZL, 1
-0000dc cff8                      		rjmp PUTSTR_LOOP
+00014e 9104                      		lpm CHAR, Z
+00014f 3000                      		cpi CHAR, 0
+000150 f029                      		breq PUTSTR_RET
+000151 930f                      		push CHAR
+000152 dfe5                      		rcall PUTCHAR
+000153 910f                      		pop CHAR
+000154 9631                      		adiw ZH:ZL, 1
+000155 cff8                      		rjmp PUTSTR_LOOP
                                  
                                  	PUTSTR_RET:
                                  		; Restore Registers
-0000dd 91ef                      		pop ZL
-0000de 91ff                      		pop ZH
-0000df 91cf                      		pop YL
-0000e0 91df                      		pop YH
-0000e1 910f                      		pop CHAR
+000156 91ef                      		pop ZL
+000157 91ff                      		pop ZH
+000158 91cf                      		pop YL
+000159 91df                      		pop YH
+00015a 910f                      		pop CHAR
                                  
-0000e2 9508                      		ret
+00015b 9508                      		ret
                                  
                                  .INCLUDE "read-mem.inc"
                                  
@@ -1517,162 +1628,379 @@ C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29,
                                  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
                                  
                                  
-0000e3 5245
-0000e4 4f52
-0000e5 3a52
-0000e6 4920
-0000e7 766e
-0000e8 6c61
-0000e9 6469
-0000ea 4920
-0000eb 706e
-0000ec 7475
-0000ed 4620
-0000ee 726f
-0000ef 6020
-0000f0 6552
-0000f1 6461
-0000f2 654d
-0000f3 606d
-0000f4 000d                      READ_SRAM_ERR_MSG: .db "ERROR: Invalid Input For `ReadMem`", ASCII_NEW_LINE, 0
+00015c 5245
+00015d 4f52
+00015e 3a52
+00015f 4920
+000160 766e
+000161 6c61
+000162 6469
+000163 4920
+000164 706e
+000165 7475
+000166 4620
+000167 726f
+000168 6020
+000169 6552
+00016a 6461
+00016b 654d
+00016c 606d
+00016d 000d                      READ_MEM_ERR_MSG: .db "ERROR: Invalid Input For `ReadMem`", ASCII_NEW_LINE, 0
                                  
                                  
                                  READ_MEM:
-                                 	.def TEMP  = R16
+                                 	.def TEMP = R16
                                  
                                  	; Number of pushes
                                  	.set STACK_OFFSET = 5
                                  	; Backup Registers
-0000f5 930f                      	push TEMP
-0000f6 93df                      	push YH
-0000f7 93cf                      	push YL
-0000f8 93ff                      	push ZH
-0000f9 93ef                      	push ZL
+00016e 930f                      	push TEMP
+00016f 93df                      	push YH
+000170 93cf                      	push YL
+000171 93ff                      	push ZH
+000172 93ef                      	push ZL
                                  
                                  	; Load Stack Pointer
                                  	; Y <- SP
-0000fa b7de                      	in YH, SPH
-0000fb b7cd                      	in YL, SPL
+000173 b7de                      	in YH, SPH
+000174 b7cd                      	in YL, SPL
                                  
                                  	; Load Command Length
-0000fc 850a                      	ldd TEMP, Y+(STACK_OFFSET + 5)
+000175 850a                      	ldd TEMP, Y+(STACK_OFFSET + 5)
                                  
-                                 	; r XXXX XXXX
-0000fd 300b                      	cpi TEMP, 11
-0000fe f5f9                      	brne READ_MEM_ERR
+                                 	; r XXXX YYYY
+000176 300b                      	cpi TEMP, 11
+000177 f5f9                      	brne READ_MEM_ERR
                                  
                                  	; Load Command Address
-0000ff 85f9                      	ldd ZH, Y+(STACK_OFFSET + 4)
-000100 85e8                      	ldd ZL, Y+(STACK_OFFSET + 3)
+000178 85f9                      	ldd ZH, Y+(STACK_OFFSET + 4)
+000179 85e8                      	ldd ZL, Y+(STACK_OFFSET + 3)
                                  
                                  	; Get string address of first memory address
-000101 9632                      	adiw ZH:ZL, 2
+00017a 9632                      	adiw ZH:ZL, 2
                                  
                                  	; Parse first memory address
-000102 e000                      	ldi TEMP, 0
-000103 930f                      	push TEMP
-000104 93ff                      	push ZH
-000105 93ef                      	push ZL
-000106 df62                      	rcall ASCII_QUAD_TO_HEX
-000107 91cf                      	pop YL
-000108 91df                      	pop YH
-000109 910f                      	pop TEMP
+00017b e000                      	ldi TEMP, 0
+00017c 930f                      	push TEMP
+00017d 93ff                      	push ZH
+00017e 93ef                      	push ZL
+00017f dee2                      	rcall ASCII_QUAD_TO_HEX
+000180 91cf                      	pop YL
+000181 91df                      	pop YH
+000182 910f                      	pop TEMP
                                  	; IF (SUBROUTINE ERR != 0) THEN ERR
-00010a 3000                      	cpi TEMP, 0
-00010b f591                      	brne READ_MEM_ERR
+000183 3000                      	cpi TEMP, 0
+000184 f591                      	brne READ_MEM_ERR
                                  
                                  	; There should be a space between parameters
-00010c 9634                      	adiw ZH:ZL, 4
-00010d 8100                      	ld TEMP, Z
-00010e 3200                      	cpi TEMP, ASCII_SPACE
-00010f f571                      	brne READ_MEM_ERR
+000185 9634                      	adiw ZH:ZL, 4
+000186 8100                      	ld TEMP, Z
+000187 3200                      	cpi TEMP, ASCII_SPACE
+000188 f571                      	brne READ_MEM_ERR
                                  
                                  	; Get string address of second memory address
-000110 9631                      	adiw ZH:ZL, 1
+000189 9631                      	adiw ZH:ZL, 1
                                  
                                  	; Parse second memory address
-000111 e000                      	ldi TEMP, 0
-000112 930f                      	push TEMP
-000113 93ff                      	push ZH
-000114 93ef                      	push ZL
-000115 df53                      	rcall ASCII_QUAD_TO_HEX
-000116 91ef                      	pop ZL
-000117 91ff                      	pop ZH
-000118 910f                      	pop TEMP
+00018a e000                      	ldi TEMP, 0
+00018b 930f                      	push TEMP
+00018c 93ff                      	push ZH
+00018d 93ef                      	push ZL
+00018e ded3                      	rcall ASCII_QUAD_TO_HEX
+00018f 91ef                      	pop ZL
+000190 91ff                      	pop ZH
+000191 910f                      	pop TEMP
                                  	; IF (SUBROUTINE ERR != 0) THEN ERR
-000119 3000                      	cpi TEMP, 0
-00011a f519                      	brne READ_MEM_ERR
+000192 3000                      	cpi TEMP, 0
+000193 f519                      	brne READ_MEM_ERR
                                  
                                  	; Ensure First Address <= Second Address
-00011b 17df                      	cp YH, ZH
-00011c f020                      	brlo READ_MEM_PARAMS_LOOP
-00011d f501                      	brne READ_MEM_ERR
+000194 17df                      	cp YH, ZH
+000195 f020                      	brlo READ_MEM_PARAMS_LOOP
+000196 f501                      	brne READ_MEM_ERR
                                  
                                  	; High byte equal
                                  	; Check low byte
-00011e 17ce                      	cp YL, ZL
-00011f f008                      	brlo READ_MEM_PARAMS_LOOP
-000120 f4e9                      	brne READ_MEM_ERR
+000197 17ce                      	cp YL, ZL
+000198 f008                      	brlo READ_MEM_PARAMS_LOOP
+000199 f4e9                      	brne READ_MEM_ERR
                                  
                                  	; Params Valid
                                  	READ_MEM_PARAMS_LOOP:
                                  		; Read Memory
-000121 9109                      		ld TEMP, Y+
+00019a 9109                      		ld TEMP, Y+
                                  
                                  		; Print as ASCII
-000122 930f                      		push TEMP
-000123 930f                      		push TEMP
-000124 df81                      		rcall HEX_BYTE_TO_ASCII
+00019b 930f                      		push TEMP
+00019c 930f                      		push TEMP
+00019d df01                      		rcall HEX_BYTE_TO_ASCII
                                  		; Get Least Significant Char
-000125 910f                      		pop TEMP
-000126 df98                      		rcall PUTCHAR
-000127 930f                      		push TEMP
-000128 df96                      		rcall PUTCHAR
-000129 910f                      		pop TEMP
-00012a 910f                      		pop TEMP
-00012b e200                      		ldi TEMP, ASCII_SPACE
-00012c 930f                      		push TEMP
-00012d df91                      		rcall PUTCHAR
-00012e 910f                      		pop TEMP
+00019e 910f                      		pop TEMP
+00019f df98                      		rcall PUTCHAR
+0001a0 930f                      		push TEMP
+0001a1 df96                      		rcall PUTCHAR
+0001a2 910f                      		pop TEMP
+0001a3 910f                      		pop TEMP
+0001a4 e200                      		ldi TEMP, ASCII_SPACE
+0001a5 930f                      		push TEMP
+0001a6 df91                      		rcall PUTCHAR
+0001a7 910f                      		pop TEMP
                                  
-00012f 17df                      		cp YH, ZH
-000130 f380                      		brlo READ_MEM_PARAMS_LOOP
-000131 f419                      		brne READ_MEM_PARAMS_LOOP_EXIT
+0001a8 17df                      		cp YH, ZH
+0001a9 f380                      		brlo READ_MEM_PARAMS_LOOP
+0001aa f419                      		brne READ_MEM_PARAMS_LOOP_EXIT
                                  
-000132 17ce                      		cp YL, ZL
-000133 f368                      		brlo READ_MEM_PARAMS_LOOP
-000134 f401                      		brne READ_MEM_PARAMS_LOOP_EXIT
+0001ab 17ce                      		cp YL, ZL
+0001ac f368                      		brlo READ_MEM_PARAMS_LOOP
+0001ad f361                      		breq READ_MEM_PARAMS_LOOP
                                  
                                  	READ_MEM_PARAMS_LOOP_EXIT:
-000135 e008                      		ldi TEMP, ASCII_BACKSPACE
-000136 930f                      		push TEMP
-000137 df87                      		rcall PUTCHAR
-000138 910f                      		pop TEMP
-000139 e00d                      		ldi TEMP, ASCII_NEW_LINE
-00013a 930f                      		push TEMP
-00013b df83                      		rcall PUTCHAR
-00013c 910f                      		pop TEMP
-00013d c007                      		rjmp READ_MEM_RET
+0001ae e008                      		ldi TEMP, ASCII_BACKSPACE
+0001af 930f                      		push TEMP
+0001b0 df87                      		rcall PUTCHAR
+0001b1 910f                      		pop TEMP
+0001b2 e00d                      		ldi TEMP, ASCII_NEW_LINE
+0001b3 930f                      		push TEMP
+0001b4 df83                      		rcall PUTCHAR
+0001b5 910f                      		pop TEMP
+0001b6 c007                      		rjmp READ_MEM_RET
                                  
                                  	READ_MEM_ERR:
-00013e e001                      		ldi TEMP, HIGH(READ_SRAM_ERR_MSG << 1)
-00013f 930f                      		push TEMP
-000140 ec06                      		ldi TEMP, LOW (READ_SRAM_ERR_MSG << 1)
-000141 930f                      		push TEMP
-000142 df89                      		rcall PUTSTR
-000143 910f                      		pop TEMP
-000144 910f                      		pop TEMP
+0001b7 e002                      		ldi TEMP, HIGH(READ_MEM_ERR_MSG << 1)
+0001b8 930f                      		push TEMP
+0001b9 eb08                      		ldi TEMP, LOW (READ_MEM_ERR_MSG << 1)
+0001ba 930f                      		push TEMP
+0001bb df89                      		rcall PUTSTR
+0001bc 910f                      		pop TEMP
+0001bd 910f                      		pop TEMP
                                  
                                  	READ_MEM_RET:
                                  		; Restore Registers
-000145 91ef                      		pop ZL
-000146 91ff                      		pop ZH
-000147 91cf                      		pop YL
-000148 91df                      		pop YH
-000149 910f                      		pop TEMP
+0001be 91ef                      		pop ZL
+0001bf 91ff                      		pop ZH
+0001c0 91cf                      		pop YL
+0001c1 91df                      		pop YH
+0001c2 910f                      		pop TEMP
                                  
-00014a 9508                      		ret
+0001c3 9508                      		ret
                                  	
+                                 .INCLUDE "write-mem.inc"
+                                 
+                                 ;; Include Guard
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 
+                                 
+                                 .ifdef INCLUDE_WRITE_MEM
+                                 .endif
+                                 
+                                 .equ INCLUDE_WRITE_MEM = 1
+                                 
+                                 
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 ;; Imports
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 
+                                 
+                                 .INCLUDE "ascii.inc"
+                                 
+                                 ;; Include Guard
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 
+                                 
+                                 .ifdef INCLUDE_ASCII
+                                 .INCLUDE "io.inc"
+                                 
+                                 ;; Include Guard
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 
+                                 
+                                 .ifdef INCLUDE_IO
+                                 
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 ;; Write Memory Address
+                                 ;;
+                                 ;; Inputs:
+                                 ;; - Command Length           <- SP + 5
+                                 ;; - Command String Pointer H <- SP + 4
+                                 ;; - Command String Pointer L <- SP + 3 (First Byte Before Return Address)
+                                 ;;
+                                 ;; Outputs:
+                                 ;; - No Output                -> SP + 5
+                                 ;; - No Output                -> SP + 4
+                                 ;; - No Output                -> SP + 3 (First Byte Before Return Address)
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 
+                                 
+0001c4 5245
+0001c5 4f52
+0001c6 3a52
+0001c7 4920
+0001c8 766e
+0001c9 6c61
+0001ca 6469
+0001cb 4920
+0001cc 706e
+0001cd 7475
+0001ce 4620
+0001cf 726f
+0001d0 6020
+0001d1 7257
+0001d2 7469
+0001d3 4d65
+0001d4 6d65
+0001d5 0d60
+0001d6 0000                      WRITE_MEM_ERR_MSG: .db "ERROR: Invalid Input For `WriteMem`", ASCII_NEW_LINE, 0, 0
+0001d7 654d
+0001d8 6f6d
+0001d9 7972
+0001da 5720
+0001db 6972
+0001dc 6574
+0001dd 4320
+0001de 6d6f
+0001df 6c70
+0001e0 7465
+0001e1 0d65
+0001e2 0000                      WRITE_MEM_SUC_MSG: .db "Memory Write Complete", ASCII_NEW_LINE, 0, 0
+                                 
+                                 
+                                 WRITE_MEM:
+                                 	.def TEMP  = R16
+                                 	.def COUNT = R17
+                                 	.def LEN   = R18
+                                 
+                                 	; Number of pushes
+                                 	.set STACK_OFFSET = 7
+                                 	; Backup Registers
+0001e3 930f                      	push TEMP
+0001e4 931f                      	push COUNT
+0001e5 932f                      	push LEN
+0001e6 93df                      	push YH
+0001e7 93cf                      	push YL
+0001e8 93ff                      	push ZH
+0001e9 93ef                      	push ZL
+                                 
+                                 	; Load Stack Pointer
+                                 	; Y <- SP
+0001ea b7de                      	in YH, SPH
+0001eb b7cd                      	in YL, SPL
+                                 
+                                 	; Load Command Length
+0001ec 852c                      	ldd LEN, Y+(STACK_OFFSET + 5)
+                                 
+                                 	; w XXXX (YY)+
+0001ed 3029                      	cpi LEN, 9
+0001ee f1f0                      	brlo WRITE_MEM_ERR
+                                 
+                                 	; Length should be odd
+0001ef ff20                      	sbrs LEN, 0
+0001f0 c03c                      	rjmp WRITE_MEM_ERR
+                                 
+                                 	; Load Command Address
+0001f1 85fb                      	ldd ZH, Y+(STACK_OFFSET + 4)
+0001f2 85ea                      	ldd ZL, Y+(STACK_OFFSET + 3)
+                                 
+                                 	; Get string address of memory address
+0001f3 9632                      	adiw ZH:ZL, 2
+                                 
+                                 	; Parse memory address
+0001f4 e000                      	ldi TEMP, 0
+0001f5 930f                      	push TEMP
+0001f6 93ff                      	push ZH
+0001f7 93ef                      	push ZL
+0001f8 de69                      	rcall ASCII_QUAD_TO_HEX
+0001f9 91cf                      	pop YL
+0001fa 91df                      	pop YH
+0001fb 910f                      	pop TEMP
+                                 	; IF (SUBROUTINE ERR != 0) THEN ERR
+0001fc 3000                      	cpi TEMP, 0
+0001fd f579                      	brne WRITE_MEM_ERR
+                                 
+                                 	; There should be a space between parameters
+0001fe 9634                      	adiw ZH:ZL, 4
+0001ff 8100                      	ld TEMP, Z
+000200 3200                      	cpi TEMP, ASCII_SPACE
+000201 f559                      	brne WRITE_MEM_ERR
+                                 
+                                 	; Get string address of bytes to write
+000202 9631                      	adiw ZH:ZL, 1
+                                 
+000203 93ff                      	push ZH
+000204 93ef                      	push ZL
+                                 
+                                 	; Get max iterations
+000205 5027                      	subi LEN, 7
+000206 9526                      	lsr LEN
+000207 e010                      	ldi COUNT, 0
+                                 
+                                 	WRITE_MEM_VALIDATE_LOOP:
+000208 e000                      		ldi TEMP, 0
+000209 930f                      		push TEMP
+00020a 8100                      		ld TEMP, Z
+00020b 930f                      		push TEMP
+00020c de0f                      		rcall ASCII_BYTE_TO_HEX
+00020d 910f                      		pop TEMP
+00020e 910f                      		pop TEMP
+                                 		; IF (SUBROUTINE ERR != 0) THEN ERR
+00020f 3000                      		cpi TEMP, 0
+000210 f4e1                      		brne WRITE_MEM_ERR
+000211 9513                      		inc COUNT
+                                 		; Get Next Byte
+000212 9631                      		adiw ZH:ZL, 1
+000213 1712                      		cp COUNT, LEN
+000214 f799                      		brne WRITE_MEM_VALIDATE_LOOP
+                                 
+000215 91ef                      	pop ZL
+000216 91ff                      	pop ZH
+000217 e010                      	ldi COUNT, 0
+                                 	WRITE_MEM_WRITE:
+000218 e000                      		ldi TEMP, 0
+000219 930f                      		push TEMP
+00021a 93ff                      		push ZH
+00021b 93ef                      		push ZL
+00021c de19                      		rcall ASCII_WORD_TO_HEX
+00021d 910f                      		pop TEMP
+00021e 9309                      		st Y+, TEMP
+00021f 910f                      		pop TEMP
+000220 910f                      		pop TEMP
+000221 9632                      		adiw ZH:ZL, 2
+000222 9513                      		inc COUNT
+000223 1712                      		cp COUNT, LEN
+000224 f799                      		brne WRITE_MEM_WRITE
+                                 
+000225 e003                      	ldi TEMP, HIGH(WRITE_MEM_SUC_MSG << 1)
+000226 930f                      	push TEMP
+000227 ea0e                      	ldi TEMP, LOW (WRITE_MEM_SUC_MSG << 1)
+000228 930f                      	push TEMP
+000229 df1b                      	rcall PUTSTR
+00022a 910f                      	pop TEMP
+00022b 910f                      	pop TEMP
+                                 
+00022c c007                      	rjmp WRITE_MEM_RET
+                                 
+                                 	WRITE_MEM_ERR:
+00022d e003                      		ldi TEMP, HIGH(WRITE_MEM_ERR_MSG << 1)
+00022e 930f                      		push TEMP
+00022f e808                      		ldi TEMP, LOW (WRITE_MEM_ERR_MSG << 1)
+000230 930f                      		push TEMP
+000231 df13                      		rcall PUTSTR
+000232 910f                      		pop TEMP
+000233 910f                      		pop TEMP
+                                 
+                                 	WRITE_MEM_RET:
+                                 		; Restore Registers
+000234 91ef                      		pop ZL
+000235 91ff                      		pop ZH
+000236 91cf                      		pop YL
+000237 91df                      		pop YH
+000238 912f                      		pop LEN
+000239 911f                      		pop COUNT
+00023a 910f                      		pop TEMP
+                                 
+00023b 9508                      		ret
+                                 	
+                                 	.undef TEMP
+                                 	.undef COUNT
                                  
                                  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
                                  ;; # Program Memory Constants
@@ -1680,23 +2008,23 @@ C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29,
                                  
                                  
                                  PROMPT:
-00014b 4746
-00014c 3e3e
-00014d 203e
-00014e 0000                      	.db "FG>>> ", 0, 0
+00023c 4746
+00023d 3e3e
+00023e 203e
+00023f 0000                      	.db "FG>>> ", 0, 0
                                  EXEC_INVALID_CMD:
-00014f 5245
-000150 4f52
-000151 3a52
-000152 4920
-000153 766e
-000154 6c61
-000155 6469
-000156 4320
-000157 6d6f
-000158 616d
-000159 646e
-00015a 000d                      	.db "ERROR: Invalid Command", ASCII_NEW_LINE, 0
+000240 5245
+000241 4f52
+000242 3a52
+000243 4920
+000244 766e
+000245 6c61
+000246 6469
+000247 4320
+000248 6d6f
+000249 616d
+00024a 646e
+00024b 000d                      	.db "ERROR: Invalid Command", ASCII_NEW_LINE, 0
                                  
                                  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
                                  ;; # Main Routine
@@ -1707,40 +2035,40 @@ C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29,
                                  	.def TEMP = R16
                                  
                                  	; Initialize Stack Pointer
-00015b e008                      	ldi TEMP, HIGH(RAMEND)
-00015c bf0e                      	out SPH, TEMP
-00015d e50f                      	ldi TEMP, LOW(RAMEND)
-00015e bf0d                      	out SPL, TEMP
+00024c e008                      	ldi TEMP, HIGH(RAMEND)
+00024d bf0e                      	out SPH, TEMP
+00024e e50f                      	ldi TEMP, LOW(RAMEND)
+00024f bf0d                      	out SPL, TEMP
                                  
                                  	; Initialize USART BEGIN
                                  
                                  	; Set Baud Rate
-00015f e000                      	ldi TEMP, HIGH(BAUD_UBRR)
-000160 bd00                      	out UBRRH, TEMP
-000161 e109                      	ldi TEMP, LOW(BAUD_UBRR)
-000162 b909                      	out UBRRL, TEMP
+000250 e000                      	ldi TEMP, HIGH(BAUD_UBRR)
+000251 bd00                      	out UBRRH, TEMP
+000252 e109                      	ldi TEMP, LOW(BAUD_UBRR)
+000253 b909                      	out UBRRL, TEMP
                                  
                                  	; TXEN  -> Enable Transmitter
                                  	; RXEN  -> Enable Receiver
                                  	; RXCIE -> Enable Rx Complete Interrupt
-000163 e908                      	ldi TEMP, (1 << RXCIE) | (1 << RXEN) | (1 << TXEN)
-000164 b90a                      	out UCSRB, TEMP
+000254 e908                      	ldi TEMP, (1 << RXCIE) | (1 << RXEN) | (1 << TXEN)
+000255 b90a                      	out UCSRB, TEMP
                                  
                                  	; Set Frame Format:	; - 8 Data Bits	; - 2 Stop Bits	ldi TEMP, (1 << URSEL) | (1 << USBS) | (1 << UCSZ0) | (1 << UCSZ1)	out UCSRC, TEMP
                                  
                                  	; Initialize USART END
                                  
                                  	; Initialie command index to 0
-000165 e0f0                      	ldi ZH, HIGH(CMD_IDX)
-000166 ece4                      	ldi ZL, LOW (CMD_IDX)
-000167 2700                      	clr TEMP
-000168 8300                      	st Z, TEMP
+000256 e0f0                      	ldi ZH, HIGH(CMD_IDX)
+000257 ece4                      	ldi ZL, LOW (CMD_IDX)
+000258 2700                      	clr TEMP
+000259 8300                      	st Z, TEMP
                                  
                                  	; Enable Global Interrupts
-000169 9478                          sei
+00025a 9478                          sei
                                  
                                  	RESET_LOOP:
-00016a cfff                      		rjmp RESET_LOOP
+00025b cfff                      		rjmp RESET_LOOP
                                  
                                  	; Clear Register Aliases
                                  	.undef TEMP
@@ -1756,32 +2084,32 @@ C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29,
                                  	.def IDX  = R18
                                  
                                  	; Backup Registers
-00016b 930f                      	push TEMP
-00016c b70f                      	in TEMP, SREG
-00016d 930f                      	push TEMP
-00016e 93ff                      	push ZH
-00016f 93ef                      	push ZL
-000170 93df                      	push YH
-000171 93cf                      	push YL
-000172 931f                      	push CHAR
-000173 932f                      	push IDX
+00025c 930f                      	push TEMP
+00025d b70f                      	in TEMP, SREG
+00025e 930f                      	push TEMP
+00025f 93ff                      	push ZH
+000260 93ef                      	push ZL
+000261 93df                      	push YH
+000262 93cf                      	push YL
+000263 931f                      	push CHAR
+000264 932f                      	push IDX
                                  
                                  	; Read ASCII Character
-000174 b11c                      	in CHAR, UDR
+000265 b11c                      	in CHAR, UDR
                                  
                                  	; Read command index
-000175 e0f0                      	ldi ZH, HIGH(CMD_IDX)
-000176 ece4                      	ldi ZL, LOW (CMD_IDX)
-000177 8120                      	ld IDX, Z
+000266 e0f0                      	ldi ZH, HIGH(CMD_IDX)
+000267 ece4                      	ldi ZL, LOW (CMD_IDX)
+000268 8120                      	ld IDX, Z
                                  
-000178 301d                      	cpi CHAR, ASCII_NEW_LINE
+000269 301d                      	cpi CHAR, ASCII_NEW_LINE
                                  
-000179 f471                      	brne USART_RX_COMPLETE_NOT_DONE
+00026a f471                      	brne USART_RX_COMPLETE_NOT_DONE
                                  
-00017a e00d                      	ldi R16, ASCII_NEW_LINE
-00017b 930f                      	push R16
-00017c df42                      	rcall PUTCHAR
-00017d 910f                      	pop R16
+00026b e00d                      	ldi R16, ASCII_NEW_LINE
+00026c 930f                      	push R16
+00026d deca                      	rcall PUTCHAR
+00026e 910f                      	pop R16
                                  	
                                  	; r $begaddress $endaddress					-- read from sram
                                  	; w $begaddress $endaddress $bytestowrite	-- write to sram
@@ -1791,86 +2119,86 @@ C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29,
                                  	; i $name $byte								-- write to io
                                  	; p $seconds $anyoftheabovecommands			-- repeat command
                                  	; TODO: dont forget to pass parameter
-00017e 930f                      	push R16
-00017f 931f                      	push R17
+00026f 930f                      	push R16
+000270 931f                      	push R17
                                  	
-000180 e600                      	ldi R16, LOW(CMD)
-000181 e010                      	ldi R17, HIGH(CMD)
+000271 e600                      	ldi R16, LOW(CMD)
+000272 e010                      	ldi R17, HIGH(CMD)
                                  	
-000182 d02d                      	rcall EXECUTE
+000273 d02d                      	rcall EXECUTE
                                  
-000183 911f                      	pop R17
-000184 910f                      	pop R16
+000274 911f                      	pop R17
+000275 910f                      	pop R16
                                  
                                  	; Reset index
-000185 2722                      	clr IDX
-000186 8320                      	st Z, IDX
+000276 2722                      	clr IDX
+000277 8320                      	st Z, IDX
                                  
-000187 c01e                      	rjmp USART_RX_COMPLETE_RET
+000278 c01e                      	rjmp USART_RX_COMPLETE_RET
                                  
                                  	USART_RX_COMPLETE_NOT_DONE:
-000188 3018                      		cpi CHAR, ASCII_BACKSPACE
+000279 3018                      		cpi CHAR, ASCII_BACKSPACE
                                  
-000189 f471                      		brne USART_RX_COMPLETE_NOT_BACKSPACE
+00027a f471                      		brne USART_RX_COMPLETE_NOT_BACKSPACE
                                  
-00018a 3020                      		cpi IDX, 0
-00018b f0d1                      		breq USART_RX_COMPLETE_RET
+00027b 3020                      		cpi IDX, 0
+00027c f0d1                      		breq USART_RX_COMPLETE_RET
                                  
-00018c 952a                      		dec IDX
-00018d 8320                      		st Z, IDX
+00027d 952a                      		dec IDX
+00027e 8320                      		st Z, IDX
                                  		; Echo backspace back
                                  		; Backspace -> Space -> Backspace
-00018e e008                      		ldi R16, ASCII_BACKSPACE
-00018f 930f                      		push R16
-000190 df2e                      		rcall PUTCHAR
-000191 e200                      		ldi R16, ASCII_SPACE
-000192 930f                      		push R16
-000193 df2b                      		rcall PUTCHAR
-000194 910f                      		pop R16
-000195 df29                      		rcall PUTCHAR
-000196 910f                      		pop R16
+00027f e008                      		ldi R16, ASCII_BACKSPACE
+000280 930f                      		push R16
+000281 deb6                      		rcall PUTCHAR
+000282 e200                      		ldi R16, ASCII_SPACE
+000283 930f                      		push R16
+000284 deb3                      		rcall PUTCHAR
+000285 910f                      		pop R16
+000286 deb1                      		rcall PUTCHAR
+000287 910f                      		pop R16
                                  
-000197 c00e                      		rjmp USART_RX_COMPLETE_RET
+000288 c00e                      		rjmp USART_RX_COMPLETE_RET
                                  
                                  	USART_RX_COMPLETE_NOT_BACKSPACE:
                                  		; Handle full command buffer
-000198 3624                      		cpi IDX, CMD_MAX_LEN
+000289 3624                      		cpi IDX, CMD_MAX_LEN
                                  
-000199 f061                      		breq USART_RX_COMPLETE_RET
+00028a f061                      		breq USART_RX_COMPLETE_RET
                                  
                                  		; Get next-character index
-00019a e0d0                      		ldi YH, HIGH(CMD)
-00019b e6c0                      		ldi YL, LOW(CMD)
-00019c 0fc2                      		add YL, IDX
-00019d 2700                      		clr TEMP
-00019e 1fd0                      		adc YH, TEMP
+00028b e0d0                      		ldi YH, HIGH(CMD)
+00028c e6c0                      		ldi YL, LOW(CMD)
+00028d 0fc2                      		add YL, IDX
+00028e 2700                      		clr TEMP
+00028f 1fd0                      		adc YH, TEMP
                                  
                                  		; Store character
-00019f 8318                      		st Y, CHAR
+000290 8318                      		st Y, CHAR
                                  	
                                  		; Increment index
-0001a0 9523                      		inc IDX
-0001a1 8320                      		st Z, IDX
+000291 9523                      		inc IDX
+000292 8320                      		st Z, IDX
                                  
                                  		; Echo character back
-0001a2 2f01                      		mov R16, CHAR
-0001a3 930f                      		push R16
-0001a4 df1a                      		rcall PUTCHAR
-0001a5 910f                      		pop R16
+000293 2f01                      		mov R16, CHAR
+000294 930f                      		push R16
+000295 dea2                      		rcall PUTCHAR
+000296 910f                      		pop R16
                                  
                                  	USART_RX_COMPLETE_RET:
                                  		; Restore Registers
-0001a6 912f                      		pop IDX
-0001a7 911f                      		pop CHAR
-0001a8 91cf                      		pop YL
-0001a9 91df                      		pop YH
-0001aa 91ef                      		pop ZL
-0001ab 91ff                      		pop ZH
-0001ac 910f                      		pop TEMP
-0001ad bf0f                      		out SREG, TEMP
-0001ae 910f                      		pop TEMP
+000297 912f                      		pop IDX
+000298 911f                      		pop CHAR
+000299 91cf                      		pop YL
+00029a 91df                      		pop YH
+00029b 91ef                      		pop ZL
+00029c 91ff                      		pop ZH
+00029d 910f                      		pop TEMP
+00029e bf0f                      		out SREG, TEMP
+00029f 910f                      		pop TEMP
                                  
-0001af 9518                      		reti
+0002a0 9518                      		reti
                                  
                                  	; Clear Register Aliases
                                  	.undef TEMP
@@ -1894,95 +2222,101 @@ C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29,
                                  	.def CHAR  = R19
                                  	.def TEMP  = R20
                                  	
-0001b0 934f                      	push TEMP
-0001b1 93cf                      	push YL
-0001b2 93df                      	push YH
+0002a1 934f                      	push TEMP
+0002a2 93cf                      	push YL
+0002a3 93df                      	push YH
                                  
                                  	; Empty command
-0001b3 3022                      	cpi IDX, 2
-0001b4 f158                      	brlo EXECUTE_INVALID
+0002a4 3022                      	cpi IDX, 2
+0002a5 f188                      	brlo EXECUTE_INVALID
                                  
-0001b5 2fd1                      	mov YH, ADDRH
-0001b6 2fc0                      	mov YL,	ADDRL
-0001b7 8138                      	ld	CHAR, Y
+0002a6 2fd1                      	mov YH, ADDRH
+0002a7 2fc0                      	mov YL,	ADDRL
+0002a8 8138                      	ld	CHAR, Y
                                  	
-0001b8 95c3                      	inc YL
-0001b9 2744                      	clr TEMP
-0001ba 1fd4                      	adc YH, TEMP
-0001bb 8148                      	ld	TEMP, Y
+0002a9 95c3                      	inc YL
+0002aa 2744                      	clr TEMP
+0002ab 1fd4                      	adc YH, TEMP
+0002ac 8148                      	ld	TEMP, Y
                                  
-0001bc 3240                      	cpi TEMP, ASCII_SPACE
-0001bd f511                      	brne EXECUTE_INVALID
+0002ad 3240                      	cpi TEMP, ASCII_SPACE
+0002ae f541                      	brne EXECUTE_INVALID
                                  
-0001be 3732                      	cpi CHAR, ASCII_LOWER_R
-0001bf f441                      	brne EXECUTE_W
-0001c0 932f                      	push IDX
-0001c1 931f                      	push ADDRH
-0001c2 930f                      	push ADDRL
-0001c3 df31                      	rcall READ_MEM
-0001c4 914f                      	pop TEMP
-0001c5 914f                      	pop TEMP
-0001c6 914f                      	pop TEMP
-0001c7 c01f                      	rjmp  EXECUTE_RET
+0002af 3732                      	cpi CHAR, ASCII_LOWER_R
+0002b0 f441                      	brne EXECUTE_W
+0002b1 932f                      	push IDX
+0002b2 931f                      	push ADDRH
+0002b3 930f                      	push ADDRL
+0002b4 deb9                      	rcall READ_MEM
+0002b5 914f                      	pop TEMP
+0002b6 914f                      	pop TEMP
+0002b7 914f                      	pop TEMP
+0002b8 c025                      	rjmp  EXECUTE_RET
                                  
                                  	EXECUTE_W:
-0001c8 3737                      		cpi CHAR, ASCII_LOWER_W
-0001c9 f411                      		brne EXECUTE_G
-0001ca d027                      		rcall WRITE_SRAM
-0001cb c01b                      		rjmp  EXECUTE_RET
+0002b9 3737                      		cpi CHAR, ASCII_LOWER_W
+0002ba f441                      		brne EXECUTE_G
+0002bb 932f                      		push IDX
+0002bc 931f                      		push ADDRH
+0002bd 930f                      		push ADDRL
+0002be df24                      		rcall WRITE_MEM
+0002bf 914f                      		pop TEMP
+0002c0 914f                      		pop TEMP
+0002c1 914f                      		pop TEMP
+0002c2 c01b                      		rjmp  EXECUTE_RET
                                  	EXECUTE_G:
-0001cc 3637                      		cpi CHAR, ASCII_LOWER_G
-0001cd f411                      		brne EXECUTE_S
-0001ce d024                      		rcall READ_REGISTER
-0001cf c017                      		rjmp  EXECUTE_RET
+0002c3 3637                      		cpi CHAR, ASCII_LOWER_G
+0002c4 f411                      		brne EXECUTE_S
+0002c5 d023                      		rcall READ_REGISTER
+0002c6 c017                      		rjmp  EXECUTE_RET
                                  	EXECUTE_S:
-0001d0 3733                      		cpi CHAR, ASCII_LOWER_S
-0001d1 f411                      		brne EXECUTE_O
-0001d2 d021                      		rcall WRITE_REGISTER
-0001d3 c013                      		rjmp  EXECUTE_RET
+0002c7 3733                      		cpi CHAR, ASCII_LOWER_S
+0002c8 f411                      		brne EXECUTE_O
+0002c9 d020                      		rcall WRITE_REGISTER
+0002ca c013                      		rjmp  EXECUTE_RET
                                  	EXECUTE_O:
-0001d4 363f                      		cpi CHAR, ASCII_LOWER_O
-0001d5 f411                      		brne EXECUTE_I
-0001d6 d01e                      		rcall READ_IO
-0001d7 c00f                      		rjmp  EXECUTE_RET
+0002cb 363f                      		cpi CHAR, ASCII_LOWER_O
+0002cc f411                      		brne EXECUTE_I
+0002cd d01d                      		rcall READ_IO
+0002ce c00f                      		rjmp  EXECUTE_RET
                                  
                                  	EXECUTE_I:
-0001d8 3639                      		cpi CHAR, ASCII_LOWER_I
-0001d9 f411                      		brne EXECUTE_P
-0001da d01b                      		rcall WRITE_IO
-0001db c00b                      		rjmp  EXECUTE_RET
+0002cf 3639                      		cpi CHAR, ASCII_LOWER_I
+0002d0 f411                      		brne EXECUTE_P
+0002d1 d01a                      		rcall WRITE_IO
+0002d2 c00b                      		rjmp  EXECUTE_RET
                                  
                                  	EXECUTE_P:
-0001dc 3730                      		cpi CHAR, ASCII_LOWER_P
-0001dd f411                      		brne EXECUTE_INVALID
-0001de d018                      		rcall REPEAT_CMD
-0001df c007                      		rjmp  EXECUTE_RET
+0002d3 3730                      		cpi CHAR, ASCII_LOWER_P
+0002d4 f411                      		brne EXECUTE_INVALID
+0002d5 d017                      		rcall REPEAT_CMD
+0002d6 c007                      		rjmp  EXECUTE_RET
                                  	
                                  	EXECUTE_INVALID:
                                  		; Print Error
-0001e0 e042                      		ldi TEMP, HIGH(EXEC_INVALID_CMD << 1)
-0001e1 934f                      		push TEMP
-0001e2 e94e                      		ldi TEMP, LOW (EXEC_INVALID_CMD << 1)
-0001e3 934f                      		push TEMP
-0001e4 dee7                      		rcall PUTSTR
-0001e5 914f                      		pop TEMP
-0001e6 914f                      		pop TEMP
+0002d7 e044                      		ldi TEMP, HIGH(EXEC_INVALID_CMD << 1)
+0002d8 934f                      		push TEMP
+0002d9 e840                      		ldi TEMP, LOW (EXEC_INVALID_CMD << 1)
+0002da 934f                      		push TEMP
+0002db de69                      		rcall PUTSTR
+0002dc 914f                      		pop TEMP
+0002dd 914f                      		pop TEMP
                                  
                                  	EXECUTE_RET:
                                  		; Print Prompt
-0001e7 e042                      		ldi TEMP, HIGH(PROMPT << 1)
-0001e8 934f                      		push TEMP
-0001e9 e946                      		ldi TEMP, LOW (PROMPT << 1)
-0001ea 934f                      		push TEMP
-0001eb dee0                      		rcall PUTSTR
-0001ec 914f                      		pop TEMP
-0001ed 914f                      		pop TEMP
+0002de e044                      		ldi TEMP, HIGH(PROMPT << 1)
+0002df 934f                      		push TEMP
+0002e0 e748                      		ldi TEMP, LOW (PROMPT << 1)
+0002e1 934f                      		push TEMP
+0002e2 de62                      		rcall PUTSTR
+0002e3 914f                      		pop TEMP
+0002e4 914f                      		pop TEMP
                                  
-0001ee 91df                      		pop YH
-0001ef 91cf                      		pop YL
-0001f0 914f                      		pop TEMP
+0002e5 91df                      		pop YH
+0002e6 91cf                      		pop YL
+0002e7 914f                      		pop TEMP
                                  	
-0001f1 9508                      		ret
+0002e8 9508                      		ret
                                  
                                  	.undef ADDRL
                                  	.undef ADDRH
@@ -1990,21 +2324,17 @@ C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29,
                                  	.undef IDX
                                  	.undef TEMP
                                  
-                                 
-                                 WRITE_SRAM:
-0001f2 9508                      ret
-                                 
                                  READ_REGISTER:
-0001f3 9508                      ret
+0002e9 9508                      ret
                                  
                                  WRITE_REGISTER:
-0001f4 9508                      ret
+0002ea 9508                      ret
                                  
                                  READ_IO:
-0001f5 9508                      ret
+0002eb 9508                      ret
                                  
                                  WRITE_IO:
-0001f6 9508                      ret
+0002ec 9508                      ret
                                  
                                  REPEAT_CMD:
 
@@ -2024,39 +2354,39 @@ counted separately from r26..r31 here.
 .dseg memory usage only counts static data declared with .byte
 
 "ATmega32" register use summary:
-x  :   0 y  :  29 z  :   9 r0 :   0 r1 :   0 r2 :   0 r3 :   0 r4 :   0 
+x  :   0 y  :  31 z  :  12 r0 :   0 r1 :   0 r2 :   0 r3 :   0 r4 :   0 
 r5 :   0 r6 :   0 r7 :   0 r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 
-r13:   0 r14:   0 r15:   0 r16: 144 r17:  38 r18:  18 r19:   8 r20:  21 
-r21:   0 r22:   0 r23:   0 r24:   0 r25:   0 r26:   0 r27:   0 r28:  35 
-r29:  35 r30:  28 r31:  28 
+r13:   0 r14:   0 r15:   0 r16: 172 r17:  47 r18:  28 r19:   8 r20:  24 
+r21:   0 r22:   0 r23:   0 r24:   0 r25:   0 r26:   0 r27:   0 r28:  39 
+r29:  39 r30:  44 r31:  44 
 Registers used: 11 out of 35 (31.4%)
 
 "ATmega32" instruction use summary:
-.lds  :   0 .sts  :   0 adc   :   2 add   :   1 adiw  :   5 and   :   0 
+.lds  :   0 .sts  :   0 adc   :   3 add   :   2 adiw  :  10 and   :   0 
 andi  :   2 asr   :   0 bclr  :   0 bld   :   0 brbc  :   0 brbs  :   0 
-brcc  :   0 brcs  :   0 break :   0 breq  :   3 brge  :   0 brhc  :   0 
-brhs  :   0 brid  :   0 brie  :   0 brlo  :  12 brlt  :   0 brmi  :   0 
-brne  :  22 brpl  :   0 brsh  :   0 brtc  :   0 brts  :   0 brvc  :   0 
+brcc  :   0 brcs  :   0 break :   0 breq  :   4 brge  :   0 brhc  :   0 
+brhs  :   0 brid  :   0 brie  :   0 brlo  :   7 brlt  :   0 brmi  :   0 
+brne  :  26 brpl  :   0 brsh  :   1 brtc  :   0 brts  :   0 brvc  :   0 
 brvs  :   0 bset  :   0 bst   :   0 call  :   0 cbi   :   0 cbr   :   0 
 clc   :   0 clh   :   0 cli   :   0 cln   :   0 clr   :   4 cls   :   0 
-clt   :   0 clv   :   0 clz   :   0 com   :   0 cp    :   4 cpc   :   0 
-cpi   :  29 cpse  :   0 dec   :   1 eor   :   0 fmul  :   0 fmuls :   0 
-fmulsu:   0 icall :   0 ijmp  :   0 in    :  18 inc   :   2 jmp   :   2 
-ld    :   7 ldd   :  13 ldi   :  34 lds   :   0 lpm   :   2 lsl   :   4 
-lsr   :   0 mov   :   5 movw  :   0 mul   :   0 muls  :   0 mulsu :   0 
-neg   :   0 nop   :   0 or    :   1 ori   :   0 out   :   7 pop   :  87 
-push  :  87 rcall :  31 ret   :  15 reti  :   1 rjmp  :  19 rol   :   0 
+clt   :   0 clv   :   0 clz   :   0 com   :   0 cp    :   6 cpc   :   0 
+cpi   :  28 cpse  :   0 dec   :   1 eor   :   0 fmul  :   0 fmuls :   0 
+fmulsu:   0 icall :   0 ijmp  :   0 in    :  20 inc   :   4 jmp   :   2 
+ld    :   9 ldd   :  16 ldi   :  46 lds   :   0 lpm   :   4 lsl   :   4 
+lsr   :   1 mov   :   5 movw  :   0 mul   :   0 muls  :   0 mulsu :   0 
+neg   :   0 nop   :   0 or    :   1 ori   :   0 out   :   7 pop   : 113 
+push  : 113 rcall :  36 ret   :  15 reti  :   1 rjmp  :  19 rol   :   0 
 ror   :   0 sbc   :   0 sbci  :   0 sbi   :   0 sbic  :   0 sbis  :   1 
-sbiw  :   0 sbr   :   0 sbrc  :   0 sbrs  :   0 sec   :   0 seh   :   0 
+sbiw  :   0 sbr   :   0 sbrc  :   0 sbrs  :   1 sec   :   0 seh   :   0 
 sei   :   1 sen   :   0 ser   :   0 ses   :   0 set   :   0 sev   :   0 
-sez   :   0 sleep :   0 spm   :   0 st    :   5 std   :  12 sts   :   0 
-sub   :   0 subi  :   5 swap  :   1 tst   :   0 wdr   :   0 
-Instructions used: 34 out of 113 (30.1%)
+sez   :   0 sleep :   0 spm   :   0 st    :   6 std   :  10 sts   :   0 
+sub   :   0 subi  :   3 swap  :   1 tst   :   0 wdr   :   0 
+Instructions used: 37 out of 113 (32.7%)
 
 "ATmega32" memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x0003f0    892     68    960   32768   2.9%
+[.cseg] 0x000000 0x0005dc   1066    386   1452   32768   4.4%
 [.dseg] 0x000060 0x0000c5      0    101    101    2048   4.9%
 [.eseg] 0x000000 0x000000      0      0      0    1024   0.0%
 
