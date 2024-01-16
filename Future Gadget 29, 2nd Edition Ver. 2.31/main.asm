@@ -51,21 +51,6 @@
 ; Maximum Command Length
 .equ CMD_MAX_LEN = 100
 
-; ASCII Codes
-.equ ASCII_NULL      = 0x00
-.equ ASCII_BACKSPACE = 0x08
-.equ ASCII_NEW_LINE  = 0x0D
-.equ ASCII_SPACE     = 0x20
-.equ ASCII_ZERO      = 0x30
-.equ ASCII_UPPER_E   = 0x45
-.equ ASCII_LOWER_G   = 0x67
-.equ ASCII_LOWER_I   = 0x69
-.equ ASCII_LOWER_O   = 0x6F
-.equ ASCII_LOWER_P   = 0x70
-.equ ASCII_LOWER_R   = 0x72
-.equ ASCII_LOWER_S   = 0x73
-.equ ASCII_LOWER_W   = 0x77
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; # Data Segment
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -87,6 +72,24 @@ CMD_IDX: .byte 1
 	jmp RESET
 .org 0x001A 
 	jmp USART_RX_COMPLETE
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; # Imports
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+.INCLUDE "ascii.inc"
+.INCLUDE "io.inc"
+.INCLUDE "read-mem.inc"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; # Program Memory Constants
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+PROMPT:
+	.db "FG>>> ", 0, 0
+EXEC_INVALID_CMD:
+	.db "ERROR: Invalid Command", ASCII_NEW_LINE, 0
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; # Main Routine
@@ -169,11 +172,9 @@ USART_RX_COMPLETE:
 	brne USART_RX_COMPLETE_NOT_DONE
 
 	ldi R16, ASCII_NEW_LINE
+	push R16
 	rcall PUTCHAR
-
-	; Empty command
-	cpi IDX, 0
-	breq USART_RX_COMPLETE_RET
+	pop R16
 	
 	; r $begaddress $endaddress					-- read from sram
 	; w $begaddress $endaddress $bytestowrite	-- write to sram
@@ -211,12 +212,16 @@ USART_RX_COMPLETE:
 		dec IDX
 		st Z, IDX
 		; Echo backspace back
+		; Backspace -> Space -> Backspace
 		ldi R16, ASCII_BACKSPACE
+		push R16
 		rcall PUTCHAR
 		ldi R16, ASCII_SPACE
+		push R16
 		rcall PUTCHAR
-		ldi R16, ASCII_BACKSPACE
+		pop R16
 		rcall PUTCHAR
+		pop R16
 
 		rjmp USART_RX_COMPLETE_RET
 
@@ -242,7 +247,9 @@ USART_RX_COMPLETE:
 
 		; Echo character back
 		mov R16, CHAR
+		push R16
 		rcall PUTCHAR
+		pop R16
 
 	USART_RX_COMPLETE_RET:
 		; Restore Registers
@@ -267,26 +274,25 @@ USART_RX_COMPLETE:
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; # Subroutines
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
 ; Inputs:
 ; - ADDRL: R16
 ; - ADDRH: R17
+; - IDX  : R18
 EXECUTE:
 	.def ADDRL = R16
 	.def ADDRH = R17
-	.def CHAR  = R18
-	.def TEMP  = R19
+	.def IDX   = R18
+	.def CHAR  = R19
+	.def TEMP  = R20
 	
 	push TEMP
 	push YL
 	push YH
 
-	; Read command index
-	ldi YH, HIGH(CMD_IDX)
-	ldi YL, LOW (CMD_IDX)
-	ld TEMP, Y
-
 	; Empty command
-	cpi TEMP, 2
+	cpi IDX, 2
 	brlo EXECUTE_INVALID
 
 	mov YH, ADDRH
@@ -303,7 +309,13 @@ EXECUTE:
 
 	cpi CHAR, ASCII_LOWER_R
 	brne EXECUTE_W
-	rcall READ_SRAM
+	push IDX
+	push ADDRH
+	push ADDRL
+	rcall READ_MEM
+	pop TEMP
+	pop TEMP
+	pop TEMP
 	rjmp  EXECUTE_RET
 
 	EXECUTE_W:
@@ -340,22 +352,25 @@ EXECUTE:
 		rjmp  EXECUTE_RET
 	
 	EXECUTE_INVALID:
-		push R16
-		ldi R16, ASCII_UPPER_E
-		rcall PUTCHAR
-		ldi R16, ASCII_LOWER_R
-		rcall PUTCHAR
-		ldi R16, ASCII_LOWER_R
-		rcall PUTCHAR
-		ldi R16, ASCII_LOWER_O
-		rcall PUTCHAR
-		ldi R16, ASCII_LOWER_R
-		rcall PUTCHAR
-		ldi R16, ASCII_NEW_LINE
-		rcall PUTCHAR
-		pop R16
+		; Print Error
+		ldi TEMP, HIGH(EXEC_INVALID_CMD << 1)
+		push TEMP
+		ldi TEMP, LOW (EXEC_INVALID_CMD << 1)
+		push TEMP
+		rcall PUTSTR
+		pop TEMP
+		pop TEMP
 
 	EXECUTE_RET:
+		; Print Prompt
+		ldi TEMP, HIGH(PROMPT << 1)
+		push TEMP
+		ldi TEMP, LOW (PROMPT << 1)
+		push TEMP
+		rcall PUTSTR
+		pop TEMP
+		pop TEMP
+
 		pop YH
 		pop YL
 		pop TEMP
@@ -365,27 +380,9 @@ EXECUTE:
 	.undef ADDRL
 	.undef ADDRH
 	.undef CHAR
+	.undef IDX
 	.undef TEMP
 
-
-; Inputs:
-; - CHAR: R16
-PUTCHAR:
-	; Set Register Aliases
-	.def CHAR = R16
-
-	; Wait until sending is safe
-	sbis UCSRA, UDRE
-	rjmp PUTCHAR
-
-	out UDR, CHAR
-	
-	ret
-
-	.undef CHAR
-
-READ_SRAM:
-ret
 
 WRITE_SRAM:
 ret

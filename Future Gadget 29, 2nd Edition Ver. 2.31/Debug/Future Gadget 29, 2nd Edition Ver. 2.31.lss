@@ -1,10 +1,20 @@
 
-AVRASM ver. 2.2.8  C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm Sat Jan 06 19:38:55 2024
+AVRASM ver. 2.2.8  C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm Tue Jan 16 20:49:44 2024
 
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m32def.inc'
+C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm(80): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\ascii.inc'
+C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm(81): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\io.inc'
+C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm(82): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\read-mem.inc'
+C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\read-mem.inc(18): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\ascii.inc'
+C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\read-mem.inc(19): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\io.inc'
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m32def.inc'
+C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm(80): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\ascii.inc'
+C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm(81): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\io.inc'
+C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm(82): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\read-mem.inc'
+C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\read-mem.inc(18): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\ascii.inc'
+C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\read-mem.inc(19): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\io.inc'
                                  
-                                 
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
                                  
                                  ;***** Created: 2011-02-09 12:03 ******* Source: ATmega32.xml ************
                                  ;*************************************************************************
@@ -820,114 +830,1183 @@ AVRASM ver. 2.2.8  C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.3
                                  #endif  /* _M32DEF_INC_ */
                                  
                                  
-                                 ;*****************************************************************
                                  ;
-                                 ; File Name		: ‘Lab3-uart.asm'
-                                 ; Title			: Interrupt-Driven UART sample code
-                                 ; Date			: 11/20/2013
-                                 ; Version		: 1.1
-                                 ; Target MCU	        : ATMega32
+                                 ; Future Gadget 29, 2nd Edition Ver. 2.31
                                  ;
-                                 ;*****************************************************************
+                                 ; COMP317 Final Project
+                                 ;
+                                 ; Authors:
+                                 ; - Ameer Taweel (0077340)
+                                 ; - Ahmed Jareer (0074982)
+                                 ;
+                                 ; Resources Usage:
+                                 ; - Program Size: TODO
+                                 ; - Data    Size: TODO
+                                 ; - Registers   : TODO
+                                 ;
+                                 ; Summary:
+                                 ;
+                                 ; Multiple times during this course, we faced a situation where the code works
+                                 ; in the debugger/simulator but not on the physical microcontroller. Debugging
+                                 ; and fixing such issues was hard because we couldn't inspect the system's
+                                 ; internal state.
+                                 ;
+                                 ; Therefore, built a system that is easy to inspect. It exposes a shell using
+                                 ; the ANSI standard over USART. The system has commands to check the system's
+                                 ; state, like memory regions and I/O pin values. Moreover, the system supports
+                                 ; periodic tasks, like logging a memory region every two minutes.
+                                 ;
+                                 ; It also has commands for modifying the system's state, like setting a memory
+                                 ; region or setting the mode of an I/O pin.
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
                                  
-                                 ; define constants
-                                 .equ	ZeroASCII = 48
-                                 .equ	AASCII = 65
-                                 .equ	BAUD_RATE	= 9600
-                                 .equ	CPU_CLOCK	= 4000000
-                                 .equ	BAUD_UBRR	= (CPU_CLOCK/(16*BAUD_RATE))-1
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 ;; # Code Style
+                                 ;;
+                                 ;;   - No global register aliases.
+                                 ;;   - Capitalize all user-defined names (constants, register aliases, labels).
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
                                  
-                                 .equ	MELOSIZE	= 200
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 ;; # Constants
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
                                  
-                                 .equ	Fck = CPU_CLOCK/64
-                                 ; define register aliases
-                                 .def	SENDCHAR	= R1
-                                 .def	TEMP		= r16	; temporary register
-                                 .def	TEMP1		= r17	; another temporary register
+                                 ; Baud Rate in Bits Per Second (bps)
+                                 .equ BAUD_RATE = 9600
+                                 ; System Oscillator Clock Frequency
+                                 .equ F_OSC     = 4 * 1000 * 1000
+                                 ; Contents of the UBRRH and UBRRL Registers (0 - 4095)
+                                 ; Asynchronous Normal Mode (U2X = 0)
+                                 .equ BAUD_UBRR = (F_OSC / (16 * BAUD_RATE)) - 1
                                  
-                                 ; data segment
-                                         .dseg
-000060                           melody: .byte	MELOSIZE
+                                 ; Maximum Command Length
+                                 .equ CMD_MAX_LEN = 100
                                  
-                                 ; code segment
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 ;; # Data Segment
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 
+                                 ; Data Segment Start
+                                 .dseg
+                                 
+000060                           CMD    : .byte CMD_MAX_LEN
+0000c4                           CMD_IDX: .byte 1
+                                 
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 ;; # Interrupt Vector Table
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 
+                                 ; Code Segment Start
                                  .cseg
-                                 .org    $000
-000000 940c 0014                 	jmp	reset		; $000 HW reset or watchdog
-                                 .org $012
-000012 940c 0032                     jmp		tim1_ovf                 ; Timer1 overflow Handler
-                                 /*.org $01A 
-                                 	jmp USART_Receive
-                                 */; begin main code
-                                 reset:
-000014 e50f                      	ldi 	TEMP, low(RAMEND)		; initialize stack pointer
-000015 bf0d                      	out		SPL, TEMP
-000016 e008                      	ldi 	TEMP, high(RAMEND)
-000017 bf0e                      	out 	SPH, TEMP
                                  
-                                 	; set baud rate
-000018 e109                      	ldi	TEMP, low(BAUD_UBRR)
-000019 b909                      	out	UBRRL, TEMP
-00001a e000                      	ldi	TEMP, high(BAUD_UBRR)
-00001b bd00                      	out	UBRRH, TEMP
+                                 .org 0x0000
+000000 940c 015b                 	jmp RESET
+                                 .org 0x001A 
+00001a 940c 016b                 	jmp USART_RX_COMPLETE
                                  
-                                 	;set timer1 PWM mode
-00001c e201                      	ldi   TEMP,(1<<WGM10)+(1<<COM1B1)
-00001d bd0f                      	out   TCCR1A,TEMP								; 8 bit Fast PWM non-inverting (Fck/256)
-00001e e00b                      	ldi   TEMP,(1<<WGM12)+(1<<CS10)+(1<<CS11)		; 8 bit Fast PWM non-inverting (Fck/256)
-00001f bd0e                      	out   TCCR1B,TEMP								; prescaler = 64
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 ;; # Imports
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 
+                                 .INCLUDE "ascii.inc"
+                                 
+                                 ;; Include Guard
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 
+                                 
+                                 .ifdef INCLUDE_ASCII
+                                 .endif
+                                 
+                                 .equ INCLUDE_ASCII = 1
+                                 
+                                 
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 ;; ASCII Codes
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 
+                                 
+                                 .equ ASCII_BACKSPACE = 0x08
+                                 .equ ASCII_NEW_LINE  = 0x0D
+                                 .equ ASCII_SPACE     = 0x20
+                                 .equ ASCII_ZERO      = 0x30
+                                 .equ ASCII_NINE      = 0x39
+                                 .equ ASCII_ARROW_R   = 0x3E
+                                 .equ ASCII_UPPER_A   = 0x41
+                                 .equ ASCII_UPPER_E   = 0x45
+                                 .equ ASCII_UPPER_F   = 0x46
+                                 .equ ASCII_UPPER_G   = 0x47
+                                 .equ ASCII_LOWER_A   = 0x61
+                                 .equ ASCII_LOWER_F   = 0x66
+                                 .equ ASCII_LOWER_G   = 0x67
+                                 .equ ASCII_LOWER_I   = 0x69
+                                 .equ ASCII_LOWER_O   = 0x6F
+                                 .equ ASCII_LOWER_P   = 0x70
+                                 .equ ASCII_LOWER_R   = 0x72
+                                 .equ ASCII_LOWER_S   = 0x73
+                                 .equ ASCII_LOWER_W   = 0x77
+                                 
+                                 
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 ;; Parse ASCII Character As Hex
+                                 ;;
+                                 ;; Inputs:
+                                 ;; - Constant Zero <- SP + 4
+                                 ;; - ASCII    Char <- SP + 3 (First Byte Before Return Address)
+                                 ;;
+                                 ;; Outputs:
+                                 ;; - Error Status  -> SP + 4
+                                 ;; - Hex   Digit   -> SP + 3 (First Byte Before Return Address)
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 
+                                 
+                                 ASCII_BYTE_TO_HEX:
+                                 	.def CHAR = R16
+                                 
+                                 	; Number of pushes
+                                 	.set STACK_OFFSET = 3
+                                 	; Backup Registers
+00001c 930f                      	push CHAR
+00001d 93df                      	push YH
+00001e 93cf                      	push YL
+                                 
+                                 	; Load Stack Pointer
+                                 	; Y <- SP
+00001f b7de                      	in YH, SPH
+000020 b7cd                      	in YL, SPL
+                                 
+                                 	; Load ASCII Character
+000021 810e                      	ldd CHAR, Y+(STACK_OFFSET + 3)
+                                 
+                                 	; IF (CHAR < ASCII_ZERO) THEN ERR
+000022 3300                      	cpi CHAR, ASCII_ZERO
+000023 f098                      	brlo ASCII_BYTE_TO_HEX_ERR
+                                 
+                                 	; IF (CHAR <= ASCII_NINE) THEN DIGIT
+000024 330a                      	cpi CHAR, ASCII_NINE + 1
+000025 f040                      	brlo ASCII_BYTE_TO_HEX_DIGIT
+                                 
+                                 	; IF (CHAR < ASCII_UPPER_A) THEN ERR
+000026 3401                      	cpi CHAR, ASCII_UPPER_A
+000027 f078                      	brlo ASCII_BYTE_TO_HEX_ERR
+                                 
+                                 	; IF (CHAR <= ASCII_UPPER_F) THEN UPPER CHAR
+000028 3407                      	cpi CHAR, ASCII_UPPER_F + 1
+000029 f038                      	brlo ASCII_BYTE_TO_HEX_UPPER_CHAR
+                                 
+                                 	; IF (CHAR < ASCII_LOWER_A) THEN ERR
+00002a 3601                      	cpi CHAR, ASCII_LOWER_A
+00002b f058                      	brlo ASCII_BYTE_TO_HEX_ERR
+                                 
+                                 	; IF (CHAR <= ASCII_LOWER_F) THEN LOWER CHAR
+00002c 3607                      	cpi CHAR, ASCII_LOWER_F + 1
+00002d f030                      	brlo ASCII_BYTE_TO_HEX_LOWER_CHAR
+                                 
+                                 	ASCII_BYTE_TO_HEX_DIGIT:
+                                 		; CHAR <- CHAR - ASCII_ZERO
+00002e 5300                      		subi CHAR, ASCII_ZERO
+                                 		; Return Hex Digit
+00002f 830e                      		std Y+(STACK_OFFSET + 3), CHAR
+000030 c008                      		rjmp ASCII_BYTE_TO_HEX_RET
+                                 
+                                 	ASCII_BYTE_TO_HEX_UPPER_CHAR:
+                                 		; CHAR <- CHAR - ASCII_UPPER_A + 10
+000031 5307                      		subi CHAR, (ASCII_UPPER_A - 10)
+                                 		; Return Hex Digit
+000032 830e                      		std Y+(STACK_OFFSET + 3), CHAR
+000033 c005                      		rjmp ASCII_BYTE_TO_HEX_RET
+                                 
+                                 	ASCII_BYTE_TO_HEX_LOWER_CHAR:
+                                 		; CHAR <- CHAR - ASCII_LOWER_A + 10
+000034 5507                      		subi CHAR, (ASCII_LOWER_A - 10)
+                                 		; Return Hex Digit
+000035 830e                      		std Y+(STACK_OFFSET + 3), CHAR
+000036 c002                      		rjmp ASCII_BYTE_TO_HEX_RET
+                                 
+                                 	ASCII_BYTE_TO_HEX_ERR:
+                                 		; Error Status <- True
+000037 e001                      		ldi CHAR, 1
+000038 830f                      		std Y+(STACK_OFFSET + 4), CHAR
+                                 
+                                 	ASCII_BYTE_TO_HEX_RET:
+                                 		; Restore Registers
+000039 91cf                      		pop YL
+00003a 91df                      		pop YH
+00003b 910f                      		pop CHAR
+                                 
+00003c 9508                      		ret
+                                 
+                                 	.undef CHAR
+                                 
+                                 
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 ;; Parse Two ASCII Digits As Hex
+                                 ;;
+                                 ;; Inputs:
+                                 ;; - Constant Zero          <- SP + 5
+                                 ;; - ASCII String Pointer H <- SP + 4
+                                 ;; - ASCII String Pointer L <- SP + 3 (First Byte Before Return Address)
+                                 ;;
+                                 ;; Outputs:
+                                 ;; - Error Status           -> SP + 5
+                                 ;; - No    Output           -> SP + 4
+                                 ;; - Return Value           -> SP + 3 (First Byte Before Return Address)
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 
+                                 
+                                 ASCII_WORD_TO_HEX:
+                                 	.def TEMP = R16
+                                 	.def BYTE = R17
+                                 
+                                 	; Number of pushes
+                                 	.set STACK_OFFSET = 6
+                                 	; Backup Registers
+00003d 930f                      	push TEMP
+00003e 931f                      	push BYTE
+00003f 93df                      	push YH
+000040 93cf                      	push YL
+000041 93ff                      	push ZH
+000042 93ef                      	push ZL
+                                 
+                                 	; Load Stack Pointer
+                                 	; Y <- SP
+000043 b7de                      	in YH, SPH
+000044 b7cd                      	in YL, SPL
+                                 
+                                 	; Load String Address
+000045 85fa                      	ldd ZH, Y+(STACK_OFFSET + 4)
+000046 85e9                      	ldd ZL, Y+(STACK_OFFSET + 3)
+                                 
+                                 	; Push Zero To Stack
+000047 e000                      	ldi TEMP, 0
+000048 930f                      	push TEMP
+                                 	; Load Most Significant ASCII Character
+000049 9101                      	ld TEMP, Z+
+                                 	; Push ASCII Character To Stack
+00004a 930f                      	push TEMP
+00004b dfd0                      	rcall ASCII_BYTE_TO_HEX
+                                 	; Get Return Value
+00004c 911f                      	pop BYTE
+                                 	; Get Error Status
+00004d 910f                      	pop TEMP
+                                 	; IF (SUBROUTINE ERR != 0) THEN ERR
+00004e 3000                      	cpi TEMP, 0
+00004f f481                      	brne ASCII_WORD_TO_HEX_ERR
+                                 
+                                 	; Byte <- Byte << 4
+000050 0f11                      	lsl BYTE
+000051 0f11                      	lsl BYTE
+000052 0f11                      	lsl BYTE
+000053 0f11                      	lsl BYTE
+                                 
+                                 	; Push Zero To Stack
+000054 e000                      	ldi TEMP, 0
+000055 930f                      	push TEMP
+                                 	; Load Most Significant ASCII Character
+000056 8100                      	ld TEMP, Z
+                                 	; Push ASCII Character To Stack
+000057 930f                      	push TEMP
+000058 dfc3                      	rcall ASCII_BYTE_TO_HEX
+                                 	; Get Return Value
+000059 910f                      	pop TEMP
+                                 	; Append Return Value To Byte
+00005a 2b10                      	or BYTE, TEMP
+                                 	; Get Error Status
+00005b 910f                      	pop TEMP
+                                 	; IF (SUBROUTINE ERR != 0) THEN ERR
+00005c 3000                      	cpi TEMP, 0
+00005d f411                      	brne ASCII_WORD_TO_HEX_ERR
+                                 
+                                 	; Return Valid Value
+00005e 8719                      	std Y+(STACK_OFFSET + 3), BYTE
+00005f c002                      	rjmp ASCII_WORD_TO_HEX_RET
+                                 
+                                 	ASCII_WORD_TO_HEX_ERR:
+000060 e001                      		ldi TEMP, 1
+000061 870b                      		std Y+(STACK_OFFSET + 5), TEMP
+                                 
+                                 	ASCII_WORD_TO_HEX_RET:
+                                 		; Restore Registers
+000062 91ef                      		pop ZL
+000063 91ff                      		pop ZH
+000064 91cf                      		pop YL
+000065 91df                      		pop YH
+000066 911f                      		pop BYTE
+000067 910f                      		pop TEMP
+                                 
+000068 9508                      		ret
+                                 
+                                 	.undef TEMP
+                                 	.undef BYTE
+                                 
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 ;; Parse Four ASCII Digits As Hex
+                                 ;;
+                                 ;; Inputs:
+                                 ;; - Constant Zero          <- SP + 5
+                                 ;; - ASCII String Pointer H <- SP + 4
+                                 ;; - ASCII String Pointer L <- SP + 3 (First Byte Before Return Address)
+                                 ;;
+                                 ;; Outputs:
+                                 ;; - Error Status           -> SP + 5
+                                 ;; - Return Value H         -> SP + 4
+                                 ;; - Return Value L         -> SP + 3 (First Byte Before Return Address)
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 
+                                 
+                                 ASCII_QUAD_TO_HEX:
+                                 	.def TEMP  = R16
+                                 	.def BYTEH = R17
+                                 	.def BYTEL = R18
+                                 
+                                 	; Number of pushes
+                                 	.set STACK_OFFSET = 7
+                                 	; Backup Registers
+000069 930f                      	push TEMP
+00006a 931f                      	push BYTEH
+00006b 932f                      	push BYTEL
+00006c 93df                      	push YH
+00006d 93cf                      	push YL
+00006e 93ff                      	push ZH
+00006f 93ef                      	push ZL
+                                 
+                                 	; Load Stack Pointer
+                                 	; Y <- SP
+000070 b7de                      	in YH, SPH
+000071 b7cd                      	in YL, SPL
+                                 
+                                 	; Load String Address
+000072 85fb                      	ldd ZH, Y+(STACK_OFFSET + 4)
+000073 85ea                      	ldd ZL, Y+(STACK_OFFSET + 3)
+                                 
+                                 	; Push Arguments To Stack
+000074 e000                      	ldi TEMP, 0
+000075 930f                      	push TEMP
+000076 93ff                      	push ZH
+000077 93ef                      	push ZL
+                                 	; Parse High Bytes
+000078 dfc4                      	rcall ASCII_WORD_TO_HEX
+                                 	; Get Return Value
+000079 911f                      	pop BYTEH
+                                 	; Discard Dummy Output
+00007a 910f                      	pop TEMP
+                                 	; Get Error Status
+00007b 910f                      	pop TEMP
+                                 	; IF (SUBROUTINE ERR != 0) THEN ERR
+00007c 3000                      	cpi TEMP, 0
+00007d f471                      	brne ASCII_QUAD_TO_HEX_ERR
+                                 
+                                 	; Advance To Low Bytes
+00007e 9632                      	adiw ZH:ZL, 2
+                                 
+                                 	; Push Arguments To Stack
+00007f e000                      	ldi TEMP, 0
+000080 930f                      	push TEMP
+000081 93ff                      	push ZH
+000082 93ef                      	push ZL
+                                 	; Parse Low Bytes
+000083 dfb9                      	rcall ASCII_WORD_TO_HEX
+                                 	; Get Return Value
+000084 912f                      	pop BYTEL
+                                 	; Discard Dummy Output
+000085 910f                      	pop TEMP
+                                 	; Get Error Status
+000086 910f                      	pop TEMP
+                                 	; IF (SUBROUTINE ERR != 0) THEN ERR
+000087 3000                      	cpi TEMP, 0
+000088 f419                      	brne ASCII_QUAD_TO_HEX_ERR
+                                 
+                                 	; Return Valid Value
+000089 871b                      	std Y+(STACK_OFFSET + 4), BYTEH
+00008a 872a                      	std Y+(STACK_OFFSET + 3), BYTEL
+00008b c002                      	rjmp ASCII_QUAD_TO_HEX_RET
+                                 
+                                 	ASCII_QUAD_TO_HEX_ERR:
+00008c e001                      		ldi TEMP, 1
+00008d 870c                      		std Y+(STACK_OFFSET + 5), TEMP
+                                 
+                                 	ASCII_QUAD_TO_HEX_RET:
+                                 		; Restore Registers
+00008e 91ef                      		pop ZL
+00008f 91ff                      		pop ZH
+000090 91cf                      		pop YL
+000091 91df                      		pop YH
+000092 912f                      		pop BYTEL
+000093 911f                      		pop BYTEH
+000094 910f                      		pop TEMP
+                                 
+000095 9508                      		ret
+                                 
+                                 	.undef TEMP
+                                 	.undef BYTEH
+                                 	.undef BYTEL
+                                 
+                                 
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 ;; Convert Hex Nibble To ASCII Character
+                                 ;;
+                                 ;; Inputs:
+                                 ;; - Nibble     <- SP + 3 (First Byte Before Return Address)
+                                 ;;
+                                 ;; Outputs:
+                                 ;; - ASCII Char -> SP + 3 (First Byte Before Return Address)
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 
+                                 
+                                 HEX_NIBBLE_TO_ASCII:
+                                 	.def NIBBLE = R16
+                                 
+                                 	; Number of pushes
+                                 	.set STACK_OFFSET = 3
+                                 	; Backup Registers
+000096 930f                      	push NIBBLE
+000097 93df                      	push YH
+000098 93cf                      	push YL
+                                 
+                                 	; Load Stack Pointer
+                                 	; Y <- SP
+000099 b7de                      	in YH, SPH
+00009a b7cd                      	in YL, SPL
+                                 
+                                 	; Load Hex Nibble
+00009b 810e                      	ldd NIBBLE, Y+(STACK_OFFSET + 3)
+                                 
+00009c 300a                      	cpi NIBBLE, 10
+00009d f010                      	brlo HEX_NIBBLE_TO_ASCII_DIGIT
+                                 
+                                 	HEX_NIBBLE_TO_ASCII_CHAR:
+                                 		; NIBBLE <- NIBBLE - 10 + ASCII_UPPER_A
+00009e 5c09                      		subi NIBBLE, (10 - ASCII_UPPER_A)
+00009f c001                      		rjmp HEX_NIBBLE_TO_ASCII_RET
+                                 
+                                 	HEX_NIBBLE_TO_ASCII_DIGIT:
+                                 		; NIBBLE <- NIBBLE + ASCII_ZERO
+0000a0 5d00                      		subi NIBBLE, (-ASCII_ZERO)
+                                 
+                                 	HEX_NIBBLE_TO_ASCII_RET:
+0000a1 830e                      		std Y+(STACK_OFFSET + 3), NIBBLE
+                                 
+                                 		; Restore Registers
+0000a2 91cf                      		pop YL
+0000a3 91df                      		pop YH
+0000a4 910f                      		pop NIBBLE
+                                 
+0000a5 9508                      		ret
+                                 
+                                 	.undef NIBBLE
+                                 
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 ;; Convert Hex Byte To Two ASCII Characters
+                                 ;;
+                                 ;; Inputs:
+                                 ;; - Dummy Input                    <- SP + 4
+                                 ;; - Byte                           <- SP + 3 (First Byte Before Return Address)
+                                 ;;
+                                 ;; Outputs:
+                                 ;; - ASCII Char (Most  Significant) -> SP + 4
+                                 ;; - ASCII Char (Least Significant) -> SP + 3 (First Byte Before Return Address)
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 
+                                 
+                                 HEX_BYTE_TO_ASCII:
+                                 	.def BYTE   = R16
+                                 	.def NIBBLE = R17
+                                 
+                                 	; Number of pushes
+                                 	.set STACK_OFFSET = 4
+                                 	; Backup Registers
+0000a6 930f                      	push BYTE
+0000a7 931f                      	push NIBBLE
+0000a8 93df                      	push YH
+0000a9 93cf                      	push YL
+                                 
+                                 	; Load Stack Pointer
+                                 	; Y <- SP
+0000aa b7de                      	in YH, SPH
+0000ab b7cd                      	in YL, SPL
+                                 
+                                 	; Load Hex Byte
+0000ac 810f                      	ldd BYTE, Y+(STACK_OFFSET + 3)
+                                 
+                                 	; Convert Least Significant Nibble
+0000ad 2f10                      	mov NIBBLE, BYTE
+0000ae 701f                      	andi NIBBLE, 0x0F
+0000af 931f                      	push NIBBLE
+0000b0 dfe5                      	rcall HEX_NIBBLE_TO_ASCII
+0000b1 911f                      	pop NIBBLE
+                                 
+                                 	; Output Least Significant Nibble
+0000b2 831f                      	std Y+(STACK_OFFSET + 3), NIBBLE
+                                 
+                                 	; Convert Most Significant Nibble
+0000b3 2f10                      	mov NIBBLE, BYTE
+0000b4 7f10                      	andi NIBBLE, 0xF0
+0000b5 9512                      	swap NIBBLE
+0000b6 931f                      	push NIBBLE
+0000b7 dfde                      	rcall HEX_NIBBLE_TO_ASCII
+0000b8 911f                      	pop NIBBLE
+                                 
+                                 	; Output Most Significant Nibble
+0000b9 8718                      	std Y+(STACK_OFFSET + 4), NIBBLE
+                                 
+                                 	; Restore Registers
+0000ba 91cf                      	pop YL
+0000bb 91df                      	pop YH
+0000bc 911f                      	pop NIBBLE
+0000bd 910f                      	pop BYTE
+                                 
+0000be 9508                      	ret
+                                 
+                                 	.undef BYTE
+                                 .INCLUDE "io.inc"
+                                 
+                                 ;; Include Guard
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 
+                                 
+                                 .ifdef INCLUDE_IO
+                                 .endif
+                                 
+                                 .equ INCLUDE_IO = 1
+                                 
+                                 
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 ;; Transmit Character Over USART
+                                 ;;
+                                 ;; Inputs:
+                                 ;; - Char      <- SP + 3 (First Byte Before Return Address)
+                                 ;;
+                                 ;; Outputs:
+                                 ;; - No Output -> SP + 3 (First Byte Before Return Address)
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 
+                                 
+                                 PUTCHAR:
+                                 	; Set Register Aliases
+                                 	.def CHAR = R16
+                                 
+                                 	; Number of pushes
+                                 	.set STACK_OFFSET = 3
+                                 	; Backup Registers
+0000bf 930f                      	push CHAR
+0000c0 93df                      	push YH
+0000c1 93cf                      	push YL
+                                 
+                                 	; Load Stack Pointer
+                                 	; Y <- SP
+0000c2 b7de                      	in YH, SPH
+0000c3 b7cd                      	in YL, SPL
+                                 
+                                 	; Load Character
+0000c4 810e                      	ldd CHAR, Y+(STACK_OFFSET + 3)
+                                 
+                                 	; Wait until sending is safe
+                                 	PUTCHAR_WAIT_SAFE_SEND:	
+0000c5 9b5d                      		sbis UCSRA, UDRE
+0000c6 cffe                      		rjmp PUTCHAR_WAIT_SAFE_SEND
+                                 
+0000c7 b90c                      	out UDR, CHAR
                                  	
-                                 	;enable timer1 / timer0 interrupt
-000020 e004                      	ldi   TEMP,(1<<TOIE1)
-000021 bf09                      	out   TIMSK,TEMP
+                                 	; Restore Registers
+0000c8 91cf                      	pop YL
+0000c9 91df                      	pop YH
+0000ca 910f                      	pop CHAR
                                  
-000022 9a53                      	sbi UCSRB, TXEN			; enable transmitter
-000023 9a54                      	sbi UCSRB, RXEN			; enable receiver
-                                     
-                                 	; set frame format: 8 data, 2 stop bits	ldi TEMP, (1 << URSEL)|(1 << USBS)| (3 << UCSZ0)	mov UCSRC, TEMP
-000024 9478                          sei					; enable interrupts
+0000cb 9508                      	ret
                                  
-                                 mloop:
-000025 d001                      	rcall USART_Receive
-000026 cffe                      	rjmp mloop
+                                 	.undef CHAR
                                  
-                                 USART_Receive:
-                                 	; Wait for data to be received
-000027 9b5f                      	sbis UCSRA, RXC
-000028 cffe                      	rjmp USART_Receive
-                                 	; Get and return received data from buffer
-000029 b10c                      	in TEMP, UDR
-00002a 9503                      	inc TEMP
-00002b 2e10                      	mov SENDCHAR, TEMP
-00002c d001                      	rcall putchar
-00002d 9508                      	ret
                                  
-                                 ; subroutines
-                                 putchar:
-00002e 9b5d                              sbis    UCSRA, UDRE		; loop until USR:UDRE is 1
-00002f cffe                              rjmp    putchar
-000030 b81c                              out     UDR, SENDCHAR		; write SENTCHAR to transmitter buffer
-000031 9508                              ret
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 ;; Print a Null-Terminated Program Memory String Over USART
+                                 ;;
+                                 ;; Inputs:
+                                 ;; - String Address H <- SP + 4
+                                 ;; - String Address L <- SP + 3 (First Byte Before Return Address)
+                                 ;;
+                                 ;; Outputs:
+                                 ;; - No Output        -> SP + 4
+                                 ;; - No Output        -> SP + 3 (First Byte Before Return Address)
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
                                  
-                                 ; Interrupt Handler
                                  
-                                 tim1_ovf:
-000032 930f                      	push   TEMP    				; Store temporary register
-000033 b70f                      	in     TEMP,SREG
-000034 930f                      	push   TEMP					; Store status register
+                                 PUTSTR:
+                                 	.def CHAR = R16
                                  
-000035 910f                      	pop     TEMP
-000036 bf0f                      	out     SREG, TEMP             ; Restore SREG
-000037 910f                      	pop     TEMP                  ; Restore temporary register;
-000038 9518                      	reti
-                                 /*USART_Receive:
-                                 	; Wait for data to be received
-                                 	sbis UCSRA, RXC
-                                 	rjmp USART_Receive
-                                 	; Get and return received data from buffer
-                                 	in TEMP, UDR
-                                 	mov SENDCHAR, TEMP
-                                 	rcall putchar
-                                 	reti
+                                 	; Number of pushes
+                                 	.set STACK_OFFSET = 5
+                                 	; Backup Registers
+0000cc 930f                      	push CHAR
+0000cd 93df                      	push YH
+0000ce 93cf                      	push YL
+0000cf 93ff                      	push ZH
+0000d0 93ef                      	push ZL
+                                 
+                                 	; Load Stack Pointer
+                                 	; Y <- SP
+0000d1 b7de                      	in YH, SPH
+0000d2 b7cd                      	in YL, SPL
+                                 
+                                 	; Load String Address
+0000d3 85f9                      	ldd ZH, Y+(STACK_OFFSET + 4)
+0000d4 85e8                      	ldd ZL, Y+(STACK_OFFSET + 3)
+                                 
+                                 	PUTSTR_LOOP:
+0000d5 9104                      		lpm CHAR, Z
+0000d6 3000                      		cpi CHAR, 0
+0000d7 f029                      		breq PUTSTR_RET
+0000d8 930f                      		push CHAR
+0000d9 dfe5                      		rcall PUTCHAR
+0000da 910f                      		pop CHAR
+0000db 9631                      		adiw ZH:ZL, 1
+0000dc cff8                      		rjmp PUTSTR_LOOP
+                                 
+                                 	PUTSTR_RET:
+                                 		; Restore Registers
+0000dd 91ef                      		pop ZL
+0000de 91ff                      		pop ZH
+0000df 91cf                      		pop YL
+0000e0 91df                      		pop YH
+0000e1 910f                      		pop CHAR
+                                 
+0000e2 9508                      		ret
+                                 
+                                 .INCLUDE "read-mem.inc"
+                                 
+                                 ;; Include Guard
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 
+                                 
+                                 .ifdef INCLUDE_READ_MEM
+                                 .endif
+                                 
+                                 .equ INCLUDE_READ_MEM = 1
+                                 
+                                 
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 ;; Imports
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 
+                                 
+                                 .INCLUDE "ascii.inc"
+                                 
+                                 ;; Include Guard
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 
+                                 
+                                 .ifdef INCLUDE_ASCII
+                                 .INCLUDE "io.inc"
+                                 
+                                 ;; Include Guard
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 
+                                 
+                                 .ifdef INCLUDE_IO
+                                 
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 ;; Read Memory Region
+                                 ;;
+                                 ;; Inputs:
+                                 ;; - Command Length           <- SP + 5
+                                 ;; - Command String Pointer H <- SP + 4
+                                 ;; - Command String Pointer L <- SP + 3 (First Byte Before Return Address)
+                                 ;;
+                                 ;; Outputs:
+                                 ;; - No Output                -> SP + 5
+                                 ;; - No Output                -> SP + 4
+                                 ;; - No Output                -> SP + 3 (First Byte Before Return Address)
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 
+                                 
+0000e3 5245
+0000e4 4f52
+0000e5 3a52
+0000e6 4920
+0000e7 766e
+0000e8 6c61
+0000e9 6469
+0000ea 4920
+0000eb 706e
+0000ec 7475
+0000ed 4620
+0000ee 726f
+0000ef 6020
+0000f0 6552
+0000f1 6461
+0000f2 654d
+0000f3 606d
+0000f4 000d                      READ_SRAM_ERR_MSG: .db "ERROR: Invalid Input For `ReadMem`", ASCII_NEW_LINE, 0
+                                 
+                                 
+                                 READ_MEM:
+                                 	.def TEMP  = R16
+                                 
+                                 	; Number of pushes
+                                 	.set STACK_OFFSET = 5
+                                 	; Backup Registers
+0000f5 930f                      	push TEMP
+0000f6 93df                      	push YH
+0000f7 93cf                      	push YL
+0000f8 93ff                      	push ZH
+0000f9 93ef                      	push ZL
+                                 
+                                 	; Load Stack Pointer
+                                 	; Y <- SP
+0000fa b7de                      	in YH, SPH
+0000fb b7cd                      	in YL, SPL
+                                 
+                                 	; Load Command Length
+0000fc 850a                      	ldd TEMP, Y+(STACK_OFFSET + 5)
+                                 
+                                 	; r XXXX XXXX
+0000fd 300b                      	cpi TEMP, 11
+0000fe f5f9                      	brne READ_MEM_ERR
+                                 
+                                 	; Load Command Address
+0000ff 85f9                      	ldd ZH, Y+(STACK_OFFSET + 4)
+000100 85e8                      	ldd ZL, Y+(STACK_OFFSET + 3)
+                                 
+                                 	; Get string address of first memory address
+000101 9632                      	adiw ZH:ZL, 2
+                                 
+                                 	; Parse first memory address
+000102 e000                      	ldi TEMP, 0
+000103 930f                      	push TEMP
+000104 93ff                      	push ZH
+000105 93ef                      	push ZL
+000106 df62                      	rcall ASCII_QUAD_TO_HEX
+000107 91cf                      	pop YL
+000108 91df                      	pop YH
+000109 910f                      	pop TEMP
+                                 	; IF (SUBROUTINE ERR != 0) THEN ERR
+00010a 3000                      	cpi TEMP, 0
+00010b f591                      	brne READ_MEM_ERR
+                                 
+                                 	; There should be a space between parameters
+00010c 9634                      	adiw ZH:ZL, 4
+00010d 8100                      	ld TEMP, Z
+00010e 3200                      	cpi TEMP, ASCII_SPACE
+00010f f571                      	brne READ_MEM_ERR
+                                 
+                                 	; Get string address of second memory address
+000110 9631                      	adiw ZH:ZL, 1
+                                 
+                                 	; Parse second memory address
+000111 e000                      	ldi TEMP, 0
+000112 930f                      	push TEMP
+000113 93ff                      	push ZH
+000114 93ef                      	push ZL
+000115 df53                      	rcall ASCII_QUAD_TO_HEX
+000116 91ef                      	pop ZL
+000117 91ff                      	pop ZH
+000118 910f                      	pop TEMP
+                                 	; IF (SUBROUTINE ERR != 0) THEN ERR
+000119 3000                      	cpi TEMP, 0
+00011a f519                      	brne READ_MEM_ERR
+                                 
+                                 	; Ensure First Address <= Second Address
+00011b 17df                      	cp YH, ZH
+00011c f020                      	brlo READ_MEM_PARAMS_LOOP
+00011d f501                      	brne READ_MEM_ERR
+                                 
+                                 	; High byte equal
+                                 	; Check low byte
+00011e 17ce                      	cp YL, ZL
+00011f f008                      	brlo READ_MEM_PARAMS_LOOP
+000120 f4e9                      	brne READ_MEM_ERR
+                                 
+                                 	; Params Valid
+                                 	READ_MEM_PARAMS_LOOP:
+                                 		; Read Memory
+000121 9109                      		ld TEMP, Y+
+                                 
+                                 		; Print as ASCII
+000122 930f                      		push TEMP
+000123 930f                      		push TEMP
+000124 df81                      		rcall HEX_BYTE_TO_ASCII
+                                 		; Get Least Significant Char
+000125 910f                      		pop TEMP
+000126 df98                      		rcall PUTCHAR
+000127 930f                      		push TEMP
+000128 df96                      		rcall PUTCHAR
+000129 910f                      		pop TEMP
+00012a 910f                      		pop TEMP
+00012b e200                      		ldi TEMP, ASCII_SPACE
+00012c 930f                      		push TEMP
+00012d df91                      		rcall PUTCHAR
+00012e 910f                      		pop TEMP
+                                 
+00012f 17df                      		cp YH, ZH
+000130 f380                      		brlo READ_MEM_PARAMS_LOOP
+000131 f419                      		brne READ_MEM_PARAMS_LOOP_EXIT
+                                 
+000132 17ce                      		cp YL, ZL
+000133 f368                      		brlo READ_MEM_PARAMS_LOOP
+000134 f401                      		brne READ_MEM_PARAMS_LOOP_EXIT
+                                 
+                                 	READ_MEM_PARAMS_LOOP_EXIT:
+000135 e008                      		ldi TEMP, ASCII_BACKSPACE
+000136 930f                      		push TEMP
+000137 df87                      		rcall PUTCHAR
+000138 910f                      		pop TEMP
+000139 e00d                      		ldi TEMP, ASCII_NEW_LINE
+00013a 930f                      		push TEMP
+00013b df83                      		rcall PUTCHAR
+00013c 910f                      		pop TEMP
+00013d c007                      		rjmp READ_MEM_RET
+                                 
+                                 	READ_MEM_ERR:
+00013e e001                      		ldi TEMP, HIGH(READ_SRAM_ERR_MSG << 1)
+00013f 930f                      		push TEMP
+000140 ec06                      		ldi TEMP, LOW (READ_SRAM_ERR_MSG << 1)
+000141 930f                      		push TEMP
+000142 df89                      		rcall PUTSTR
+000143 910f                      		pop TEMP
+000144 910f                      		pop TEMP
+                                 
+                                 	READ_MEM_RET:
+                                 		; Restore Registers
+000145 91ef                      		pop ZL
+000146 91ff                      		pop ZH
+000147 91cf                      		pop YL
+000148 91df                      		pop YH
+000149 910f                      		pop TEMP
+                                 
+00014a 9508                      		ret
+                                 	
+                                 
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 ;; # Program Memory Constants
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 
+                                 
+                                 PROMPT:
+00014b 4746
+00014c 3e3e
+00014d 203e
+00014e 0000                      	.db "FG>>> ", 0, 0
+                                 EXEC_INVALID_CMD:
+00014f 5245
+000150 4f52
+000151 3a52
+000152 4920
+000153 766e
+000154 6c61
+000155 6469
+000156 4320
+000157 6d6f
+000158 616d
+000159 646e
+00015a 000d                      	.db "ERROR: Invalid Command", ASCII_NEW_LINE, 0
+                                 
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 ;; # Main Routine
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 
+                                 RESET:
+                                 	; Set Register Aliases
+                                 	.def TEMP = R16
+                                 
+                                 	; Initialize Stack Pointer
+00015b e008                      	ldi TEMP, HIGH(RAMEND)
+00015c bf0e                      	out SPH, TEMP
+00015d e50f                      	ldi TEMP, LOW(RAMEND)
+00015e bf0d                      	out SPL, TEMP
+                                 
+                                 	; Initialize USART BEGIN
+                                 
+                                 	; Set Baud Rate
+00015f e000                      	ldi TEMP, HIGH(BAUD_UBRR)
+000160 bd00                      	out UBRRH, TEMP
+000161 e109                      	ldi TEMP, LOW(BAUD_UBRR)
+000162 b909                      	out UBRRL, TEMP
+                                 
+                                 	; TXEN  -> Enable Transmitter
+                                 	; RXEN  -> Enable Receiver
+                                 	; RXCIE -> Enable Rx Complete Interrupt
+000163 e908                      	ldi TEMP, (1 << RXCIE) | (1 << RXEN) | (1 << TXEN)
+000164 b90a                      	out UCSRB, TEMP
+                                 
+                                 	; Set Frame Format:	; - 8 Data Bits	; - 2 Stop Bits	ldi TEMP, (1 << URSEL) | (1 << USBS) | (1 << UCSZ0) | (1 << UCSZ1)	out UCSRC, TEMP
+                                 
+                                 	; Initialize USART END
+                                 
+                                 	; Initialie command index to 0
+000165 e0f0                      	ldi ZH, HIGH(CMD_IDX)
+000166 ece4                      	ldi ZL, LOW (CMD_IDX)
+000167 2700                      	clr TEMP
+000168 8300                      	st Z, TEMP
+                                 
+                                 	; Enable Global Interrupts
+000169 9478                          sei
+                                 
+                                 	RESET_LOOP:
+00016a cfff                      		rjmp RESET_LOOP
+                                 
+                                 	; Clear Register Aliases
+                                 	.undef TEMP
+                                 
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 ;; # Interrupt Handlers
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 
+                                 USART_RX_COMPLETE:
+                                 	; Set Register Aliases
+                                 	.def TEMP = R16
+                                 	.def CHAR = R17
+                                 	.def IDX  = R18
+                                 
+                                 	; Backup Registers
+00016b 930f                      	push TEMP
+00016c b70f                      	in TEMP, SREG
+00016d 930f                      	push TEMP
+00016e 93ff                      	push ZH
+00016f 93ef                      	push ZL
+000170 93df                      	push YH
+000171 93cf                      	push YL
+000172 931f                      	push CHAR
+000173 932f                      	push IDX
+                                 
+                                 	; Read ASCII Character
+000174 b11c                      	in CHAR, UDR
+                                 
+                                 	; Read command index
+000175 e0f0                      	ldi ZH, HIGH(CMD_IDX)
+000176 ece4                      	ldi ZL, LOW (CMD_IDX)
+000177 8120                      	ld IDX, Z
+                                 
+000178 301d                      	cpi CHAR, ASCII_NEW_LINE
+                                 
+000179 f471                      	brne USART_RX_COMPLETE_NOT_DONE
+                                 
+00017a e00d                      	ldi R16, ASCII_NEW_LINE
+00017b 930f                      	push R16
+00017c df42                      	rcall PUTCHAR
+00017d 910f                      	pop R16
+                                 	
+                                 	; r $begaddress $endaddress					-- read from sram
+                                 	; w $begaddress $endaddress $bytestowrite	-- write to sram
+                                 	; g $regname								-- read from register
+                                 	; s $regname $byte							-- write to register
+                                 	; o $name									-- read from io
+                                 	; i $name $byte								-- write to io
+                                 	; p $seconds $anyoftheabovecommands			-- repeat command
+                                 	; TODO: dont forget to pass parameter
+00017e 930f                      	push R16
+00017f 931f                      	push R17
+                                 	
+000180 e600                      	ldi R16, LOW(CMD)
+000181 e010                      	ldi R17, HIGH(CMD)
+                                 	
+000182 d02d                      	rcall EXECUTE
+                                 
+000183 911f                      	pop R17
+000184 910f                      	pop R16
+                                 
+                                 	; Reset index
+000185 2722                      	clr IDX
+000186 8320                      	st Z, IDX
+                                 
+000187 c01e                      	rjmp USART_RX_COMPLETE_RET
+                                 
+                                 	USART_RX_COMPLETE_NOT_DONE:
+000188 3018                      		cpi CHAR, ASCII_BACKSPACE
+                                 
+000189 f471                      		brne USART_RX_COMPLETE_NOT_BACKSPACE
+                                 
+00018a 3020                      		cpi IDX, 0
+00018b f0d1                      		breq USART_RX_COMPLETE_RET
+                                 
+00018c 952a                      		dec IDX
+00018d 8320                      		st Z, IDX
+                                 		; Echo backspace back
+                                 		; Backspace -> Space -> Backspace
+00018e e008                      		ldi R16, ASCII_BACKSPACE
+00018f 930f                      		push R16
+000190 df2e                      		rcall PUTCHAR
+000191 e200                      		ldi R16, ASCII_SPACE
+000192 930f                      		push R16
+000193 df2b                      		rcall PUTCHAR
+000194 910f                      		pop R16
+000195 df29                      		rcall PUTCHAR
+000196 910f                      		pop R16
+                                 
+000197 c00e                      		rjmp USART_RX_COMPLETE_RET
+                                 
+                                 	USART_RX_COMPLETE_NOT_BACKSPACE:
+                                 		; Handle full command buffer
+000198 3624                      		cpi IDX, CMD_MAX_LEN
+                                 
+000199 f061                      		breq USART_RX_COMPLETE_RET
+                                 
+                                 		; Get next-character index
+00019a e0d0                      		ldi YH, HIGH(CMD)
+00019b e6c0                      		ldi YL, LOW(CMD)
+00019c 0fc2                      		add YL, IDX
+00019d 2700                      		clr TEMP
+00019e 1fd0                      		adc YH, TEMP
+                                 
+                                 		; Store character
+00019f 8318                      		st Y, CHAR
+                                 	
+                                 		; Increment index
+0001a0 9523                      		inc IDX
+0001a1 8320                      		st Z, IDX
+                                 
+                                 		; Echo character back
+0001a2 2f01                      		mov R16, CHAR
+0001a3 930f                      		push R16
+0001a4 df1a                      		rcall PUTCHAR
+0001a5 910f                      		pop R16
+                                 
+                                 	USART_RX_COMPLETE_RET:
+                                 		; Restore Registers
+0001a6 912f                      		pop IDX
+0001a7 911f                      		pop CHAR
+0001a8 91cf                      		pop YL
+0001a9 91df                      		pop YH
+0001aa 91ef                      		pop ZL
+0001ab 91ff                      		pop ZH
+0001ac 910f                      		pop TEMP
+0001ad bf0f                      		out SREG, TEMP
+0001ae 910f                      		pop TEMP
+                                 
+0001af 9518                      		reti
+                                 
+                                 	; Clear Register Aliases
+                                 	.undef TEMP
+                                 	.undef CHAR
+                                 	.undef IDX
+                                 
+                                 
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 ;; # Subroutines
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 
+                                 
+                                 ; Inputs:
+                                 ; - ADDRL: R16
+                                 ; - ADDRH: R17
+                                 ; - IDX  : R18
+                                 EXECUTE:
+                                 	.def ADDRL = R16
+                                 	.def ADDRH = R17
+                                 	.def IDX   = R18
+                                 	.def CHAR  = R19
+                                 	.def TEMP  = R20
+                                 	
+0001b0 934f                      	push TEMP
+0001b1 93cf                      	push YL
+0001b2 93df                      	push YH
+                                 
+                                 	; Empty command
+0001b3 3022                      	cpi IDX, 2
+0001b4 f158                      	brlo EXECUTE_INVALID
+                                 
+0001b5 2fd1                      	mov YH, ADDRH
+0001b6 2fc0                      	mov YL,	ADDRL
+0001b7 8138                      	ld	CHAR, Y
+                                 	
+0001b8 95c3                      	inc YL
+0001b9 2744                      	clr TEMP
+0001ba 1fd4                      	adc YH, TEMP
+0001bb 8148                      	ld	TEMP, Y
+                                 
+0001bc 3240                      	cpi TEMP, ASCII_SPACE
+0001bd f511                      	brne EXECUTE_INVALID
+                                 
+0001be 3732                      	cpi CHAR, ASCII_LOWER_R
+0001bf f441                      	brne EXECUTE_W
+0001c0 932f                      	push IDX
+0001c1 931f                      	push ADDRH
+0001c2 930f                      	push ADDRL
+0001c3 df31                      	rcall READ_MEM
+0001c4 914f                      	pop TEMP
+0001c5 914f                      	pop TEMP
+0001c6 914f                      	pop TEMP
+0001c7 c01f                      	rjmp  EXECUTE_RET
+                                 
+                                 	EXECUTE_W:
+0001c8 3737                      		cpi CHAR, ASCII_LOWER_W
+0001c9 f411                      		brne EXECUTE_G
+0001ca d027                      		rcall WRITE_SRAM
+0001cb c01b                      		rjmp  EXECUTE_RET
+                                 	EXECUTE_G:
+0001cc 3637                      		cpi CHAR, ASCII_LOWER_G
+0001cd f411                      		brne EXECUTE_S
+0001ce d024                      		rcall READ_REGISTER
+0001cf c017                      		rjmp  EXECUTE_RET
+                                 	EXECUTE_S:
+0001d0 3733                      		cpi CHAR, ASCII_LOWER_S
+0001d1 f411                      		brne EXECUTE_O
+0001d2 d021                      		rcall WRITE_REGISTER
+0001d3 c013                      		rjmp  EXECUTE_RET
+                                 	EXECUTE_O:
+0001d4 363f                      		cpi CHAR, ASCII_LOWER_O
+0001d5 f411                      		brne EXECUTE_I
+0001d6 d01e                      		rcall READ_IO
+0001d7 c00f                      		rjmp  EXECUTE_RET
+                                 
+                                 	EXECUTE_I:
+0001d8 3639                      		cpi CHAR, ASCII_LOWER_I
+0001d9 f411                      		brne EXECUTE_P
+0001da d01b                      		rcall WRITE_IO
+0001db c00b                      		rjmp  EXECUTE_RET
+                                 
+                                 	EXECUTE_P:
+0001dc 3730                      		cpi CHAR, ASCII_LOWER_P
+0001dd f411                      		brne EXECUTE_INVALID
+0001de d018                      		rcall REPEAT_CMD
+0001df c007                      		rjmp  EXECUTE_RET
+                                 	
+                                 	EXECUTE_INVALID:
+                                 		; Print Error
+0001e0 e042                      		ldi TEMP, HIGH(EXEC_INVALID_CMD << 1)
+0001e1 934f                      		push TEMP
+0001e2 e94e                      		ldi TEMP, LOW (EXEC_INVALID_CMD << 1)
+0001e3 934f                      		push TEMP
+0001e4 dee7                      		rcall PUTSTR
+0001e5 914f                      		pop TEMP
+0001e6 914f                      		pop TEMP
+                                 
+                                 	EXECUTE_RET:
+                                 		; Print Prompt
+0001e7 e042                      		ldi TEMP, HIGH(PROMPT << 1)
+0001e8 934f                      		push TEMP
+0001e9 e946                      		ldi TEMP, LOW (PROMPT << 1)
+0001ea 934f                      		push TEMP
+0001eb dee0                      		rcall PUTSTR
+0001ec 914f                      		pop TEMP
+0001ed 914f                      		pop TEMP
+                                 
+0001ee 91df                      		pop YH
+0001ef 91cf                      		pop YL
+0001f0 914f                      		pop TEMP
+                                 	
+0001f1 9508                      		ret
+                                 
+                                 	.undef ADDRL
+                                 	.undef ADDRH
+                                 	.undef CHAR
+                                 	.undef IDX
+                                 	.undef TEMP
+                                 
+                                 
+                                 WRITE_SRAM:
+0001f2 9508                      ret
+                                 
+                                 READ_REGISTER:
+0001f3 9508                      ret
+                                 
+                                 WRITE_REGISTER:
+0001f4 9508                      ret
+                                 
+                                 READ_IO:
+0001f5 9508                      ret
+                                 
+                                 WRITE_IO:
+0001f6 9508                      ret
+                                 
+                                 REPEAT_CMD:
 
 
 RESOURCE USE INFORMATION
@@ -945,40 +2024,40 @@ counted separately from r26..r31 here.
 .dseg memory usage only counts static data declared with .byte
 
 "ATmega32" register use summary:
-x  :   0 y  :   0 z  :   0 r0 :   0 r1 :   2 r2 :   0 r3 :   0 r4 :   0 
+x  :   0 y  :  29 z  :   9 r0 :   0 r1 :   0 r2 :   0 r3 :   0 r4 :   0 
 r5 :   0 r6 :   0 r7 :   0 r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 
-r13:   0 r14:   0 r15:   0 r16:  23 r17:   0 r18:   0 r19:   0 r20:   0 
-r21:   0 r22:   0 r23:   0 r24:   0 r25:   0 r26:   0 r27:   0 r28:   0 
-r29:   0 r30:   0 r31:   0 
-Registers used: 2 out of 35 (5.7%)
+r13:   0 r14:   0 r15:   0 r16: 144 r17:  38 r18:  18 r19:   8 r20:  21 
+r21:   0 r22:   0 r23:   0 r24:   0 r25:   0 r26:   0 r27:   0 r28:  35 
+r29:  35 r30:  28 r31:  28 
+Registers used: 11 out of 35 (31.4%)
 
 "ATmega32" instruction use summary:
-.lds  :   0 .sts  :   0 adc   :   0 add   :   0 adiw  :   0 and   :   0 
-andi  :   0 asr   :   0 bclr  :   0 bld   :   0 brbc  :   0 brbs  :   0 
-brcc  :   0 brcs  :   0 break :   0 breq  :   0 brge  :   0 brhc  :   0 
-brhs  :   0 brid  :   0 brie  :   0 brlo  :   0 brlt  :   0 brmi  :   0 
-brne  :   0 brpl  :   0 brsh  :   0 brtc  :   0 brts  :   0 brvc  :   0 
+.lds  :   0 .sts  :   0 adc   :   2 add   :   1 adiw  :   5 and   :   0 
+andi  :   2 asr   :   0 bclr  :   0 bld   :   0 brbc  :   0 brbs  :   0 
+brcc  :   0 brcs  :   0 break :   0 breq  :   3 brge  :   0 brhc  :   0 
+brhs  :   0 brid  :   0 brie  :   0 brlo  :  12 brlt  :   0 brmi  :   0 
+brne  :  22 brpl  :   0 brsh  :   0 brtc  :   0 brts  :   0 brvc  :   0 
 brvs  :   0 bset  :   0 bst   :   0 call  :   0 cbi   :   0 cbr   :   0 
-clc   :   0 clh   :   0 cli   :   0 cln   :   0 clr   :   0 cls   :   0 
-clt   :   0 clv   :   0 clz   :   0 com   :   0 cp    :   0 cpc   :   0 
-cpi   :   0 cpse  :   0 dec   :   0 eor   :   0 fmul  :   0 fmuls :   0 
-fmulsu:   0 icall :   0 ijmp  :   0 in    :   2 inc   :   1 jmp   :   2 
-ld    :   0 ldd   :   0 ldi   :   7 lds   :   0 lpm   :   0 lsl   :   0 
-lsr   :   0 mov   :   1 movw  :   0 mul   :   0 muls  :   0 mulsu :   0 
-neg   :   0 nop   :   0 or    :   0 ori   :   0 out   :   9 pop   :   2 
-push  :   2 rcall :   2 ret   :   2 reti  :   1 rjmp  :   3 rol   :   0 
-ror   :   0 sbc   :   0 sbci  :   0 sbi   :   2 sbic  :   0 sbis  :   2 
+clc   :   0 clh   :   0 cli   :   0 cln   :   0 clr   :   4 cls   :   0 
+clt   :   0 clv   :   0 clz   :   0 com   :   0 cp    :   4 cpc   :   0 
+cpi   :  29 cpse  :   0 dec   :   1 eor   :   0 fmul  :   0 fmuls :   0 
+fmulsu:   0 icall :   0 ijmp  :   0 in    :  18 inc   :   2 jmp   :   2 
+ld    :   7 ldd   :  13 ldi   :  34 lds   :   0 lpm   :   2 lsl   :   4 
+lsr   :   0 mov   :   5 movw  :   0 mul   :   0 muls  :   0 mulsu :   0 
+neg   :   0 nop   :   0 or    :   1 ori   :   0 out   :   7 pop   :  87 
+push  :  87 rcall :  31 ret   :  15 reti  :   1 rjmp  :  19 rol   :   0 
+ror   :   0 sbc   :   0 sbci  :   0 sbi   :   0 sbic  :   0 sbis  :   1 
 sbiw  :   0 sbr   :   0 sbrc  :   0 sbrs  :   0 sec   :   0 seh   :   0 
 sei   :   1 sen   :   0 ser   :   0 ses   :   0 set   :   0 sev   :   0 
-sez   :   0 sleep :   0 spm   :   0 st    :   0 std   :   0 sts   :   0 
-sub   :   0 subi  :   0 swap  :   0 tst   :   0 wdr   :   0 
-Instructions used: 15 out of 113 (13.3%)
+sez   :   0 sleep :   0 spm   :   0 st    :   5 std   :  12 sts   :   0 
+sub   :   0 subi  :   5 swap  :   1 tst   :   0 wdr   :   0 
+Instructions used: 34 out of 113 (30.1%)
 
 "ATmega32" memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x000072     82      0     82   32768   0.3%
-[.dseg] 0x000060 0x000128      0    200    200    2048   9.8%
+[.cseg] 0x000000 0x0003f0    892     68    960   32768   2.9%
+[.dseg] 0x000060 0x0000c5      0    101    101    2048   4.9%
 [.eseg] 0x000000 0x000000      0      0      0    1024   0.0%
 
 Assembly complete, 0 errors, 0 warnings
