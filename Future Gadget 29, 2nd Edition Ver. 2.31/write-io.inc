@@ -3,11 +3,11 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
-.ifdef INCLUDE_READ_MEM
+.ifdef INCLUDE_WRITE_IO
 	.exit
 .endif
 
-.equ INCLUDE_READ_MEM = 1
+.equ INCLUDE_WRITE_IO = 1
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -17,10 +17,11 @@
 
 .INCLUDE "ascii.inc"
 .INCLUDE "io.inc"
+.INCLUDE "io-name-to-addr.inc"
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Read Memory Region
+;; Write IO Register
 ;;
 ;; Inputs:
 ;; - Command Length           <- SP + 5
@@ -34,16 +35,19 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
-READ_MEM_ERR_MSG: .db "ERROR: Invalid Input For `ReadMem`", ASCII_NEW_LINE, 0
+WRITE_IO_ERR_MSG: .db "ERROR: Invalid Input For `WriteIO`", ASCII_NEW_LINE, 0
+WRITE_IO_SUC_MSG: .db "IO Register Write Complete", ASCII_NEW_LINE, 0
 
 
-READ_MEM:
+WRITE_IO:
 	.def TEMP = R16
+	.def BYTE = R17
 
 	; Number of pushes
-	.set STACK_OFFSET = 5
+	.set STACK_OFFSET = 6
 	; Backup Registers
 	push TEMP
+	push BYTE
 	push YH
 	push YL
 	push ZH
@@ -57,120 +61,78 @@ READ_MEM:
 	; Load Command Length
 	ldd TEMP, Y+(STACK_OFFSET + 5)
 
-	; r XXXX YYYY
-	cpi TEMP, 11
-	brne READ_MEM_ERR
+	; i YY (X)+
+	cpi TEMP, 6
+	brlo WRITE_IO_ERR
 
 	; Load Command Address
 	ldd ZH, Y+(STACK_OFFSET + 4)
 	ldd ZL, Y+(STACK_OFFSET + 3)
 
-	; Get string address of first memory address
+	; Get string address of byte to store
 	adiw ZH:ZL, 2
 
-	; Parse first memory address
 	ldi TEMP, 0
 	push TEMP
 	push ZH
 	push ZL
-	rcall ASCII_QUAD_TO_HEX
-	pop YL
-	pop YH
+	rcall ASCII_WORD_TO_HEX
+	pop BYTE
+	pop TEMP
 	pop TEMP
 	; IF (SUBROUTINE ERR != 0) THEN ERR
 	cpi TEMP, 0
-	brne READ_MEM_ERR
+	brne WRITE_IO_ERR
 
-	; There should be a space between parameters
-	adiw ZH:ZL, 4
-	ld TEMP, Z
-	cpi TEMP, ASCII_SPACE
-	brne READ_MEM_ERR
+	; Get string address of IO register name
+	adiw ZH:ZL, 3
+	; Load Command Length
+	ldd TEMP, Y+(STACK_OFFSET + 5)
+	; Decrease length by 5
+	subi TEMP, 5
 
-	; Get string address of second memory address
-	adiw ZH:ZL, 1
-
-	; Parse second memory address
-	ldi TEMP, 0
 	push TEMP
 	push ZH
 	push ZL
-	rcall ASCII_QUAD_TO_HEX
+	rcall ASCII_IO_REG_TO_MEM_ADDR
 	pop ZL
 	pop ZH
 	pop TEMP
 	; IF (SUBROUTINE ERR != 0) THEN ERR
 	cpi TEMP, 0
-	brne READ_MEM_ERR
+	brne WRITE_IO_ERR
 
-	; Ensure First Address <= Second Address
-	cp YH, ZH
-	brlo READ_MEM_PARAMS_LOOP
-	brne READ_MEM_ERR
+	st Z, BYTE
 
-	; High byte equal
-	; Check low byte
-	cp YL, ZL
-	brlo READ_MEM_PARAMS_LOOP
-	brne READ_MEM_ERR
+	ldi TEMP, HIGH(WRITE_IO_SUC_MSG << 1)
+	push TEMP
+	ldi TEMP, LOW (WRITE_IO_SUC_MSG << 1)
+	push TEMP
+	rcall PUTSTR
+	pop TEMP
+	pop TEMP
 
-	; Params Valid
-	READ_MEM_PARAMS_LOOP:
-		; Read Memory
-		ld TEMP, Y+
+	rjmp WRITE_IO_RET
 
-		; Print as ASCII
+	WRITE_IO_ERR:
+		ldi TEMP, HIGH(WRITE_IO_ERR_MSG << 1)
 		push TEMP
-		push TEMP
-		rcall HEX_BYTE_TO_ASCII
-		; Get Least Significant Char
-		pop TEMP
-		rcall PUTCHAR
-		push TEMP
-		rcall PUTCHAR
-		pop TEMP
-		pop TEMP
-		ldi TEMP, ASCII_SPACE
-		push TEMP
-		rcall PUTCHAR
-		pop TEMP
-
-		cp YH, ZH
-		brlo READ_MEM_PARAMS_LOOP
-		brne READ_MEM_PARAMS_LOOP_EXIT
-
-		cp YL, ZL
-		brlo READ_MEM_PARAMS_LOOP
-		breq READ_MEM_PARAMS_LOOP
-
-	READ_MEM_PARAMS_LOOP_EXIT:
-		ldi TEMP, ASCII_BACKSPACE
-		push TEMP
-		rcall PUTCHAR
-		pop TEMP
-		ldi TEMP, ASCII_NEW_LINE
-		push TEMP
-		rcall PUTCHAR
-		pop TEMP
-		rjmp READ_MEM_RET
-
-	READ_MEM_ERR:
-		ldi TEMP, HIGH(READ_MEM_ERR_MSG << 1)
-		push TEMP
-		ldi TEMP, LOW (READ_MEM_ERR_MSG << 1)
+		ldi TEMP, LOW (WRITE_IO_ERR_MSG << 1)
 		push TEMP
 		rcall PUTSTR
 		pop TEMP
 		pop TEMP
 
-	READ_MEM_RET:
+	WRITE_IO_RET:
 		; Restore Registers
 		pop ZL
 		pop ZH
 		pop YL
 		pop YH
+		pop BYTE
 		pop TEMP
 
 		ret
 	
 	.undef TEMP
+	.undef BYTE

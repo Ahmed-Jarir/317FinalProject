@@ -81,6 +81,8 @@ CMD_IDX: .byte 1
 .INCLUDE "io.inc"
 .INCLUDE "read-mem.inc"
 .INCLUDE "write-mem.inc"
+.INCLUDE "read-io.inc"
+.INCLUDE "write-io.inc"
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; # Program Memory Constants
@@ -343,13 +345,25 @@ EXECUTE:
 	EXECUTE_O:
 		cpi CHAR, ASCII_LOWER_O
 		brne EXECUTE_I
+		push IDX
+		push ADDRH
+		push ADDRL
 		rcall READ_IO
+		pop TEMP
+		pop TEMP
+		pop TEMP
 		rjmp  EXECUTE_RET
 
 	EXECUTE_I:
 		cpi CHAR, ASCII_LOWER_I
 		brne EXECUTE_P
+		push IDX
+		push ADDRH
+		push ADDRL
 		rcall WRITE_IO
+		pop TEMP
+		pop TEMP
+		pop TEMP
 		rjmp  EXECUTE_RET
 
 	EXECUTE_P:
@@ -394,12 +408,6 @@ READ_REGISTER:
 ret
 
 WRITE_REGISTER:
-ret
-
-READ_IO:
-ret
-
-WRITE_IO:
 ret
 
 REPEAT_CMD:

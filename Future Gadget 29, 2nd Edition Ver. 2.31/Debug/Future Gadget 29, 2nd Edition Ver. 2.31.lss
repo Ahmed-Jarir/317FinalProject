@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.8  C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm Tue Jan 16 22:52:17 2024
+AVRASM ver. 2.2.8  C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm Wed Jan 17 21:23:46 2024
 
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m32def.inc'
 C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm(80): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\ascii.inc'
@@ -10,6 +10,14 @@ C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29,
 C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm(83): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\write-mem.inc'
 C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\write-mem.inc(18): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\ascii.inc'
 C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\write-mem.inc(19): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\io.inc'
+C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm(84): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\read-io.inc'
+C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\read-io.inc(18): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\ascii.inc'
+C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\read-io.inc(19): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\io.inc'
+C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\read-io.inc(20): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\io-name-to-addr.inc'
+C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm(85): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\write-io.inc'
+C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\write-io.inc(18): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\ascii.inc'
+C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\write-io.inc(19): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\io.inc'
+C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\write-io.inc(20): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\io-name-to-addr.inc'
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m32def.inc'
 C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm(80): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\ascii.inc'
 C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm(81): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\io.inc'
@@ -19,6 +27,14 @@ C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29,
 C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm(83): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\write-mem.inc'
 C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\write-mem.inc(18): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\ascii.inc'
 C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\write-mem.inc(19): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\io.inc'
+C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm(84): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\read-io.inc'
+C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\read-io.inc(18): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\ascii.inc'
+C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\read-io.inc(19): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\io.inc'
+C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\read-io.inc(20): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\io-name-to-addr.inc'
+C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm(85): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\write-io.inc'
+C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\write-io.inc(18): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\ascii.inc'
+C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\write-io.inc(19): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\io.inc'
+C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\write-io.inc(20): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\io-name-to-addr.inc'
                                  
                                  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
                                  
@@ -906,9 +922,9 @@ C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29,
                                  .cseg
                                  
                                  .org 0x0000
-000000 940c 024c                 	jmp RESET
+000000 940c 05aa                 	jmp RESET
                                  .org 0x001A 
-00001a 940c 025c                 	jmp USART_RX_COMPLETE
+00001a 940c 05ba                 	jmp USART_RX_COMPLETE
                                  
                                  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
                                  ;; # Imports
@@ -1340,134 +1356,139 @@ C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29,
                                  	.undef NIBBLE
                                  
                                  
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 ;; Lookup Table To Convert ASCII To Hex
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 
+                                 
                                  ASCII_TO_HEX_LOOKUP_TABLE:
-0000b8 ffff                      	.db 255, 255
-0000b9 ffff                      	.db 255, 255
-0000ba ffff                      	.db 255, 255
-0000bb ffff                      	.db 255, 255
-0000bc ffff                      	.db 255, 255
-0000bd ffff                      	.db 255, 255
-0000be ffff                      	.db 255, 255
-0000bf ffff                      	.db 255, 255
-0000c0 ffff                      	.db 255, 255
-0000c1 ffff                      	.db 255, 255
-0000c2 ffff                      	.db 255, 255
-0000c3 ffff                      	.db 255, 255
-0000c4 ffff                      	.db 255, 255
-0000c5 ffff                      	.db 255, 255
-0000c6 ffff                      	.db 255, 255
-0000c7 ffff                      	.db 255, 255
-0000c8 ffff                      	.db 255, 255
-0000c9 ffff                      	.db 255, 255
-0000ca ffff                      	.db 255, 255
-0000cb ffff                      	.db 255, 255
-0000cc ffff                      	.db 255, 255
-0000cd ffff                      	.db 255, 255
-0000ce ffff                      	.db 255, 255
-0000cf ffff                      	.db 255, 255
-0000d0 0100                      	.db   0,   1
-0000d1 0302                      	.db   2,   3
-0000d2 0504                      	.db   4,   5
-0000d3 0706                      	.db   6,   7
-0000d4 0908                      	.db   8,   9
-0000d5 ffff                      	.db 255, 255
-0000d6 ffff                      	.db 255, 255
-0000d7 ffff                      	.db 255, 255
-0000d8 0aff                      	.db 255,  10
-0000d9 0c0b                      	.db  11,  12
-0000da 0e0d                      	.db  13,  14
-0000db 100f                      	.db  15,  16
-0000dc 1211                      	.db  17,  18
-0000dd 1413                      	.db  19,  20
-0000de 1615                      	.db  21,  22
-0000df 1817                      	.db  23,  24
-0000e0 1a19                      	.db  25,  26
-0000e1 1c1b                      	.db  27,  28
-0000e2 1e1d                      	.db  29,  30
-0000e3 201f                      	.db  31,  32
-0000e4 2221                      	.db  33,  34
-0000e5 ff23                      	.db  35, 255
-0000e6 ffff                      	.db 255, 255
-0000e7 ffff                      	.db 255, 255
-0000e8 0aff                      	.db 255,  10
-0000e9 0c0b                      	.db  11,  12
-0000ea 0e0d                      	.db  13,  14
-0000eb 100f                      	.db  15,  16
-0000ec 1211                      	.db  17,  18
-0000ed 1413                      	.db  19,  20
-0000ee 1615                      	.db  21,  22
-0000ef 1817                      	.db  23,  24
-0000f0 1a19                      	.db  25,  26
-0000f1 1c1b                      	.db  27,  28
-0000f2 1e1d                      	.db  29,  30
-0000f3 201f                      	.db  31,  32
-0000f4 2221                      	.db  33,  34
-0000f5 ff23                      	.db  35, 255
-0000f6 ffff                      	.db 255, 255
-0000f7 ffff                      	.db 255, 255
-0000f8 ffff                      	.db 255, 255
-0000f9 ffff                      	.db 255, 255
-0000fa ffff                      	.db 255, 255
-0000fb ffff                      	.db 255, 255
-0000fc ffff                      	.db 255, 255
-0000fd ffff                      	.db 255, 255
-0000fe ffff                      	.db 255, 255
-0000ff ffff                      	.db 255, 255
-000100 ffff                      	.db 255, 255
-000101 ffff                      	.db 255, 255
-000102 ffff                      	.db 255, 255
-000103 ffff                      	.db 255, 255
-000104 ffff                      	.db 255, 255
-000105 ffff                      	.db 255, 255
-000106 ffff                      	.db 255, 255
-000107 ffff                      	.db 255, 255
-000108 ffff                      	.db 255, 255
-000109 ffff                      	.db 255, 255
-00010a ffff                      	.db 255, 255
-00010b ffff                      	.db 255, 255
-00010c ffff                      	.db 255, 255
-00010d ffff                      	.db 255, 255
-00010e ffff                      	.db 255, 255
-00010f ffff                      	.db 255, 255
-000110 ffff                      	.db 255, 255
-000111 ffff                      	.db 255, 255
-000112 ffff                      	.db 255, 255
-000113 ffff                      	.db 255, 255
-000114 ffff                      	.db 255, 255
-000115 ffff                      	.db 255, 255
-000116 ffff                      	.db 255, 255
-000117 ffff                      	.db 255, 255
-000118 ffff                      	.db 255, 255
-000119 ffff                      	.db 255, 255
-00011a ffff                      	.db 255, 255
-00011b ffff                      	.db 255, 255
-00011c ffff                      	.db 255, 255
-00011d ffff                      	.db 255, 255
-00011e ffff                      	.db 255, 255
-00011f ffff                      	.db 255, 255
-000120 ffff                      	.db 255, 255
-000121 ffff                      	.db 255, 255
-000122 ffff                      	.db 255, 255
-000123 ffff                      	.db 255, 255
-000124 ffff                      	.db 255, 255
-000125 ffff                      	.db 255, 255
-000126 ffff                      	.db 255, 255
-000127 ffff                      	.db 255, 255
-000128 ffff                      	.db 255, 255
-000129 ffff                      	.db 255, 255
-00012a ffff                      	.db 255, 255
-00012b ffff                      	.db 255, 255
-00012c ffff                      	.db 255, 255
-00012d ffff                      	.db 255, 255
-00012e ffff                      	.db 255, 255
-00012f ffff                      	.db 255, 255
-000130 ffff                      	.db 255, 255
-000131 ffff                      	.db 255, 255
-000132 ffff                      	.db 255, 255
-000133 ffff                      	.db 255, 255
-000134 ffff                      	.db 255, 255
-000135 ffff                      	.db 255, 255
-000136 ffff                      	.db 255, 255
+0000b8 ffff                      	.db 0xFF, 0xFF
+0000b9 ffff                      	.db 0xFF, 0xFF
+0000ba ffff                      	.db 0xFF, 0xFF
+0000bb ffff                      	.db 0xFF, 0xFF
+0000bc ffff                      	.db 0xFF, 0xFF
+0000bd ffff                      	.db 0xFF, 0xFF
+0000be ffff                      	.db 0xFF, 0xFF
+0000bf ffff                      	.db 0xFF, 0xFF
+0000c0 ffff                      	.db 0xFF, 0xFF
+0000c1 ffff                      	.db 0xFF, 0xFF
+0000c2 ffff                      	.db 0xFF, 0xFF
+0000c3 ffff                      	.db 0xFF, 0xFF
+0000c4 ffff                      	.db 0xFF, 0xFF
+0000c5 ffff                      	.db 0xFF, 0xFF
+0000c6 ffff                      	.db 0xFF, 0xFF
+0000c7 ffff                      	.db 0xFF, 0xFF
+0000c8 ffff                      	.db 0xFF, 0xFF
+0000c9 ffff                      	.db 0xFF, 0xFF
+0000ca ffff                      	.db 0xFF, 0xFF
+0000cb ffff                      	.db 0xFF, 0xFF
+0000cc ffff                      	.db 0xFF, 0xFF
+0000cd ffff                      	.db 0xFF, 0xFF
+0000ce ffff                      	.db 0xFF, 0xFF
+0000cf ffff                      	.db 0xFF, 0xFF
+0000d0 0100                      	.db 0x00, 0x01
+0000d1 0302                      	.db 0x02, 0x03
+0000d2 0504                      	.db 0x04, 0x05
+0000d3 0706                      	.db 0x06, 0x07
+0000d4 0908                      	.db 0x08, 0x09
+0000d5 ffff                      	.db 0xFF, 0xFF
+0000d6 ffff                      	.db 0xFF, 0xFF
+0000d7 ffff                      	.db 0xFF, 0xFF
+0000d8 0aff                      	.db 0xFF, 0x0A
+0000d9 0c0b                      	.db 0x0B, 0x0C
+0000da 0e0d                      	.db 0x0D, 0x0E
+0000db ff0f                      	.db 0x0F, 0xFF
+0000dc ffff                      	.db 0xFF, 0xFF
+0000dd ffff                      	.db 0xFF, 0xFF
+0000de ffff                      	.db 0xFF, 0xFF
+0000df ffff                      	.db 0xFF, 0xFF
+0000e0 ffff                      	.db 0xFF, 0xFF
+0000e1 ffff                      	.db 0xFF, 0xFF
+0000e2 ffff                      	.db 0xFF, 0xFF
+0000e3 ffff                      	.db 0xFF, 0xFF
+0000e4 ffff                      	.db 0xFF, 0xFF
+0000e5 ffff                      	.db 0xFF, 0xFF
+0000e6 ffff                      	.db 0xFF, 0xFF
+0000e7 ffff                      	.db 0xFF, 0xFF
+0000e8 0aff                      	.db 0xFF, 0x0A
+0000e9 0c0b                      	.db 0x0B, 0x0C
+0000ea 0e0d                      	.db 0x0D, 0x0E
+0000eb ff0f                      	.db 0x0F, 0xFF
+0000ec ffff                      	.db 0xFF, 0xFF
+0000ed ffff                      	.db 0xFF, 0xFF
+0000ee ffff                      	.db 0xFF, 0xFF
+0000ef ffff                      	.db 0xFF, 0xFF
+0000f0 ffff                      	.db 0xFF, 0xFF
+0000f1 ffff                      	.db 0xFF, 0xFF
+0000f2 ffff                      	.db 0xFF, 0xFF
+0000f3 ffff                      	.db 0xFF, 0xFF
+0000f4 ffff                      	.db 0xFF, 0xFF
+0000f5 ffff                      	.db 0xFF, 0xFF
+0000f6 ffff                      	.db 0xFF, 0xFF
+0000f7 ffff                      	.db 0xFF, 0xFF
+0000f8 ffff                      	.db 0xFF, 0xFF
+0000f9 ffff                      	.db 0xFF, 0xFF
+0000fa ffff                      	.db 0xFF, 0xFF
+0000fb ffff                      	.db 0xFF, 0xFF
+0000fc ffff                      	.db 0xFF, 0xFF
+0000fd ffff                      	.db 0xFF, 0xFF
+0000fe ffff                      	.db 0xFF, 0xFF
+0000ff ffff                      	.db 0xFF, 0xFF
+000100 ffff                      	.db 0xFF, 0xFF
+000101 ffff                      	.db 0xFF, 0xFF
+000102 ffff                      	.db 0xFF, 0xFF
+000103 ffff                      	.db 0xFF, 0xFF
+000104 ffff                      	.db 0xFF, 0xFF
+000105 ffff                      	.db 0xFF, 0xFF
+000106 ffff                      	.db 0xFF, 0xFF
+000107 ffff                      	.db 0xFF, 0xFF
+000108 ffff                      	.db 0xFF, 0xFF
+000109 ffff                      	.db 0xFF, 0xFF
+00010a ffff                      	.db 0xFF, 0xFF
+00010b ffff                      	.db 0xFF, 0xFF
+00010c ffff                      	.db 0xFF, 0xFF
+00010d ffff                      	.db 0xFF, 0xFF
+00010e ffff                      	.db 0xFF, 0xFF
+00010f ffff                      	.db 0xFF, 0xFF
+000110 ffff                      	.db 0xFF, 0xFF
+000111 ffff                      	.db 0xFF, 0xFF
+000112 ffff                      	.db 0xFF, 0xFF
+000113 ffff                      	.db 0xFF, 0xFF
+000114 ffff                      	.db 0xFF, 0xFF
+000115 ffff                      	.db 0xFF, 0xFF
+000116 ffff                      	.db 0xFF, 0xFF
+000117 ffff                      	.db 0xFF, 0xFF
+000118 ffff                      	.db 0xFF, 0xFF
+000119 ffff                      	.db 0xFF, 0xFF
+00011a ffff                      	.db 0xFF, 0xFF
+00011b ffff                      	.db 0xFF, 0xFF
+00011c ffff                      	.db 0xFF, 0xFF
+00011d ffff                      	.db 0xFF, 0xFF
+00011e ffff                      	.db 0xFF, 0xFF
+00011f ffff                      	.db 0xFF, 0xFF
+000120 ffff                      	.db 0xFF, 0xFF
+000121 ffff                      	.db 0xFF, 0xFF
+000122 ffff                      	.db 0xFF, 0xFF
+000123 ffff                      	.db 0xFF, 0xFF
+000124 ffff                      	.db 0xFF, 0xFF
+000125 ffff                      	.db 0xFF, 0xFF
+000126 ffff                      	.db 0xFF, 0xFF
+000127 ffff                      	.db 0xFF, 0xFF
+000128 ffff                      	.db 0xFF, 0xFF
+000129 ffff                      	.db 0xFF, 0xFF
+00012a ffff                      	.db 0xFF, 0xFF
+00012b ffff                      	.db 0xFF, 0xFF
+00012c ffff                      	.db 0xFF, 0xFF
+00012d ffff                      	.db 0xFF, 0xFF
+00012e ffff                      	.db 0xFF, 0xFF
+00012f ffff                      	.db 0xFF, 0xFF
+000130 ffff                      	.db 0xFF, 0xFF
+000131 ffff                      	.db 0xFF, 0xFF
+000132 ffff                      	.db 0xFF, 0xFF
+000133 ffff                      	.db 0xFF, 0xFF
+000134 ffff                      	.db 0xFF, 0xFF
+000135 ffff                      	.db 0xFF, 0xFF
+000136 ffff                      	.db 0xFF, 0xFF
                                  .INCLUDE "io.inc"
 000137 ffff                      
                                  ;; Include Guard
@@ -1612,6 +1633,7 @@ C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29,
                                  
                                  
                                  .ifdef INCLUDE_IO
+                                 
                                  
                                  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
                                  ;; Read Memory Region
@@ -1816,6 +1838,7 @@ C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29,
                                  
                                  .ifdef INCLUDE_IO
                                  
+                                 
                                  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
                                  ;; Write Memory Address
                                  ;;
@@ -2001,6 +2024,1292 @@ C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29,
                                  	
                                  	.undef TEMP
                                  	.undef COUNT
+                                 .INCLUDE "read-io.inc"
+                                 
+                                 ;; Include Guard
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 
+                                 
+                                 .ifdef INCLUDE_READ_IO
+                                 .endif
+                                 
+                                 .equ INCLUDE_READ_IO = 1
+                                 
+                                 
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 ;; Imports
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 
+                                 
+                                 .INCLUDE "ascii.inc"
+                                 
+                                 ;; Include Guard
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 
+                                 
+                                 .ifdef INCLUDE_ASCII
+                                 .INCLUDE "io.inc"
+                                 
+                                 ;; Include Guard
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 
+                                 
+                                 .ifdef INCLUDE_IO
+                                 .INCLUDE "io-name-to-addr.inc"
+                                 
+                                 ;; Include Guard
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 
+                                 
+                                 .ifdef INCLUDE_IO_NAME_TO_ADDR
+                                 .endif
+                                 
+                                 .equ INCLUDE_IO_NAME_TO_ADDR = 1
+                                 
+                                 
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 ;; Parse String As IO Register And Return Memory Address
+                                 ;;
+                                 ;; Inputs:
+                                 ;; - String Length          <- SP + 5
+                                 ;; - ASCII String Pointer H <- SP + 4
+                                 ;; - ASCII String Pointer L <- SP + 3 (First Byte Before Return Address)
+                                 ;;
+                                 ;; Outputs:
+                                 ;; - Error Status           -> SP + 5
+                                 ;; - Return Value H         -> SP + 4
+                                 ;; - Return Value L         -> SP + 3 (First Byte Before Return Address)
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 
+                                 
+                                 ASCII_IO_REG_TO_MEM_ADDR:
+                                 	.def LEN  = R16
+                                 	.def CHAR = R17
+                                 	.def CNTR = R18
+                                 	.def TEMP = R19
+                                 
+                                 	; Number of pushes
+                                 	.set STACK_OFFSET = 8
+                                 	; Backup Registers
+00023c 930f                      	push LEN
+00023d 931f                      	push CHAR
+00023e 932f                      	push CNTR
+00023f 933f                      	push TEMP
+000240 93df                      	push YH
+000241 93cf                      	push YL
+000242 93ff                      	push ZH
+000243 93ef                      	push ZL
+                                 
+                                 	; Load Stack Pointer
+                                 	; Z <- SP
+000244 b7fe                      	in ZH, SPH
+000245 b7ed                      	in ZL, SPL
+                                 
+                                 	; Load String Length
+000246 8505                      	ldd LEN, Z+(STACK_OFFSET + 5)
+                                 
+                                 	; Load String Pointer
+000247 85d4                      	ldd YH, Z+(STACK_OFFSET + 4)
+000248 85c3                      	ldd YL, Z+(STACK_OFFSET + 3)
+                                 
+                                 	; Load Tree Pointer (Program Memory)
+000249 e0f4                      	ldi ZH, HIGH(IO_LOOKUP_TREE << 1)
+00024a eee8                      	ldi ZL, LOW (IO_LOOKUP_TREE << 1)
+                                 
+00024b e020                      	ldi CNTR, 0
+                                 
+                                 	ASCII_IO_REG_TO_MEM_ADDR_LOOP:
+00024c 8118                      		ld CHAR, Y
+                                 		; Skip Done Leaf
+00024d 9632                      		adiw ZH:ZL, 2
+                                 		ASCII_IO_REG_TO_MEM_ADDR_INNER_LOOP:
+                                 			; Get Character In Tree
+00024e 9134                      			lpm TEMP, Z
+00024f 3030                      			cpi TEMP, 0
+                                 			; Invlaid String
+000250 f0c1                      			breq ASCII_IO_REG_TO_MEM_ADDR_ERR
+000251 1731                      			cp TEMP, CHAR
+000252 f011                      			breq ASCII_IO_REG_TO_MEM_ADDR_INNER_LOOP_MATCH
+                                 			; No Match
+000253 9634                      			adiw ZH:ZL, 4
+000254 cff9                      			rjmp ASCII_IO_REG_TO_MEM_ADDR_INNER_LOOP
+                                 			ASCII_IO_REG_TO_MEM_ADDR_INNER_LOOP_MATCH:
+000255 9632                      				adiw ZH:ZL, 2
+                                 				; High Byte
+000256 9134                      				lpm TEMP, Z
+000257 9631                      				adiw ZH:ZL, 1
+                                 				; Low Byte
+000258 9114                      				lpm CHAR, Z
+000259 2ff3                      				mov ZH, TEMP
+00025a 2fe1                      				mov ZL, CHAR
+00025b 9621                      				adiw YH:YL, 1
+00025c 9523                      				inc CNTR
+00025d 1720                      				cp CNTR, LEN
+00025e f368                      				brlo ASCII_IO_REG_TO_MEM_ADDR_LOOP
+                                 
+                                 	; Load Stack Pointer
+                                 	; Y <- SP
+00025f b7de                      	in YH, SPH
+000260 b7cd                      	in YL, SPL
+                                 			
+                                 	; We have a valid string
+                                 	; Get memory address
+                                 	; High Byte
+000261 9134                      	lpm TEMP, Z
+000262 873c                      	std Y+(STACK_OFFSET + 4), TEMP
+000263 9631                      	adiw ZH:ZL, 1
+                                 	; Low Byte
+000264 9134                      	lpm TEMP, Z
+000265 873b                      	std Y+(STACK_OFFSET + 3), TEMP
+                                 	; No Error
+000266 e030                      	ldi TEMP, 0
+000267 873d                      	std Y+(STACK_OFFSET + 5), TEMP
+                                 	
+000268 c002                      	rjmp ASCII_IO_REG_TO_MEM_ADDR_RET
+                                 
+                                 	ASCII_IO_REG_TO_MEM_ADDR_ERR:
+                                 		; Error Status <- True
+000269 e031                      		ldi TEMP, 1
+00026a 873d                      		std Y+(STACK_OFFSET + 5), TEMP
+                                 
+                                 	ASCII_IO_REG_TO_MEM_ADDR_RET:
+                                 		; Restore Registers
+00026b 91ef                      		pop ZL
+00026c 91ff                      		pop ZH
+00026d 91cf                      		pop YL
+00026e 91df                      		pop YH
+00026f 913f                      		pop TEMP
+000270 912f                      		pop CNTR
+000271 911f                      		pop CHAR
+000272 910f                      		pop LEN
+                                 
+000273 9508                      		ret
+                                 
+                                 	.undef LEN
+                                 	.undef CHAR
+                                 	.undef CNTR
+                                 	.undef TEMP
+                                 
+                                 
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 ;; Lookup Tree To Convert ASCII To IO Register Memory Address
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 
+                                 
+                                 IO_LOOKUP_TREE:
+000274 0000                              .db HIGH(0x00), LOW(0x00)
+000275 0041
+000276 1c05                              .db "A", 0, HIGH(IO_LOOKUP_TREE_A << 1), LOW(IO_LOOKUP_TREE_A << 1)
+000277 0044
+000278 a005                              .db "D", 0, HIGH(IO_LOOKUP_TREE_D << 1), LOW(IO_LOOKUP_TREE_D << 1)
+000279 0045
+00027a d405                              .db "E", 0, HIGH(IO_LOOKUP_TREE_E << 1), LOW(IO_LOOKUP_TREE_E << 1)
+00027b 0047
+00027c 2006                              .db "G", 0, HIGH(IO_LOOKUP_TREE_G << 1), LOW(IO_LOOKUP_TREE_G << 1)
+00027d 0049
+00027e 4c06                              .db "I", 0, HIGH(IO_LOOKUP_TREE_I << 1), LOW(IO_LOOKUP_TREE_I << 1)
+00027f 004d
+000280 7806                              .db "M", 0, HIGH(IO_LOOKUP_TREE_M << 1), LOW(IO_LOOKUP_TREE_M << 1)
+000281 004f
+000282 ac06                              .db "O", 0, HIGH(IO_LOOKUP_TREE_O << 1), LOW(IO_LOOKUP_TREE_O << 1)
+000283 0050
+000284 4007                              .db "P", 0, HIGH(IO_LOOKUP_TREE_P << 1), LOW(IO_LOOKUP_TREE_P << 1)
+000285 0053
+000286 ac07                              .db "S", 0, HIGH(IO_LOOKUP_TREE_S << 1), LOW(IO_LOOKUP_TREE_S << 1)
+000287 0054
+000288 4808                              .db "T", 0, HIGH(IO_LOOKUP_TREE_T << 1), LOW(IO_LOOKUP_TREE_T << 1)
+000289 0055
+00028a 4c09                              .db "U", 0, HIGH(IO_LOOKUP_TREE_U << 1), LOW(IO_LOOKUP_TREE_U << 1)
+00028b 0057
+00028c d009                              .db "W", 0, HIGH(IO_LOOKUP_TREE_W << 1), LOW(IO_LOOKUP_TREE_W << 1)
+00028d 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_A:
+00028e 0000                              .db HIGH(0x00), LOW(0x00)
+00028f 0043
+000290 2c05                              .db "C", 0, HIGH(IO_LOOKUP_TREE_AC << 1), LOW(IO_LOOKUP_TREE_AC << 1)
+000291 0044
+000292 4005                              .db "D", 0, HIGH(IO_LOOKUP_TREE_AD << 1), LOW(IO_LOOKUP_TREE_AD << 1)
+000293 0053
+000294 8c05                              .db "S", 0, HIGH(IO_LOOKUP_TREE_AS << 1), LOW(IO_LOOKUP_TREE_AS << 1)
+000295 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_AC:
+000296 0000                              .db HIGH(0x00), LOW(0x00)
+000297 0053
+000298 3405                              .db "S", 0, HIGH(IO_LOOKUP_TREE_ACS << 1), LOW(IO_LOOKUP_TREE_ACS << 1)
+000299 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_ACS:
+00029a 0000                              .db HIGH(0x00), LOW(0x00)
+00029b 0052
+00029c 3c05                              .db "R", 0, HIGH(IO_LOOKUP_TREE_ACSR << 1), LOW(IO_LOOKUP_TREE_ACSR << 1)
+00029d 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_ACSR:
+00029e 2800                              .db HIGH(0x28), LOW(0x28)
+00029f 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_AD:
+0002a0 0000                              .db HIGH(0x00), LOW(0x00)
+0002a1 0043
+0002a2 4c05                              .db "C", 0, HIGH(IO_LOOKUP_TREE_ADC << 1), LOW(IO_LOOKUP_TREE_ADC << 1)
+0002a3 004d
+0002a4 7805                              .db "M", 0, HIGH(IO_LOOKUP_TREE_ADM << 1), LOW(IO_LOOKUP_TREE_ADM << 1)
+0002a5 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_ADC:
+0002a6 0000                              .db HIGH(0x00), LOW(0x00)
+0002a7 0048
+0002a8 5c05                              .db "H", 0, HIGH(IO_LOOKUP_TREE_ADCH << 1), LOW(IO_LOOKUP_TREE_ADCH << 1)
+0002a9 004c
+0002aa 6005                              .db "L", 0, HIGH(IO_LOOKUP_TREE_ADCL << 1), LOW(IO_LOOKUP_TREE_ADCL << 1)
+0002ab 0053
+0002ac 6405                              .db "S", 0, HIGH(IO_LOOKUP_TREE_ADCS << 1), LOW(IO_LOOKUP_TREE_ADCS << 1)
+0002ad 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_ADCH:
+0002ae 2500                              .db HIGH(0x25), LOW(0x25)
+0002af 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_ADCL:
+0002b0 2400                              .db HIGH(0x24), LOW(0x24)
+0002b1 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_ADCS:
+0002b2 0000                              .db HIGH(0x00), LOW(0x00)
+0002b3 0052
+0002b4 6c05                              .db "R", 0, HIGH(IO_LOOKUP_TREE_ADCSR << 1), LOW(IO_LOOKUP_TREE_ADCSR << 1)
+0002b5 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_ADCSR:
+0002b6 0000                              .db HIGH(0x00), LOW(0x00)
+0002b7 0041
+0002b8 7405                              .db "A", 0, HIGH(IO_LOOKUP_TREE_ADCSRA << 1), LOW(IO_LOOKUP_TREE_ADCSRA << 1)
+0002b9 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_ADCSRA:
+0002ba 2600                              .db HIGH(0x26), LOW(0x26)
+0002bb 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_ADM:
+0002bc 0000                              .db HIGH(0x00), LOW(0x00)
+0002bd 0055
+0002be 8005                              .db "U", 0, HIGH(IO_LOOKUP_TREE_ADMU << 1), LOW(IO_LOOKUP_TREE_ADMU << 1)
+0002bf 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_ADMU:
+0002c0 0000                              .db HIGH(0x00), LOW(0x00)
+0002c1 0058
+0002c2 8805                              .db "X", 0, HIGH(IO_LOOKUP_TREE_ADMUX << 1), LOW(IO_LOOKUP_TREE_ADMUX << 1)
+0002c3 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_ADMUX:
+0002c4 2700                              .db HIGH(0x27), LOW(0x27)
+0002c5 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_AS:
+0002c6 0000                              .db HIGH(0x00), LOW(0x00)
+0002c7 0053
+0002c8 9405                              .db "S", 0, HIGH(IO_LOOKUP_TREE_ASS << 1), LOW(IO_LOOKUP_TREE_ASS << 1)
+0002c9 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_ASS:
+0002ca 0000                              .db HIGH(0x00), LOW(0x00)
+0002cb 0052
+0002cc 9c05                              .db "R", 0, HIGH(IO_LOOKUP_TREE_ASSR << 1), LOW(IO_LOOKUP_TREE_ASSR << 1)
+0002cd 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_ASSR:
+0002ce 4200                              .db HIGH(0x42), LOW(0x42)
+0002cf 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_D:
+0002d0 0000                              .db HIGH(0x00), LOW(0x00)
+0002d1 0044
+0002d2 a805                              .db "D", 0, HIGH(IO_LOOKUP_TREE_DD << 1), LOW(IO_LOOKUP_TREE_DD << 1)
+0002d3 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_DD:
+0002d4 0000                              .db HIGH(0x00), LOW(0x00)
+0002d5 0052
+0002d6 b005                              .db "R", 0, HIGH(IO_LOOKUP_TREE_DDR << 1), LOW(IO_LOOKUP_TREE_DDR << 1)
+0002d7 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_DDR:
+0002d8 0000                              .db HIGH(0x00), LOW(0x00)
+0002d9 0041
+0002da c405                              .db "A", 0, HIGH(IO_LOOKUP_TREE_DDRA << 1), LOW(IO_LOOKUP_TREE_DDRA << 1)
+0002db 0042
+0002dc c805                              .db "B", 0, HIGH(IO_LOOKUP_TREE_DDRB << 1), LOW(IO_LOOKUP_TREE_DDRB << 1)
+0002dd 0043
+0002de cc05                              .db "C", 0, HIGH(IO_LOOKUP_TREE_DDRC << 1), LOW(IO_LOOKUP_TREE_DDRC << 1)
+0002df 0044
+0002e0 d005                              .db "D", 0, HIGH(IO_LOOKUP_TREE_DDRD << 1), LOW(IO_LOOKUP_TREE_DDRD << 1)
+0002e1 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_DDRA:
+0002e2 3a00                              .db HIGH(0x3A), LOW(0x3A)
+0002e3 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_DDRB:
+0002e4 3700                              .db HIGH(0x37), LOW(0x37)
+0002e5 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_DDRC:
+0002e6 3400                              .db HIGH(0x34), LOW(0x34)
+0002e7 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_DDRD:
+0002e8 3100                              .db HIGH(0x31), LOW(0x31)
+0002e9 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_E:
+0002ea 0000                              .db HIGH(0x00), LOW(0x00)
+0002eb 0045
+0002ec dc05                              .db "E", 0, HIGH(IO_LOOKUP_TREE_EE << 1), LOW(IO_LOOKUP_TREE_EE << 1)
+0002ed 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_EE:
+0002ee 0000                              .db HIGH(0x00), LOW(0x00)
+0002ef 0041
+0002f0 ec05                              .db "A", 0, HIGH(IO_LOOKUP_TREE_EEA << 1), LOW(IO_LOOKUP_TREE_EEA << 1)
+0002f1 0043
+0002f2 0806                              .db "C", 0, HIGH(IO_LOOKUP_TREE_EEC << 1), LOW(IO_LOOKUP_TREE_EEC << 1)
+0002f3 0044
+0002f4 1406                              .db "D", 0, HIGH(IO_LOOKUP_TREE_EED << 1), LOW(IO_LOOKUP_TREE_EED << 1)
+0002f5 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_EEA:
+0002f6 0000                              .db HIGH(0x00), LOW(0x00)
+0002f7 0052
+0002f8 f405                              .db "R", 0, HIGH(IO_LOOKUP_TREE_EEAR << 1), LOW(IO_LOOKUP_TREE_EEAR << 1)
+0002f9 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_EEAR:
+0002fa 0000                              .db HIGH(0x00), LOW(0x00)
+0002fb 0048
+0002fc 0006                              .db "H", 0, HIGH(IO_LOOKUP_TREE_EEARH << 1), LOW(IO_LOOKUP_TREE_EEARH << 1)
+0002fd 004c
+0002fe 0406                              .db "L", 0, HIGH(IO_LOOKUP_TREE_EEARL << 1), LOW(IO_LOOKUP_TREE_EEARL << 1)
+0002ff 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_EEARH:
+000300 3f00                              .db HIGH(0x3F), LOW(0x3F)
+000301 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_EEARL:
+000302 3e00                              .db HIGH(0x3E), LOW(0x3E)
+000303 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_EEC:
+000304 0000                              .db HIGH(0x00), LOW(0x00)
+000305 0052
+000306 1006                              .db "R", 0, HIGH(IO_LOOKUP_TREE_EECR << 1), LOW(IO_LOOKUP_TREE_EECR << 1)
+000307 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_EECR:
+000308 3c00                              .db HIGH(0x3C), LOW(0x3C)
+000309 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_EED:
+00030a 0000                              .db HIGH(0x00), LOW(0x00)
+00030b 0052
+00030c 1c06                              .db "R", 0, HIGH(IO_LOOKUP_TREE_EEDR << 1), LOW(IO_LOOKUP_TREE_EEDR << 1)
+00030d 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_EEDR:
+00030e 3d00                              .db HIGH(0x3D), LOW(0x3D)
+00030f 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_G:
+000310 0000                              .db HIGH(0x00), LOW(0x00)
+000311 0049
+000312 2806                              .db "I", 0, HIGH(IO_LOOKUP_TREE_GI << 1), LOW(IO_LOOKUP_TREE_GI << 1)
+000313 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_GI:
+000314 0000                              .db HIGH(0x00), LOW(0x00)
+000315 0043
+000316 3406                              .db "C", 0, HIGH(IO_LOOKUP_TREE_GIC << 1), LOW(IO_LOOKUP_TREE_GIC << 1)
+000317 0046
+000318 4006                              .db "F", 0, HIGH(IO_LOOKUP_TREE_GIF << 1), LOW(IO_LOOKUP_TREE_GIF << 1)
+000319 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_GIC:
+00031a 0000                              .db HIGH(0x00), LOW(0x00)
+00031b 0052
+00031c 3c06                              .db "R", 0, HIGH(IO_LOOKUP_TREE_GICR << 1), LOW(IO_LOOKUP_TREE_GICR << 1)
+00031d 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_GICR:
+00031e 5b00                              .db HIGH(0x5B), LOW(0x5B)
+00031f 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_GIF:
+000320 0000                              .db HIGH(0x00), LOW(0x00)
+000321 0052
+000322 4806                              .db "R", 0, HIGH(IO_LOOKUP_TREE_GIFR << 1), LOW(IO_LOOKUP_TREE_GIFR << 1)
+000323 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_GIFR:
+000324 5a00                              .db HIGH(0x5A), LOW(0x5A)
+000325 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_I:
+000326 0000                              .db HIGH(0x00), LOW(0x00)
+000327 0043
+000328 5406                              .db "C", 0, HIGH(IO_LOOKUP_TREE_IC << 1), LOW(IO_LOOKUP_TREE_IC << 1)
+000329 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_IC:
+00032a 0000                              .db HIGH(0x00), LOW(0x00)
+00032b 0052
+00032c 5c06                              .db "R", 0, HIGH(IO_LOOKUP_TREE_ICR << 1), LOW(IO_LOOKUP_TREE_ICR << 1)
+00032d 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_ICR:
+00032e 0000                              .db HIGH(0x00), LOW(0x00)
+00032f 0031
+000330 6406                              .db "1", 0, HIGH(IO_LOOKUP_TREE_ICR1 << 1), LOW(IO_LOOKUP_TREE_ICR1 << 1)
+000331 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_ICR1:
+000332 0000                              .db HIGH(0x00), LOW(0x00)
+000333 0048
+000334 7006                              .db "H", 0, HIGH(IO_LOOKUP_TREE_ICR1H << 1), LOW(IO_LOOKUP_TREE_ICR1H << 1)
+000335 004c
+000336 7406                              .db "L", 0, HIGH(IO_LOOKUP_TREE_ICR1L << 1), LOW(IO_LOOKUP_TREE_ICR1L << 1)
+000337 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_ICR1H:
+000338 4700                              .db HIGH(0x47), LOW(0x47)
+000339 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_ICR1L:
+00033a 4600                              .db HIGH(0x46), LOW(0x46)
+00033b 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_M:
+00033c 0000                              .db HIGH(0x00), LOW(0x00)
+00033d 0043
+00033e 8006                              .db "C", 0, HIGH(IO_LOOKUP_TREE_MC << 1), LOW(IO_LOOKUP_TREE_MC << 1)
+00033f 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_MC:
+000340 0000                              .db HIGH(0x00), LOW(0x00)
+000341 0055
+000342 8806                              .db "U", 0, HIGH(IO_LOOKUP_TREE_MCU << 1), LOW(IO_LOOKUP_TREE_MCU << 1)
+000343 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_MCU:
+000344 0000                              .db HIGH(0x00), LOW(0x00)
+000345 0043
+000346 9006                              .db "C", 0, HIGH(IO_LOOKUP_TREE_MCUC << 1), LOW(IO_LOOKUP_TREE_MCUC << 1)
+000347 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_MCUC:
+000348 0000                              .db HIGH(0x00), LOW(0x00)
+000349 0052
+00034a 9c06                              .db "R", 0, HIGH(IO_LOOKUP_TREE_MCUCR << 1), LOW(IO_LOOKUP_TREE_MCUCR << 1)
+00034b 0053
+00034c a006                              .db "S", 0, HIGH(IO_LOOKUP_TREE_MCUCS << 1), LOW(IO_LOOKUP_TREE_MCUCS << 1)
+00034d 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_MCUCR:
+00034e 5500                              .db HIGH(0x55), LOW(0x55)
+00034f 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_MCUCS:
+000350 0000                              .db HIGH(0x00), LOW(0x00)
+000351 0052
+000352 a806                              .db "R", 0, HIGH(IO_LOOKUP_TREE_MCUCSR << 1), LOW(IO_LOOKUP_TREE_MCUCSR << 1)
+000353 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_MCUCSR:
+000354 5400                              .db HIGH(0x54), LOW(0x54)
+000355 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_O:
+000356 0000                              .db HIGH(0x00), LOW(0x00)
+000357 0043
+000358 b806                              .db "C", 0, HIGH(IO_LOOKUP_TREE_OC << 1), LOW(IO_LOOKUP_TREE_OC << 1)
+000359 0053
+00035a 1c07                              .db "S", 0, HIGH(IO_LOOKUP_TREE_OS << 1), LOW(IO_LOOKUP_TREE_OS << 1)
+00035b 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_OC:
+00035c 0000                              .db HIGH(0x00), LOW(0x00)
+00035d 0044
+00035e c406                              .db "D", 0, HIGH(IO_LOOKUP_TREE_OCD << 1), LOW(IO_LOOKUP_TREE_OCD << 1)
+00035f 0052
+000360 d006                              .db "R", 0, HIGH(IO_LOOKUP_TREE_OCR << 1), LOW(IO_LOOKUP_TREE_OCR << 1)
+000361 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_OCD:
+000362 0000                              .db HIGH(0x00), LOW(0x00)
+000363 0052
+000364 cc06                              .db "R", 0, HIGH(IO_LOOKUP_TREE_OCDR << 1), LOW(IO_LOOKUP_TREE_OCDR << 1)
+000365 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_OCDR:
+000366 5100                              .db HIGH(0x51), LOW(0x51)
+000367 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_OCR:
+000368 0000                              .db HIGH(0x00), LOW(0x00)
+000369 0030
+00036a e006                              .db "0", 0, HIGH(IO_LOOKUP_TREE_OCR0 << 1), LOW(IO_LOOKUP_TREE_OCR0 << 1)
+00036b 0031
+00036c e406                              .db "1", 0, HIGH(IO_LOOKUP_TREE_OCR1 << 1), LOW(IO_LOOKUP_TREE_OCR1 << 1)
+00036d 0032
+00036e 1807                              .db "2", 0, HIGH(IO_LOOKUP_TREE_OCR2 << 1), LOW(IO_LOOKUP_TREE_OCR2 << 1)
+00036f 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_OCR0:
+000370 5c00                              .db HIGH(0x5C), LOW(0x5C)
+000371 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_OCR1:
+000372 0000                              .db HIGH(0x00), LOW(0x00)
+000373 0041
+000374 f006                              .db "A", 0, HIGH(IO_LOOKUP_TREE_OCR1A << 1), LOW(IO_LOOKUP_TREE_OCR1A << 1)
+000375 0042
+000376 0407                              .db "B", 0, HIGH(IO_LOOKUP_TREE_OCR1B << 1), LOW(IO_LOOKUP_TREE_OCR1B << 1)
+000377 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_OCR1A:
+000378 0000                              .db HIGH(0x00), LOW(0x00)
+000379 0048
+00037a fc06                              .db "H", 0, HIGH(IO_LOOKUP_TREE_OCR1AH << 1), LOW(IO_LOOKUP_TREE_OCR1AH << 1)
+00037b 004c
+00037c 0007                              .db "L", 0, HIGH(IO_LOOKUP_TREE_OCR1AL << 1), LOW(IO_LOOKUP_TREE_OCR1AL << 1)
+00037d 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_OCR1AH:
+00037e 4b00                              .db HIGH(0x4B), LOW(0x4B)
+00037f 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_OCR1AL:
+000380 4a00                              .db HIGH(0x4A), LOW(0x4A)
+000381 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_OCR1B:
+000382 0000                              .db HIGH(0x00), LOW(0x00)
+000383 0048
+000384 1007                              .db "H", 0, HIGH(IO_LOOKUP_TREE_OCR1BH << 1), LOW(IO_LOOKUP_TREE_OCR1BH << 1)
+000385 004c
+000386 1407                              .db "L", 0, HIGH(IO_LOOKUP_TREE_OCR1BL << 1), LOW(IO_LOOKUP_TREE_OCR1BL << 1)
+000387 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_OCR1BH:
+000388 4900                              .db HIGH(0x49), LOW(0x49)
+000389 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_OCR1BL:
+00038a 4800                              .db HIGH(0x48), LOW(0x48)
+00038b 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_OCR2:
+00038c 4300                              .db HIGH(0x43), LOW(0x43)
+00038d 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_OS:
+00038e 0000                              .db HIGH(0x00), LOW(0x00)
+00038f 0043
+000390 2407                              .db "C", 0, HIGH(IO_LOOKUP_TREE_OSC << 1), LOW(IO_LOOKUP_TREE_OSC << 1)
+000391 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_OSC:
+000392 0000                              .db HIGH(0x00), LOW(0x00)
+000393 0043
+000394 2c07                              .db "C", 0, HIGH(IO_LOOKUP_TREE_OSCC << 1), LOW(IO_LOOKUP_TREE_OSCC << 1)
+000395 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_OSCC:
+000396 0000                              .db HIGH(0x00), LOW(0x00)
+000397 0041
+000398 3407                              .db "A", 0, HIGH(IO_LOOKUP_TREE_OSCCA << 1), LOW(IO_LOOKUP_TREE_OSCCA << 1)
+000399 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_OSCCA:
+00039a 0000                              .db HIGH(0x00), LOW(0x00)
+00039b 004c
+00039c 3c07                              .db "L", 0, HIGH(IO_LOOKUP_TREE_OSCCAL << 1), LOW(IO_LOOKUP_TREE_OSCCAL << 1)
+00039d 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_OSCCAL:
+00039e 5100                              .db HIGH(0x51), LOW(0x51)
+00039f 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_P:
+0003a0 0000                              .db HIGH(0x00), LOW(0x00)
+0003a1 0049
+0003a2 4c07                              .db "I", 0, HIGH(IO_LOOKUP_TREE_PI << 1), LOW(IO_LOOKUP_TREE_PI << 1)
+0003a3 004f
+0003a4 7807                              .db "O", 0, HIGH(IO_LOOKUP_TREE_PO << 1), LOW(IO_LOOKUP_TREE_PO << 1)
+0003a5 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_PI:
+0003a6 0000                              .db HIGH(0x00), LOW(0x00)
+0003a7 004e
+0003a8 5407                              .db "N", 0, HIGH(IO_LOOKUP_TREE_PIN << 1), LOW(IO_LOOKUP_TREE_PIN << 1)
+0003a9 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_PIN:
+0003aa 0000                              .db HIGH(0x00), LOW(0x00)
+0003ab 0041
+0003ac 6807                              .db "A", 0, HIGH(IO_LOOKUP_TREE_PINA << 1), LOW(IO_LOOKUP_TREE_PINA << 1)
+0003ad 0042
+0003ae 6c07                              .db "B", 0, HIGH(IO_LOOKUP_TREE_PINB << 1), LOW(IO_LOOKUP_TREE_PINB << 1)
+0003af 0043
+0003b0 7007                              .db "C", 0, HIGH(IO_LOOKUP_TREE_PINC << 1), LOW(IO_LOOKUP_TREE_PINC << 1)
+0003b1 0044
+0003b2 7407                              .db "D", 0, HIGH(IO_LOOKUP_TREE_PIND << 1), LOW(IO_LOOKUP_TREE_PIND << 1)
+0003b3 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_PINA:
+0003b4 3900                              .db HIGH(0x39), LOW(0x39)
+0003b5 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_PINB:
+0003b6 3600                              .db HIGH(0x36), LOW(0x36)
+0003b7 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_PINC:
+0003b8 3300                              .db HIGH(0x33), LOW(0x33)
+0003b9 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_PIND:
+0003ba 3000                              .db HIGH(0x30), LOW(0x30)
+0003bb 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_PO:
+0003bc 0000                              .db HIGH(0x00), LOW(0x00)
+0003bd 0052
+0003be 8007                              .db "R", 0, HIGH(IO_LOOKUP_TREE_POR << 1), LOW(IO_LOOKUP_TREE_POR << 1)
+0003bf 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_POR:
+0003c0 0000                              .db HIGH(0x00), LOW(0x00)
+0003c1 0054
+0003c2 8807                              .db "T", 0, HIGH(IO_LOOKUP_TREE_PORT << 1), LOW(IO_LOOKUP_TREE_PORT << 1)
+0003c3 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_PORT:
+0003c4 0000                              .db HIGH(0x00), LOW(0x00)
+0003c5 0041
+0003c6 9c07                              .db "A", 0, HIGH(IO_LOOKUP_TREE_PORTA << 1), LOW(IO_LOOKUP_TREE_PORTA << 1)
+0003c7 0042
+0003c8 a007                              .db "B", 0, HIGH(IO_LOOKUP_TREE_PORTB << 1), LOW(IO_LOOKUP_TREE_PORTB << 1)
+0003c9 0043
+0003ca a407                              .db "C", 0, HIGH(IO_LOOKUP_TREE_PORTC << 1), LOW(IO_LOOKUP_TREE_PORTC << 1)
+0003cb 0044
+0003cc a807                              .db "D", 0, HIGH(IO_LOOKUP_TREE_PORTD << 1), LOW(IO_LOOKUP_TREE_PORTD << 1)
+0003cd 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_PORTA:
+0003ce 3b00                              .db HIGH(0x3B), LOW(0x3B)
+0003cf 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_PORTB:
+0003d0 3800                              .db HIGH(0x38), LOW(0x38)
+0003d1 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_PORTC:
+0003d2 3500                              .db HIGH(0x35), LOW(0x35)
+0003d3 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_PORTD:
+0003d4 3200                              .db HIGH(0x32), LOW(0x32)
+0003d5 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_S:
+0003d6 0000                              .db HIGH(0x00), LOW(0x00)
+0003d7 0046
+0003d8 bc07                              .db "F", 0, HIGH(IO_LOOKUP_TREE_SF << 1), LOW(IO_LOOKUP_TREE_SF << 1)
+0003d9 0050
+0003da d807                              .db "P", 0, HIGH(IO_LOOKUP_TREE_SP << 1), LOW(IO_LOOKUP_TREE_SP << 1)
+0003db 0052
+0003dc 3408                              .db "R", 0, HIGH(IO_LOOKUP_TREE_SR << 1), LOW(IO_LOOKUP_TREE_SR << 1)
+0003dd 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_SF:
+0003de 0000                              .db HIGH(0x00), LOW(0x00)
+0003df 0049
+0003e0 c407                              .db "I", 0, HIGH(IO_LOOKUP_TREE_SFI << 1), LOW(IO_LOOKUP_TREE_SFI << 1)
+0003e1 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_SFI:
+0003e2 0000                              .db HIGH(0x00), LOW(0x00)
+0003e3 004f
+0003e4 cc07                              .db "O", 0, HIGH(IO_LOOKUP_TREE_SFIO << 1), LOW(IO_LOOKUP_TREE_SFIO << 1)
+0003e5 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_SFIO:
+0003e6 0000                              .db HIGH(0x00), LOW(0x00)
+0003e7 0052
+0003e8 d407                              .db "R", 0, HIGH(IO_LOOKUP_TREE_SFIOR << 1), LOW(IO_LOOKUP_TREE_SFIOR << 1)
+0003e9 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_SFIOR:
+0003ea 5000                              .db HIGH(0x50), LOW(0x50)
+0003eb 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_SP:
+0003ec 0000                              .db HIGH(0x00), LOW(0x00)
+0003ed 0043
+0003ee f407                              .db "C", 0, HIGH(IO_LOOKUP_TREE_SPC << 1), LOW(IO_LOOKUP_TREE_SPC << 1)
+0003ef 0044
+0003f0 0008                              .db "D", 0, HIGH(IO_LOOKUP_TREE_SPD << 1), LOW(IO_LOOKUP_TREE_SPD << 1)
+0003f1 0048
+0003f2 0c08                              .db "H", 0, HIGH(IO_LOOKUP_TREE_SPH << 1), LOW(IO_LOOKUP_TREE_SPH << 1)
+0003f3 004c
+0003f4 1008                              .db "L", 0, HIGH(IO_LOOKUP_TREE_SPL << 1), LOW(IO_LOOKUP_TREE_SPL << 1)
+0003f5 004d
+0003f6 1408                              .db "M", 0, HIGH(IO_LOOKUP_TREE_SPM << 1), LOW(IO_LOOKUP_TREE_SPM << 1)
+0003f7 0053
+0003f8 2808                              .db "S", 0, HIGH(IO_LOOKUP_TREE_SPS << 1), LOW(IO_LOOKUP_TREE_SPS << 1)
+0003f9 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_SPC:
+0003fa 0000                              .db HIGH(0x00), LOW(0x00)
+0003fb 0052
+0003fc fc07                              .db "R", 0, HIGH(IO_LOOKUP_TREE_SPCR << 1), LOW(IO_LOOKUP_TREE_SPCR << 1)
+0003fd 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_SPCR:
+0003fe 2d00                              .db HIGH(0x2D), LOW(0x2D)
+0003ff 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_SPD:
+000400 0000                              .db HIGH(0x00), LOW(0x00)
+000401 0052
+000402 0808                              .db "R", 0, HIGH(IO_LOOKUP_TREE_SPDR << 1), LOW(IO_LOOKUP_TREE_SPDR << 1)
+000403 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_SPDR:
+000404 2f00                              .db HIGH(0x2F), LOW(0x2F)
+000405 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_SPH:
+000406 5e00                              .db HIGH(0x5E), LOW(0x5E)
+000407 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_SPL:
+000408 5d00                              .db HIGH(0x5D), LOW(0x5D)
+000409 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_SPM:
+00040a 0000                              .db HIGH(0x00), LOW(0x00)
+00040b 0043
+00040c 1c08                              .db "C", 0, HIGH(IO_LOOKUP_TREE_SPMC << 1), LOW(IO_LOOKUP_TREE_SPMC << 1)
+00040d 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_SPMC:
+00040e 0000                              .db HIGH(0x00), LOW(0x00)
+00040f 0052
+000410 2408                              .db "R", 0, HIGH(IO_LOOKUP_TREE_SPMCR << 1), LOW(IO_LOOKUP_TREE_SPMCR << 1)
+000411 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_SPMCR:
+000412 5700                              .db HIGH(0x57), LOW(0x57)
+000413 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_SPS:
+000414 0000                              .db HIGH(0x00), LOW(0x00)
+000415 0052
+000416 3008                              .db "R", 0, HIGH(IO_LOOKUP_TREE_SPSR << 1), LOW(IO_LOOKUP_TREE_SPSR << 1)
+000417 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_SPSR:
+000418 2e00                              .db HIGH(0x2E), LOW(0x2E)
+000419 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_SR:
+00041a 0000                              .db HIGH(0x00), LOW(0x00)
+00041b 0045
+00041c 3c08                              .db "E", 0, HIGH(IO_LOOKUP_TREE_SRE << 1), LOW(IO_LOOKUP_TREE_SRE << 1)
+00041d 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_SRE:
+00041e 0000                              .db HIGH(0x00), LOW(0x00)
+00041f 0047
+000420 4408                              .db "G", 0, HIGH(IO_LOOKUP_TREE_SREG << 1), LOW(IO_LOOKUP_TREE_SREG << 1)
+000421 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_SREG:
+000422 5f00                              .db HIGH(0x5F), LOW(0x5F)
+000423 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_T:
+000424 0000                              .db HIGH(0x00), LOW(0x00)
+000425 0043
+000426 5808                              .db "C", 0, HIGH(IO_LOOKUP_TREE_TC << 1), LOW(IO_LOOKUP_TREE_TC << 1)
+000427 0049
+000428 cc08                              .db "I", 0, HIGH(IO_LOOKUP_TREE_TI << 1), LOW(IO_LOOKUP_TREE_TI << 1)
+000429 0057
+00042a f808                              .db "W", 0, HIGH(IO_LOOKUP_TREE_TW << 1), LOW(IO_LOOKUP_TREE_TW << 1)
+00042b 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_TC:
+00042c 0000                              .db HIGH(0x00), LOW(0x00)
+00042d 0043
+00042e 6408                              .db "C", 0, HIGH(IO_LOOKUP_TREE_TCC << 1), LOW(IO_LOOKUP_TREE_TCC << 1)
+00042f 004e
+000430 9808                              .db "N", 0, HIGH(IO_LOOKUP_TREE_TCN << 1), LOW(IO_LOOKUP_TREE_TCN << 1)
+000431 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_TCC:
+000432 0000                              .db HIGH(0x00), LOW(0x00)
+000433 0052
+000434 6c08                              .db "R", 0, HIGH(IO_LOOKUP_TREE_TCCR << 1), LOW(IO_LOOKUP_TREE_TCCR << 1)
+000435 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_TCCR:
+000436 0000                              .db HIGH(0x00), LOW(0x00)
+000437 0030
+000438 7c08                              .db "0", 0, HIGH(IO_LOOKUP_TREE_TCCR0 << 1), LOW(IO_LOOKUP_TREE_TCCR0 << 1)
+000439 0031
+00043a 8008                              .db "1", 0, HIGH(IO_LOOKUP_TREE_TCCR1 << 1), LOW(IO_LOOKUP_TREE_TCCR1 << 1)
+00043b 0032
+00043c 9408                              .db "2", 0, HIGH(IO_LOOKUP_TREE_TCCR2 << 1), LOW(IO_LOOKUP_TREE_TCCR2 << 1)
+00043d 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_TCCR0:
+00043e 5300                              .db HIGH(0x53), LOW(0x53)
+00043f 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_TCCR1:
+000440 0000                              .db HIGH(0x00), LOW(0x00)
+000441 0041
+000442 8c08                              .db "A", 0, HIGH(IO_LOOKUP_TREE_TCCR1A << 1), LOW(IO_LOOKUP_TREE_TCCR1A << 1)
+000443 0042
+000444 9008                              .db "B", 0, HIGH(IO_LOOKUP_TREE_TCCR1B << 1), LOW(IO_LOOKUP_TREE_TCCR1B << 1)
+000445 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_TCCR1A:
+000446 4f00                              .db HIGH(0x4F), LOW(0x4F)
+000447 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_TCCR1B:
+000448 4e00                              .db HIGH(0x4E), LOW(0x4E)
+000449 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_TCCR2:
+00044a 4500                              .db HIGH(0x45), LOW(0x45)
+00044b 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_TCN:
+00044c 0000                              .db HIGH(0x00), LOW(0x00)
+00044d 0054
+00044e a008                              .db "T", 0, HIGH(IO_LOOKUP_TREE_TCNT << 1), LOW(IO_LOOKUP_TREE_TCNT << 1)
+00044f 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_TCNT:
+000450 0000                              .db HIGH(0x00), LOW(0x00)
+000451 0030
+000452 b008                              .db "0", 0, HIGH(IO_LOOKUP_TREE_TCNT0 << 1), LOW(IO_LOOKUP_TREE_TCNT0 << 1)
+000453 0031
+000454 b408                              .db "1", 0, HIGH(IO_LOOKUP_TREE_TCNT1 << 1), LOW(IO_LOOKUP_TREE_TCNT1 << 1)
+000455 0032
+000456 c808                              .db "2", 0, HIGH(IO_LOOKUP_TREE_TCNT2 << 1), LOW(IO_LOOKUP_TREE_TCNT2 << 1)
+000457 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_TCNT0:
+000458 5200                              .db HIGH(0x52), LOW(0x52)
+000459 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_TCNT1:
+00045a 0000                              .db HIGH(0x00), LOW(0x00)
+00045b 0048
+00045c c008                              .db "H", 0, HIGH(IO_LOOKUP_TREE_TCNT1H << 1), LOW(IO_LOOKUP_TREE_TCNT1H << 1)
+00045d 004c
+00045e c408                              .db "L", 0, HIGH(IO_LOOKUP_TREE_TCNT1L << 1), LOW(IO_LOOKUP_TREE_TCNT1L << 1)
+00045f 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_TCNT1H:
+000460 4d00                              .db HIGH(0x4D), LOW(0x4D)
+000461 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_TCNT1L:
+000462 4c00                              .db HIGH(0x4C), LOW(0x4C)
+000463 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_TCNT2:
+000464 4400                              .db HIGH(0x44), LOW(0x44)
+000465 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_TI:
+000466 0000                              .db HIGH(0x00), LOW(0x00)
+000467 0046
+000468 d808                              .db "F", 0, HIGH(IO_LOOKUP_TREE_TIF << 1), LOW(IO_LOOKUP_TREE_TIF << 1)
+000469 004d
+00046a e408                              .db "M", 0, HIGH(IO_LOOKUP_TREE_TIM << 1), LOW(IO_LOOKUP_TREE_TIM << 1)
+00046b 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_TIF:
+00046c 0000                              .db HIGH(0x00), LOW(0x00)
+00046d 0052
+00046e e008                              .db "R", 0, HIGH(IO_LOOKUP_TREE_TIFR << 1), LOW(IO_LOOKUP_TREE_TIFR << 1)
+00046f 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_TIFR:
+000470 5800                              .db HIGH(0x58), LOW(0x58)
+000471 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_TIM:
+000472 0000                              .db HIGH(0x00), LOW(0x00)
+000473 0053
+000474 ec08                              .db "S", 0, HIGH(IO_LOOKUP_TREE_TIMS << 1), LOW(IO_LOOKUP_TREE_TIMS << 1)
+000475 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_TIMS:
+000476 0000                              .db HIGH(0x00), LOW(0x00)
+000477 004b
+000478 f408                              .db "K", 0, HIGH(IO_LOOKUP_TREE_TIMSK << 1), LOW(IO_LOOKUP_TREE_TIMSK << 1)
+000479 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_TIMSK:
+00047a 5900                              .db HIGH(0x59), LOW(0x59)
+00047b 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_TW:
+00047c 0000                              .db HIGH(0x00), LOW(0x00)
+00047d 0041
+00047e 1009                              .db "A", 0, HIGH(IO_LOOKUP_TREE_TWA << 1), LOW(IO_LOOKUP_TREE_TWA << 1)
+00047f 0042
+000480 1c09                              .db "B", 0, HIGH(IO_LOOKUP_TREE_TWB << 1), LOW(IO_LOOKUP_TREE_TWB << 1)
+000481 0043
+000482 2809                              .db "C", 0, HIGH(IO_LOOKUP_TREE_TWC << 1), LOW(IO_LOOKUP_TREE_TWC << 1)
+000483 0044
+000484 3409                              .db "D", 0, HIGH(IO_LOOKUP_TREE_TWD << 1), LOW(IO_LOOKUP_TREE_TWD << 1)
+000485 0053
+000486 4009                              .db "S", 0, HIGH(IO_LOOKUP_TREE_TWS << 1), LOW(IO_LOOKUP_TREE_TWS << 1)
+000487 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_TWA:
+000488 0000                              .db HIGH(0x00), LOW(0x00)
+000489 0052
+00048a 1809                              .db "R", 0, HIGH(IO_LOOKUP_TREE_TWAR << 1), LOW(IO_LOOKUP_TREE_TWAR << 1)
+00048b 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_TWAR:
+00048c 2200                              .db HIGH(0x22), LOW(0x22)
+00048d 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_TWB:
+00048e 0000                              .db HIGH(0x00), LOW(0x00)
+00048f 0052
+000490 2409                              .db "R", 0, HIGH(IO_LOOKUP_TREE_TWBR << 1), LOW(IO_LOOKUP_TREE_TWBR << 1)
+000491 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_TWBR:
+000492 2000                              .db HIGH(0x20), LOW(0x20)
+000493 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_TWC:
+000494 0000                              .db HIGH(0x00), LOW(0x00)
+000495 0052
+000496 3009                              .db "R", 0, HIGH(IO_LOOKUP_TREE_TWCR << 1), LOW(IO_LOOKUP_TREE_TWCR << 1)
+000497 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_TWCR:
+000498 5600                              .db HIGH(0x56), LOW(0x56)
+000499 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_TWD:
+00049a 0000                              .db HIGH(0x00), LOW(0x00)
+00049b 0052
+00049c 3c09                              .db "R", 0, HIGH(IO_LOOKUP_TREE_TWDR << 1), LOW(IO_LOOKUP_TREE_TWDR << 1)
+00049d 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_TWDR:
+00049e 2300                              .db HIGH(0x23), LOW(0x23)
+00049f 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_TWS:
+0004a0 0000                              .db HIGH(0x00), LOW(0x00)
+0004a1 0052
+0004a2 4809                              .db "R", 0, HIGH(IO_LOOKUP_TREE_TWSR << 1), LOW(IO_LOOKUP_TREE_TWSR << 1)
+0004a3 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_TWSR:
+0004a4 2100                              .db HIGH(0x21), LOW(0x21)
+0004a5 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_U:
+0004a6 0000                              .db HIGH(0x00), LOW(0x00)
+0004a7 0042
+0004a8 6009                              .db "B", 0, HIGH(IO_LOOKUP_TREE_UB << 1), LOW(IO_LOOKUP_TREE_UB << 1)
+0004a9 0043
+0004aa 8409                              .db "C", 0, HIGH(IO_LOOKUP_TREE_UC << 1), LOW(IO_LOOKUP_TREE_UC << 1)
+0004ab 0044
+0004ac a809                              .db "D", 0, HIGH(IO_LOOKUP_TREE_UD << 1), LOW(IO_LOOKUP_TREE_UD << 1)
+0004ad 0052
+0004ae b409                              .db "R", 0, HIGH(IO_LOOKUP_TREE_UR << 1), LOW(IO_LOOKUP_TREE_UR << 1)
+0004af 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_UB:
+0004b0 0000                              .db HIGH(0x00), LOW(0x00)
+0004b1 0052
+0004b2 6809                              .db "R", 0, HIGH(IO_LOOKUP_TREE_UBR << 1), LOW(IO_LOOKUP_TREE_UBR << 1)
+0004b3 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_UBR:
+0004b4 0000                              .db HIGH(0x00), LOW(0x00)
+0004b5 0052
+0004b6 7009                              .db "R", 0, HIGH(IO_LOOKUP_TREE_UBRR << 1), LOW(IO_LOOKUP_TREE_UBRR << 1)
+0004b7 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_UBRR:
+0004b8 0000                              .db HIGH(0x00), LOW(0x00)
+0004b9 0048
+0004ba 7c09                              .db "H", 0, HIGH(IO_LOOKUP_TREE_UBRRH << 1), LOW(IO_LOOKUP_TREE_UBRRH << 1)
+0004bb 004c
+0004bc 8009                              .db "L", 0, HIGH(IO_LOOKUP_TREE_UBRRL << 1), LOW(IO_LOOKUP_TREE_UBRRL << 1)
+0004bd 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_UBRRH:
+0004be 4000                              .db HIGH(0x40), LOW(0x40)
+0004bf 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_UBRRL:
+0004c0 2900                              .db HIGH(0x29), LOW(0x29)
+0004c1 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_UC:
+0004c2 0000                              .db HIGH(0x00), LOW(0x00)
+0004c3 0053
+0004c4 8c09                              .db "S", 0, HIGH(IO_LOOKUP_TREE_UCS << 1), LOW(IO_LOOKUP_TREE_UCS << 1)
+0004c5 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_UCS:
+0004c6 0000                              .db HIGH(0x00), LOW(0x00)
+0004c7 0052
+0004c8 9409                              .db "R", 0, HIGH(IO_LOOKUP_TREE_UCSR << 1), LOW(IO_LOOKUP_TREE_UCSR << 1)
+0004c9 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_UCSR:
+0004ca 0000                              .db HIGH(0x00), LOW(0x00)
+0004cb 0041
+0004cc a009                              .db "A", 0, HIGH(IO_LOOKUP_TREE_UCSRA << 1), LOW(IO_LOOKUP_TREE_UCSRA << 1)
+0004cd 0042
+0004ce a409                              .db "B", 0, HIGH(IO_LOOKUP_TREE_UCSRB << 1), LOW(IO_LOOKUP_TREE_UCSRB << 1)
+0004cf 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_UCSRA:
+0004d0 2b00                              .db HIGH(0x2B), LOW(0x2B)
+0004d1 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_UCSRB:
+0004d2 2a00                              .db HIGH(0x2A), LOW(0x2A)
+0004d3 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_UD:
+0004d4 0000                              .db HIGH(0x00), LOW(0x00)
+0004d5 0052
+0004d6 b009                              .db "R", 0, HIGH(IO_LOOKUP_TREE_UDR << 1), LOW(IO_LOOKUP_TREE_UDR << 1)
+0004d7 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_UDR:
+0004d8 2c00                              .db HIGH(0x2C), LOW(0x2C)
+0004d9 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_UR:
+0004da 0000                              .db HIGH(0x00), LOW(0x00)
+0004db 0053
+0004dc bc09                              .db "S", 0, HIGH(IO_LOOKUP_TREE_URS << 1), LOW(IO_LOOKUP_TREE_URS << 1)
+0004dd 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_URS:
+0004de 0000                              .db HIGH(0x00), LOW(0x00)
+0004df 0045
+0004e0 c409                              .db "E", 0, HIGH(IO_LOOKUP_TREE_URSE << 1), LOW(IO_LOOKUP_TREE_URSE << 1)
+0004e1 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_URSE:
+0004e2 0000                              .db HIGH(0x00), LOW(0x00)
+0004e3 004c
+0004e4 cc09                              .db "L", 0, HIGH(IO_LOOKUP_TREE_URSEL << 1), LOW(IO_LOOKUP_TREE_URSEL << 1)
+0004e5 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_URSEL:
+0004e6 4000                              .db HIGH(0x40), LOW(0x40)
+0004e7 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_W:
+0004e8 0000                              .db HIGH(0x00), LOW(0x00)
+0004e9 0044
+0004ea d809                              .db "D", 0, HIGH(IO_LOOKUP_TREE_WD << 1), LOW(IO_LOOKUP_TREE_WD << 1)
+0004eb 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_WD:
+0004ec 0000                              .db HIGH(0x00), LOW(0x00)
+0004ed 0054
+0004ee e009                              .db "T", 0, HIGH(IO_LOOKUP_TREE_WDT << 1), LOW(IO_LOOKUP_TREE_WDT << 1)
+0004ef 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_WDT:
+0004f0 0000                              .db HIGH(0x00), LOW(0x00)
+0004f1 0043
+0004f2 e809                              .db "C", 0, HIGH(IO_LOOKUP_TREE_WDTC << 1), LOW(IO_LOOKUP_TREE_WDTC << 1)
+0004f3 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_WDTC:
+0004f4 0000                              .db HIGH(0x00), LOW(0x00)
+0004f5 0052
+0004f6 f009                              .db "R", 0, HIGH(IO_LOOKUP_TREE_WDTCR << 1), LOW(IO_LOOKUP_TREE_WDTCR << 1)
+0004f7 0000                              .db 0, 0
+                                 IO_LOOKUP_TREE_WDTCR:
+0004f8 4100                              .db HIGH(0x41), LOW(0x41)
+0004f9 0000                      
+                                 
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 ;; Read IO Register
+                                 ;;
+                                 ;; Inputs:
+                                 ;; - Command Length           <- SP + 5
+                                 ;; - Command String Pointer H <- SP + 4
+                                 ;; - Command String Pointer L <- SP + 3 (First Byte Before Return Address)
+                                 ;;
+                                 ;; Outputs:
+                                 ;; - No Output                -> SP + 5
+                                 ;; - No Output                -> SP + 4
+                                 ;; - No Output                -> SP + 3 (First Byte Before Return Address)
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 
+                                 
+0004fa 5245
+0004fb 4f52
+0004fc 3a52
+0004fd 4920
+0004fe 766e
+0004ff 6c61
+000500 6469
+000501 4920
+000502 706e
+000503 7475
+000504 4620
+000505 726f
+000506 6020
+000507 6552
+000508 6461
+000509 4f49
+00050a 0d60
+00050b 0000                      READ_IO_ERR_MSG: .db "ERROR: Invalid Input For `ReadIO`", ASCII_NEW_LINE, 0, 0
+                                 
+                                 
+                                 READ_IO:
+                                 	.def TEMP = R16
+                                 
+                                 	; Number of pushes
+                                 	.set STACK_OFFSET = 5
+                                 	; Backup Registers
+00050c 930f                      	push TEMP
+00050d 93df                      	push YH
+00050e 93cf                      	push YL
+00050f 93ff                      	push ZH
+000510 93ef                      	push ZL
+                                 
+                                 	; Load Stack Pointer
+                                 	; Y <- SP
+000511 b7de                      	in YH, SPH
+000512 b7cd                      	in YL, SPL
+                                 
+                                 	; Load Command Length
+000513 850a                      	ldd TEMP, Y+(STACK_OFFSET + 5)
+                                 
+                                 	; o (X)+
+000514 3003                      	cpi TEMP, 3
+000515 f0e0                      	brlo READ_IO_ERR
+                                 
+                                 	; Load Command Address
+000516 85f9                      	ldd ZH, Y+(STACK_OFFSET + 4)
+000517 85e8                      	ldd ZL, Y+(STACK_OFFSET + 3)
+                                 
+                                 	; Get string address of IO register name
+000518 9632                      	adiw ZH:ZL, 2
+                                 	; Decrease length by 2
+000519 5002                      	subi TEMP, 2
+                                 
+00051a 930f                      	push TEMP
+00051b 93ff                      	push ZH
+00051c 93ef                      	push ZL
+00051d dd1e                      	rcall ASCII_IO_REG_TO_MEM_ADDR
+00051e 91ef                      	pop ZL
+00051f 91ff                      	pop ZH
+000520 910f                      	pop TEMP
+                                 	; IF (SUBROUTINE ERR != 0) THEN ERR
+000521 3000                      	cpi TEMP, 0
+000522 f479                      	brne READ_IO_ERR
+                                 
+                                 	; Read IO Register Value
+000523 8100                      	ld TEMP, Z
+                                 	; Print as ASCII
+000524 930f                      	push TEMP
+000525 930f                      	push TEMP
+000526 db78                      	rcall HEX_BYTE_TO_ASCII
+                                 	; Get Least Significant Char
+000527 910f                      	pop TEMP
+000528 dc0f                      	rcall PUTCHAR
+000529 930f                      	push TEMP
+00052a dc0d                      	rcall PUTCHAR
+00052b 910f                      	pop TEMP
+00052c 910f                      	pop TEMP
+                                 
+                                 	; Print New Line
+00052d e00d                      	ldi TEMP, ASCII_NEW_LINE
+00052e 930f                      	push TEMP
+00052f dc08                      	rcall PUTCHAR
+000530 910f                      	pop TEMP
+                                 
+000531 c007                      	rjmp READ_IO_RET
+                                 
+                                 	READ_IO_ERR:
+000532 e009                      		ldi TEMP, HIGH(READ_IO_ERR_MSG << 1)
+000533 930f                      		push TEMP
+000534 ef04                      		ldi TEMP, LOW (READ_IO_ERR_MSG << 1)
+000535 930f                      		push TEMP
+000536 dc0e                      		rcall PUTSTR
+000537 910f                      		pop TEMP
+000538 910f                      		pop TEMP
+                                 
+                                 	READ_IO_RET:
+                                 		; Restore Registers
+000539 91ef                      		pop ZL
+00053a 91ff                      		pop ZH
+00053b 91cf                      		pop YL
+00053c 91df                      		pop YH
+00053d 910f                      		pop TEMP
+                                 
+00053e 9508                      		ret
+                                 	
+                                 .INCLUDE "write-io.inc"
+                                 
+                                 ;; Include Guard
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 
+                                 
+                                 .ifdef INCLUDE_WRITE_IO
+                                 .endif
+                                 
+                                 .equ INCLUDE_WRITE_IO = 1
+                                 
+                                 
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 ;; Imports
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 
+                                 
+                                 .INCLUDE "ascii.inc"
+                                 
+                                 ;; Include Guard
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 
+                                 
+                                 .ifdef INCLUDE_ASCII
+                                 .INCLUDE "io.inc"
+                                 
+                                 ;; Include Guard
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 
+                                 
+                                 .ifdef INCLUDE_IO
+                                 .INCLUDE "io-name-to-addr.inc"
+                                 
+                                 ;; Include Guard
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 
+                                 
+                                 .ifdef INCLUDE_IO_NAME_TO_ADDR
+                                 
+                                 
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 ;; Write IO Register
+                                 ;;
+                                 ;; Inputs:
+                                 ;; - Command Length           <- SP + 5
+                                 ;; - Command String Pointer H <- SP + 4
+                                 ;; - Command String Pointer L <- SP + 3 (First Byte Before Return Address)
+                                 ;;
+                                 ;; Outputs:
+                                 ;; - No Output                -> SP + 5
+                                 ;; - No Output                -> SP + 4
+                                 ;; - No Output                -> SP + 3 (First Byte Before Return Address)
+                                 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                                 
+                                 
+00053f 5245
+000540 4f52
+000541 3a52
+000542 4920
+000543 766e
+000544 6c61
+000545 6469
+000546 4920
+000547 706e
+000548 7475
+000549 4620
+00054a 726f
+00054b 6020
+00054c 7257
+00054d 7469
+00054e 4965
+00054f 604f
+000550 000d                      WRITE_IO_ERR_MSG: .db "ERROR: Invalid Input For `WriteIO`", ASCII_NEW_LINE, 0
+000551 4f49
+000552 5220
+000553 6765
+000554 7369
+000555 6574
+000556 2072
+000557 7257
+000558 7469
+000559 2065
+00055a 6f43
+00055b 706d
+00055c 656c
+00055d 6574
+00055e 000d                      WRITE_IO_SUC_MSG: .db "IO Register Write Complete", ASCII_NEW_LINE, 0
+                                 
+                                 
+                                 WRITE_IO:
+                                 	.def TEMP = R16
+                                 	.def BYTE = R17
+                                 
+                                 	; Number of pushes
+                                 	.set STACK_OFFSET = 6
+                                 	; Backup Registers
+00055f 930f                      	push TEMP
+000560 931f                      	push BYTE
+000561 93df                      	push YH
+000562 93cf                      	push YL
+000563 93ff                      	push ZH
+000564 93ef                      	push ZL
+                                 
+                                 	; Load Stack Pointer
+                                 	; Y <- SP
+000565 b7de                      	in YH, SPH
+000566 b7cd                      	in YL, SPL
+                                 
+                                 	; Load Command Length
+000567 850b                      	ldd TEMP, Y+(STACK_OFFSET + 5)
+                                 
+                                 	; i YY (X)+
+000568 3006                      	cpi TEMP, 6
+000569 f110                      	brlo WRITE_IO_ERR
+                                 
+                                 	; Load Command Address
+00056a 85fa                      	ldd ZH, Y+(STACK_OFFSET + 4)
+00056b 85e9                      	ldd ZL, Y+(STACK_OFFSET + 3)
+                                 
+                                 	; Get string address of byte to store
+00056c 9632                      	adiw ZH:ZL, 2
+                                 
+00056d e000                      	ldi TEMP, 0
+00056e 930f                      	push TEMP
+00056f 93ff                      	push ZH
+000570 93ef                      	push ZL
+000571 dac4                      	rcall ASCII_WORD_TO_HEX
+000572 911f                      	pop BYTE
+000573 910f                      	pop TEMP
+000574 910f                      	pop TEMP
+                                 	; IF (SUBROUTINE ERR != 0) THEN ERR
+000575 3000                      	cpi TEMP, 0
+000576 f4a9                      	brne WRITE_IO_ERR
+                                 
+                                 	; Get string address of IO register name
+000577 9633                      	adiw ZH:ZL, 3
+                                 	; Load Command Length
+000578 850b                      	ldd TEMP, Y+(STACK_OFFSET + 5)
+                                 	; Decrease length by 5
+000579 5005                      	subi TEMP, 5
+                                 
+00057a 930f                      	push TEMP
+00057b 93ff                      	push ZH
+00057c 93ef                      	push ZL
+00057d dcbe                      	rcall ASCII_IO_REG_TO_MEM_ADDR
+00057e 91ef                      	pop ZL
+00057f 91ff                      	pop ZH
+000580 910f                      	pop TEMP
+                                 	; IF (SUBROUTINE ERR != 0) THEN ERR
+000581 3000                      	cpi TEMP, 0
+000582 f449                      	brne WRITE_IO_ERR
+                                 
+000583 8310                      	st Z, BYTE
+                                 
+000584 e00a                      	ldi TEMP, HIGH(WRITE_IO_SUC_MSG << 1)
+000585 930f                      	push TEMP
+000586 ea02                      	ldi TEMP, LOW (WRITE_IO_SUC_MSG << 1)
+000587 930f                      	push TEMP
+000588 dbbc                      	rcall PUTSTR
+000589 910f                      	pop TEMP
+00058a 910f                      	pop TEMP
+                                 
+00058b c007                      	rjmp WRITE_IO_RET
+                                 
+                                 	WRITE_IO_ERR:
+00058c e00a                      		ldi TEMP, HIGH(WRITE_IO_ERR_MSG << 1)
+00058d 930f                      		push TEMP
+00058e e70e                      		ldi TEMP, LOW (WRITE_IO_ERR_MSG << 1)
+00058f 930f                      		push TEMP
+000590 dbb4                      		rcall PUTSTR
+000591 910f                      		pop TEMP
+000592 910f                      		pop TEMP
+                                 
+                                 	WRITE_IO_RET:
+                                 		; Restore Registers
+000593 91ef                      		pop ZL
+000594 91ff                      		pop ZH
+000595 91cf                      		pop YL
+000596 91df                      		pop YH
+000597 911f                      		pop BYTE
+000598 910f                      		pop TEMP
+                                 
+000599 9508                      		ret
+                                 	
+                                 	.undef TEMP
                                  
                                  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
                                  ;; # Program Memory Constants
@@ -2008,23 +3317,23 @@ C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29,
                                  
                                  
                                  PROMPT:
-00023c 4746
-00023d 3e3e
-00023e 203e
-00023f 0000                      	.db "FG>>> ", 0, 0
+00059a 4746
+00059b 3e3e
+00059c 203e
+00059d 0000                      	.db "FG>>> ", 0, 0
                                  EXEC_INVALID_CMD:
-000240 5245
-000241 4f52
-000242 3a52
-000243 4920
-000244 766e
-000245 6c61
-000246 6469
-000247 4320
-000248 6d6f
-000249 616d
-00024a 646e
-00024b 000d                      	.db "ERROR: Invalid Command", ASCII_NEW_LINE, 0
+00059e 5245
+00059f 4f52
+0005a0 3a52
+0005a1 4920
+0005a2 766e
+0005a3 6c61
+0005a4 6469
+0005a5 4320
+0005a6 6d6f
+0005a7 616d
+0005a8 646e
+0005a9 000d                      	.db "ERROR: Invalid Command", ASCII_NEW_LINE, 0
                                  
                                  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
                                  ;; # Main Routine
@@ -2035,40 +3344,40 @@ C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29,
                                  	.def TEMP = R16
                                  
                                  	; Initialize Stack Pointer
-00024c e008                      	ldi TEMP, HIGH(RAMEND)
-00024d bf0e                      	out SPH, TEMP
-00024e e50f                      	ldi TEMP, LOW(RAMEND)
-00024f bf0d                      	out SPL, TEMP
+0005aa e008                      	ldi TEMP, HIGH(RAMEND)
+0005ab bf0e                      	out SPH, TEMP
+0005ac e50f                      	ldi TEMP, LOW(RAMEND)
+0005ad bf0d                      	out SPL, TEMP
                                  
                                  	; Initialize USART BEGIN
                                  
                                  	; Set Baud Rate
-000250 e000                      	ldi TEMP, HIGH(BAUD_UBRR)
-000251 bd00                      	out UBRRH, TEMP
-000252 e109                      	ldi TEMP, LOW(BAUD_UBRR)
-000253 b909                      	out UBRRL, TEMP
+0005ae e000                      	ldi TEMP, HIGH(BAUD_UBRR)
+0005af bd00                      	out UBRRH, TEMP
+0005b0 e109                      	ldi TEMP, LOW(BAUD_UBRR)
+0005b1 b909                      	out UBRRL, TEMP
                                  
                                  	; TXEN  -> Enable Transmitter
                                  	; RXEN  -> Enable Receiver
                                  	; RXCIE -> Enable Rx Complete Interrupt
-000254 e908                      	ldi TEMP, (1 << RXCIE) | (1 << RXEN) | (1 << TXEN)
-000255 b90a                      	out UCSRB, TEMP
+0005b2 e908                      	ldi TEMP, (1 << RXCIE) | (1 << RXEN) | (1 << TXEN)
+0005b3 b90a                      	out UCSRB, TEMP
                                  
                                  	; Set Frame Format:	; - 8 Data Bits	; - 2 Stop Bits	ldi TEMP, (1 << URSEL) | (1 << USBS) | (1 << UCSZ0) | (1 << UCSZ1)	out UCSRC, TEMP
                                  
                                  	; Initialize USART END
                                  
                                  	; Initialie command index to 0
-000256 e0f0                      	ldi ZH, HIGH(CMD_IDX)
-000257 ece4                      	ldi ZL, LOW (CMD_IDX)
-000258 2700                      	clr TEMP
-000259 8300                      	st Z, TEMP
+0005b4 e0f0                      	ldi ZH, HIGH(CMD_IDX)
+0005b5 ece4                      	ldi ZL, LOW (CMD_IDX)
+0005b6 2700                      	clr TEMP
+0005b7 8300                      	st Z, TEMP
                                  
                                  	; Enable Global Interrupts
-00025a 9478                          sei
+0005b8 9478                          sei
                                  
                                  	RESET_LOOP:
-00025b cfff                      		rjmp RESET_LOOP
+0005b9 cfff                      		rjmp RESET_LOOP
                                  
                                  	; Clear Register Aliases
                                  	.undef TEMP
@@ -2084,32 +3393,32 @@ C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29,
                                  	.def IDX  = R18
                                  
                                  	; Backup Registers
-00025c 930f                      	push TEMP
-00025d b70f                      	in TEMP, SREG
-00025e 930f                      	push TEMP
-00025f 93ff                      	push ZH
-000260 93ef                      	push ZL
-000261 93df                      	push YH
-000262 93cf                      	push YL
-000263 931f                      	push CHAR
-000264 932f                      	push IDX
+0005ba 930f                      	push TEMP
+0005bb b70f                      	in TEMP, SREG
+0005bc 930f                      	push TEMP
+0005bd 93ff                      	push ZH
+0005be 93ef                      	push ZL
+0005bf 93df                      	push YH
+0005c0 93cf                      	push YL
+0005c1 931f                      	push CHAR
+0005c2 932f                      	push IDX
                                  
                                  	; Read ASCII Character
-000265 b11c                      	in CHAR, UDR
+0005c3 b11c                      	in CHAR, UDR
                                  
                                  	; Read command index
-000266 e0f0                      	ldi ZH, HIGH(CMD_IDX)
-000267 ece4                      	ldi ZL, LOW (CMD_IDX)
-000268 8120                      	ld IDX, Z
+0005c4 e0f0                      	ldi ZH, HIGH(CMD_IDX)
+0005c5 ece4                      	ldi ZL, LOW (CMD_IDX)
+0005c6 8120                      	ld IDX, Z
                                  
-000269 301d                      	cpi CHAR, ASCII_NEW_LINE
+0005c7 301d                      	cpi CHAR, ASCII_NEW_LINE
                                  
-00026a f471                      	brne USART_RX_COMPLETE_NOT_DONE
+0005c8 f471                      	brne USART_RX_COMPLETE_NOT_DONE
                                  
-00026b e00d                      	ldi R16, ASCII_NEW_LINE
-00026c 930f                      	push R16
-00026d deca                      	rcall PUTCHAR
-00026e 910f                      	pop R16
+0005c9 e00d                      	ldi R16, ASCII_NEW_LINE
+0005ca 930f                      	push R16
+0005cb db6c                      	rcall PUTCHAR
+0005cc 910f                      	pop R16
                                  	
                                  	; r $begaddress $endaddress					-- read from sram
                                  	; w $begaddress $endaddress $bytestowrite	-- write to sram
@@ -2119,86 +3428,86 @@ C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29,
                                  	; i $name $byte								-- write to io
                                  	; p $seconds $anyoftheabovecommands			-- repeat command
                                  	; TODO: dont forget to pass parameter
-00026f 930f                      	push R16
-000270 931f                      	push R17
+0005cd 930f                      	push R16
+0005ce 931f                      	push R17
                                  	
-000271 e600                      	ldi R16, LOW(CMD)
-000272 e010                      	ldi R17, HIGH(CMD)
+0005cf e600                      	ldi R16, LOW(CMD)
+0005d0 e010                      	ldi R17, HIGH(CMD)
                                  	
-000273 d02d                      	rcall EXECUTE
+0005d1 d02d                      	rcall EXECUTE
                                  
-000274 911f                      	pop R17
-000275 910f                      	pop R16
+0005d2 911f                      	pop R17
+0005d3 910f                      	pop R16
                                  
                                  	; Reset index
-000276 2722                      	clr IDX
-000277 8320                      	st Z, IDX
+0005d4 2722                      	clr IDX
+0005d5 8320                      	st Z, IDX
                                  
-000278 c01e                      	rjmp USART_RX_COMPLETE_RET
+0005d6 c01e                      	rjmp USART_RX_COMPLETE_RET
                                  
                                  	USART_RX_COMPLETE_NOT_DONE:
-000279 3018                      		cpi CHAR, ASCII_BACKSPACE
+0005d7 3018                      		cpi CHAR, ASCII_BACKSPACE
                                  
-00027a f471                      		brne USART_RX_COMPLETE_NOT_BACKSPACE
+0005d8 f471                      		brne USART_RX_COMPLETE_NOT_BACKSPACE
                                  
-00027b 3020                      		cpi IDX, 0
-00027c f0d1                      		breq USART_RX_COMPLETE_RET
+0005d9 3020                      		cpi IDX, 0
+0005da f0d1                      		breq USART_RX_COMPLETE_RET
                                  
-00027d 952a                      		dec IDX
-00027e 8320                      		st Z, IDX
+0005db 952a                      		dec IDX
+0005dc 8320                      		st Z, IDX
                                  		; Echo backspace back
                                  		; Backspace -> Space -> Backspace
-00027f e008                      		ldi R16, ASCII_BACKSPACE
-000280 930f                      		push R16
-000281 deb6                      		rcall PUTCHAR
-000282 e200                      		ldi R16, ASCII_SPACE
-000283 930f                      		push R16
-000284 deb3                      		rcall PUTCHAR
-000285 910f                      		pop R16
-000286 deb1                      		rcall PUTCHAR
-000287 910f                      		pop R16
+0005dd e008                      		ldi R16, ASCII_BACKSPACE
+0005de 930f                      		push R16
+0005df db58                      		rcall PUTCHAR
+0005e0 e200                      		ldi R16, ASCII_SPACE
+0005e1 930f                      		push R16
+0005e2 db55                      		rcall PUTCHAR
+0005e3 910f                      		pop R16
+0005e4 db53                      		rcall PUTCHAR
+0005e5 910f                      		pop R16
                                  
-000288 c00e                      		rjmp USART_RX_COMPLETE_RET
+0005e6 c00e                      		rjmp USART_RX_COMPLETE_RET
                                  
                                  	USART_RX_COMPLETE_NOT_BACKSPACE:
                                  		; Handle full command buffer
-000289 3624                      		cpi IDX, CMD_MAX_LEN
+0005e7 3624                      		cpi IDX, CMD_MAX_LEN
                                  
-00028a f061                      		breq USART_RX_COMPLETE_RET
+0005e8 f061                      		breq USART_RX_COMPLETE_RET
                                  
                                  		; Get next-character index
-00028b e0d0                      		ldi YH, HIGH(CMD)
-00028c e6c0                      		ldi YL, LOW(CMD)
-00028d 0fc2                      		add YL, IDX
-00028e 2700                      		clr TEMP
-00028f 1fd0                      		adc YH, TEMP
+0005e9 e0d0                      		ldi YH, HIGH(CMD)
+0005ea e6c0                      		ldi YL, LOW(CMD)
+0005eb 0fc2                      		add YL, IDX
+0005ec 2700                      		clr TEMP
+0005ed 1fd0                      		adc YH, TEMP
                                  
                                  		; Store character
-000290 8318                      		st Y, CHAR
+0005ee 8318                      		st Y, CHAR
                                  	
                                  		; Increment index
-000291 9523                      		inc IDX
-000292 8320                      		st Z, IDX
+0005ef 9523                      		inc IDX
+0005f0 8320                      		st Z, IDX
                                  
                                  		; Echo character back
-000293 2f01                      		mov R16, CHAR
-000294 930f                      		push R16
-000295 dea2                      		rcall PUTCHAR
-000296 910f                      		pop R16
+0005f1 2f01                      		mov R16, CHAR
+0005f2 930f                      		push R16
+0005f3 db44                      		rcall PUTCHAR
+0005f4 910f                      		pop R16
                                  
                                  	USART_RX_COMPLETE_RET:
                                  		; Restore Registers
-000297 912f                      		pop IDX
-000298 911f                      		pop CHAR
-000299 91cf                      		pop YL
-00029a 91df                      		pop YH
-00029b 91ef                      		pop ZL
-00029c 91ff                      		pop ZH
-00029d 910f                      		pop TEMP
-00029e bf0f                      		out SREG, TEMP
-00029f 910f                      		pop TEMP
+0005f5 912f                      		pop IDX
+0005f6 911f                      		pop CHAR
+0005f7 91cf                      		pop YL
+0005f8 91df                      		pop YH
+0005f9 91ef                      		pop ZL
+0005fa 91ff                      		pop ZH
+0005fb 910f                      		pop TEMP
+0005fc bf0f                      		out SREG, TEMP
+0005fd 910f                      		pop TEMP
                                  
-0002a0 9518                      		reti
+0005fe 9518                      		reti
                                  
                                  	; Clear Register Aliases
                                  	.undef TEMP
@@ -2222,101 +3531,113 @@ C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29,
                                  	.def CHAR  = R19
                                  	.def TEMP  = R20
                                  	
-0002a1 934f                      	push TEMP
-0002a2 93cf                      	push YL
-0002a3 93df                      	push YH
+0005ff 934f                      	push TEMP
+000600 93cf                      	push YL
+000601 93df                      	push YH
                                  
                                  	; Empty command
-0002a4 3022                      	cpi IDX, 2
-0002a5 f188                      	brlo EXECUTE_INVALID
+000602 3022                      	cpi IDX, 2
+000603 f1e8                      	brlo EXECUTE_INVALID
                                  
-0002a6 2fd1                      	mov YH, ADDRH
-0002a7 2fc0                      	mov YL,	ADDRL
-0002a8 8138                      	ld	CHAR, Y
+000604 2fd1                      	mov YH, ADDRH
+000605 2fc0                      	mov YL,	ADDRL
+000606 8138                      	ld	CHAR, Y
                                  	
-0002a9 95c3                      	inc YL
-0002aa 2744                      	clr TEMP
-0002ab 1fd4                      	adc YH, TEMP
-0002ac 8148                      	ld	TEMP, Y
+000607 95c3                      	inc YL
+000608 2744                      	clr TEMP
+000609 1fd4                      	adc YH, TEMP
+00060a 8148                      	ld	TEMP, Y
                                  
-0002ad 3240                      	cpi TEMP, ASCII_SPACE
-0002ae f541                      	brne EXECUTE_INVALID
+00060b 3240                      	cpi TEMP, ASCII_SPACE
+00060c f5a1                      	brne EXECUTE_INVALID
                                  
-0002af 3732                      	cpi CHAR, ASCII_LOWER_R
-0002b0 f441                      	brne EXECUTE_W
-0002b1 932f                      	push IDX
-0002b2 931f                      	push ADDRH
-0002b3 930f                      	push ADDRL
-0002b4 deb9                      	rcall READ_MEM
-0002b5 914f                      	pop TEMP
-0002b6 914f                      	pop TEMP
-0002b7 914f                      	pop TEMP
-0002b8 c025                      	rjmp  EXECUTE_RET
+00060d 3732                      	cpi CHAR, ASCII_LOWER_R
+00060e f441                      	brne EXECUTE_W
+00060f 932f                      	push IDX
+000610 931f                      	push ADDRH
+000611 930f                      	push ADDRL
+000612 db5b                      	rcall READ_MEM
+000613 914f                      	pop TEMP
+000614 914f                      	pop TEMP
+000615 914f                      	pop TEMP
+000616 c031                      	rjmp  EXECUTE_RET
                                  
                                  	EXECUTE_W:
-0002b9 3737                      		cpi CHAR, ASCII_LOWER_W
-0002ba f441                      		brne EXECUTE_G
-0002bb 932f                      		push IDX
-0002bc 931f                      		push ADDRH
-0002bd 930f                      		push ADDRL
-0002be df24                      		rcall WRITE_MEM
-0002bf 914f                      		pop TEMP
-0002c0 914f                      		pop TEMP
-0002c1 914f                      		pop TEMP
-0002c2 c01b                      		rjmp  EXECUTE_RET
+000617 3737                      		cpi CHAR, ASCII_LOWER_W
+000618 f441                      		brne EXECUTE_G
+000619 932f                      		push IDX
+00061a 931f                      		push ADDRH
+00061b 930f                      		push ADDRL
+00061c dbc6                      		rcall WRITE_MEM
+00061d 914f                      		pop TEMP
+00061e 914f                      		pop TEMP
+00061f 914f                      		pop TEMP
+000620 c027                      		rjmp  EXECUTE_RET
                                  	EXECUTE_G:
-0002c3 3637                      		cpi CHAR, ASCII_LOWER_G
-0002c4 f411                      		brne EXECUTE_S
-0002c5 d023                      		rcall READ_REGISTER
-0002c6 c017                      		rjmp  EXECUTE_RET
+000621 3637                      		cpi CHAR, ASCII_LOWER_G
+000622 f411                      		brne EXECUTE_S
+000623 d02f                      		rcall READ_REGISTER
+000624 c023                      		rjmp  EXECUTE_RET
                                  	EXECUTE_S:
-0002c7 3733                      		cpi CHAR, ASCII_LOWER_S
-0002c8 f411                      		brne EXECUTE_O
-0002c9 d020                      		rcall WRITE_REGISTER
-0002ca c013                      		rjmp  EXECUTE_RET
+000625 3733                      		cpi CHAR, ASCII_LOWER_S
+000626 f411                      		brne EXECUTE_O
+000627 d02c                      		rcall WRITE_REGISTER
+000628 c01f                      		rjmp  EXECUTE_RET
                                  	EXECUTE_O:
-0002cb 363f                      		cpi CHAR, ASCII_LOWER_O
-0002cc f411                      		brne EXECUTE_I
-0002cd d01d                      		rcall READ_IO
-0002ce c00f                      		rjmp  EXECUTE_RET
+000629 363f                      		cpi CHAR, ASCII_LOWER_O
+00062a f441                      		brne EXECUTE_I
+00062b 932f                      		push IDX
+00062c 931f                      		push ADDRH
+00062d 930f                      		push ADDRL
+00062e dedd                      		rcall READ_IO
+00062f 914f                      		pop TEMP
+000630 914f                      		pop TEMP
+000631 914f                      		pop TEMP
+000632 c015                      		rjmp  EXECUTE_RET
                                  
                                  	EXECUTE_I:
-0002cf 3639                      		cpi CHAR, ASCII_LOWER_I
-0002d0 f411                      		brne EXECUTE_P
-0002d1 d01a                      		rcall WRITE_IO
-0002d2 c00b                      		rjmp  EXECUTE_RET
+000633 3639                      		cpi CHAR, ASCII_LOWER_I
+000634 f441                      		brne EXECUTE_P
+000635 932f                      		push IDX
+000636 931f                      		push ADDRH
+000637 930f                      		push ADDRL
+000638 df26                      		rcall WRITE_IO
+000639 914f                      		pop TEMP
+00063a 914f                      		pop TEMP
+00063b 914f                      		pop TEMP
+00063c c00b                      		rjmp  EXECUTE_RET
                                  
                                  	EXECUTE_P:
-0002d3 3730                      		cpi CHAR, ASCII_LOWER_P
-0002d4 f411                      		brne EXECUTE_INVALID
-0002d5 d017                      		rcall REPEAT_CMD
-0002d6 c007                      		rjmp  EXECUTE_RET
+00063d 3730                      		cpi CHAR, ASCII_LOWER_P
+00063e f411                      		brne EXECUTE_INVALID
+00063f d015                      		rcall REPEAT_CMD
+000640 c007                      		rjmp  EXECUTE_RET
                                  	
                                  	EXECUTE_INVALID:
                                  		; Print Error
-0002d7 e044                      		ldi TEMP, HIGH(EXEC_INVALID_CMD << 1)
-0002d8 934f                      		push TEMP
-0002d9 e840                      		ldi TEMP, LOW (EXEC_INVALID_CMD << 1)
-0002da 934f                      		push TEMP
-0002db de69                      		rcall PUTSTR
-0002dc 914f                      		pop TEMP
-0002dd 914f                      		pop TEMP
+000641 e04b                      		ldi TEMP, HIGH(EXEC_INVALID_CMD << 1)
+000642 934f                      		push TEMP
+000643 e34c                      		ldi TEMP, LOW (EXEC_INVALID_CMD << 1)
+000644 934f                      		push TEMP
+000645 daff                      		rcall PUTSTR
+000646 914f                      		pop TEMP
+000647 914f                      		pop TEMP
                                  
                                  	EXECUTE_RET:
                                  		; Print Prompt
-0002de e044                      		ldi TEMP, HIGH(PROMPT << 1)
-0002df 934f                      		push TEMP
-0002e0 e748                      		ldi TEMP, LOW (PROMPT << 1)
-0002e1 934f                      		push TEMP
-0002e2 de62                      		rcall PUTSTR
-0002e3 914f                      		pop TEMP
-0002e4 914f                      		pop TEMP
+000648 e04b                      		ldi TEMP, HIGH(PROMPT << 1)
+000649 934f                      		push TEMP
+00064a e344                      		ldi TEMP, LOW (PROMPT << 1)
+00064b 934f                      		push TEMP
+00064c daf8                      		rcall PUTSTR
+00064d 914f                      		pop TEMP
+00064e 914f                      		pop TEMP
                                  
-0002e5 91df                      		pop YH
-0002e6 91cf                      		pop YL
-0002e7 914f                      		pop TEMP
+00064f 91df                      		pop YH
+000650 91cf                      		pop YL
+000651 914f                      		pop TEMP
                                  	
-0002e8 9508                      		ret
+000652 9508                      		ret
                                  
                                  	.undef ADDRL
                                  	.undef ADDRH
@@ -2325,16 +3646,10 @@ C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29,
                                  	.undef TEMP
                                  
                                  READ_REGISTER:
-0002e9 9508                      ret
+000653 9508                      ret
                                  
                                  WRITE_REGISTER:
-0002ea 9508                      ret
-                                 
-                                 READ_IO:
-0002eb 9508                      ret
-                                 
-                                 WRITE_IO:
-0002ec 9508                      ret
+000654 9508                      ret
                                  
                                  REPEAT_CMD:
 
@@ -2354,39 +3669,39 @@ counted separately from r26..r31 here.
 .dseg memory usage only counts static data declared with .byte
 
 "ATmega32" register use summary:
-x  :   0 y  :  31 z  :  12 r0 :   0 r1 :   0 r2 :   0 r3 :   0 r4 :   0 
+x  :   0 y  :  43 z  :  22 r0 :   0 r1 :   0 r2 :   0 r3 :   0 r4 :   0 
 r5 :   0 r6 :   0 r7 :   0 r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 
-r13:   0 r14:   0 r15:   0 r16: 172 r17:  47 r18:  28 r19:   8 r20:  24 
-r21:   0 r22:   0 r23:   0 r24:   0 r25:   0 r26:   0 r27:   0 r28:  39 
-r29:  39 r30:  44 r31:  44 
+r13:   0 r14:   0 r15:   0 r16: 228 r17:  59 r18:  35 r19:  23 r20:  30 
+r21:   0 r22:   0 r23:   0 r24:   0 r25:   0 r26:   0 r27:   0 r28:  50 
+r29:  50 r30:  68 r31:  68 
 Registers used: 11 out of 35 (31.4%)
 
 "ATmega32" instruction use summary:
-.lds  :   0 .sts  :   0 adc   :   3 add   :   2 adiw  :  10 and   :   0 
+.lds  :   0 .sts  :   0 adc   :   3 add   :   2 adiw  :  19 and   :   0 
 andi  :   2 asr   :   0 bclr  :   0 bld   :   0 brbc  :   0 brbs  :   0 
-brcc  :   0 brcs  :   0 break :   0 breq  :   4 brge  :   0 brhc  :   0 
-brhs  :   0 brid  :   0 brie  :   0 brlo  :   7 brlt  :   0 brmi  :   0 
-brne  :  26 brpl  :   0 brsh  :   1 brtc  :   0 brts  :   0 brvc  :   0 
+brcc  :   0 brcs  :   0 break :   0 breq  :   6 brge  :   0 brhc  :   0 
+brhs  :   0 brid  :   0 brie  :   0 brlo  :  10 brlt  :   0 brmi  :   0 
+brne  :  29 brpl  :   0 brsh  :   1 brtc  :   0 brts  :   0 brvc  :   0 
 brvs  :   0 bset  :   0 bst   :   0 call  :   0 cbi   :   0 cbr   :   0 
 clc   :   0 clh   :   0 cli   :   0 cln   :   0 clr   :   4 cls   :   0 
-clt   :   0 clv   :   0 clz   :   0 com   :   0 cp    :   6 cpc   :   0 
-cpi   :  28 cpse  :   0 dec   :   1 eor   :   0 fmul  :   0 fmuls :   0 
-fmulsu:   0 icall :   0 ijmp  :   0 in    :  20 inc   :   4 jmp   :   2 
-ld    :   9 ldd   :  16 ldi   :  46 lds   :   0 lpm   :   4 lsl   :   4 
-lsr   :   1 mov   :   5 movw  :   0 mul   :   0 muls  :   0 mulsu :   0 
-neg   :   0 nop   :   0 or    :   1 ori   :   0 out   :   7 pop   : 113 
-push  : 113 rcall :  36 ret   :  15 reti  :   1 rjmp  :  19 rol   :   0 
+clt   :   0 clv   :   0 clz   :   0 com   :   0 cp    :   8 cpc   :   0 
+cpi   :  34 cpse  :   0 dec   :   1 eor   :   0 fmul  :   0 fmuls :   0 
+fmulsu:   0 icall :   0 ijmp  :   0 in    :  28 inc   :   5 jmp   :   2 
+ld    :  11 ldd   :  26 ldi   :  59 lds   :   0 lpm   :  14 lsl   :   4 
+lsr   :   1 mov   :   7 movw  :   0 mul   :   0 muls  :   0 mulsu :   0 
+neg   :   0 nop   :   0 or    :   1 ori   :   0 out   :   7 pop   : 157 
+push  : 157 rcall :  46 ret   :  16 reti  :   1 rjmp  :  23 rol   :   0 
 ror   :   0 sbc   :   0 sbci  :   0 sbi   :   0 sbic  :   0 sbis  :   1 
 sbiw  :   0 sbr   :   0 sbrc  :   0 sbrs  :   1 sec   :   0 seh   :   0 
 sei   :   1 sen   :   0 ser   :   0 ses   :   0 set   :   0 sev   :   0 
-sez   :   0 sleep :   0 spm   :   0 st    :   6 std   :  10 sts   :   0 
-sub   :   0 subi  :   3 swap  :   1 tst   :   0 wdr   :   0 
+sez   :   0 sleep :   0 spm   :   0 st    :   7 std   :  14 sts   :   0 
+sub   :   0 subi  :   5 swap  :   1 tst   :   0 wdr   :   0 
 Instructions used: 37 out of 113 (32.7%)
 
 "ATmega32" memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x0005dc   1066    386   1452   32768   4.4%
+[.cseg] 0x000000 0x000cac   1418   1778   3196   32768   9.8%
 [.dseg] 0x000060 0x0000c5      0    101    101    2048   4.9%
 [.eseg] 0x000000 0x000000      0      0      0    1024   0.0%
 
