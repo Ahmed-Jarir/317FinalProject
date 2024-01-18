@@ -53,7 +53,13 @@
 .equ BAUD_UBRR = (F_OSC / (16 * BAUD_RATE)) - 1
 
 ; Maximum Command Length
-.equ CMD_MAX_LEN = 100
+.equ CMD_MAX_LEN     = 32
+.equ MAX_REPEAT_CMDS = 4
+; 1           Byte  -> Counter
+; 1           Byte  -> Interval
+; 1           Byte  -> Command Length
+; CMD_MAX_LEN Bytes -> Command
+.equ REPEAT_CMD_LEN  = CMD_MAX_LEN + 3
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -66,6 +72,9 @@
 
 CMD    : .byte CMD_MAX_LEN
 CMD_IDX: .byte 1
+
+REPEAT_CMDS: .byte REPEAT_CMD_LEN * MAX_REPEAT_CMDS
+REPEAT_IDX : .byte 1
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -93,15 +102,12 @@ CMD_IDX: .byte 1
 .INCLUDE "write-mem.inc"
 .INCLUDE "read-io.inc"
 .INCLUDE "write-io.inc"
-.INCLUDE "repeat-cmd.inc"
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; # Program Memory Constants
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-
-.cseg
 
 PROMPT:
 	.db "FG>>> ", 0, 0
@@ -142,9 +148,15 @@ RESET:
 
 	; Initialize USART END
 
-	; Initialie command index to 0
+	; Initialize command index to 0
 	ldi ZH, HIGH(CMD_IDX)
 	ldi ZL, LOW (CMD_IDX)
+	clr TEMP
+	st Z, TEMP
+
+	; Initialize repeat index to 0
+	ldi ZH, HIGH(REPEAT_IDX)
+	ldi ZL, LOW (REPEAT_IDX)
 	clr TEMP
 	st Z, TEMP
 
@@ -321,6 +333,10 @@ USART_RX_COMPLETE:
 ;;   i $IO_REG_NAME $BYTE
 ;; - Repeat Command:
 ;;   p $SECONDS $COMMAND
+;; - List Repeated Commands:
+;;   l
+;; - Deleted Repeated Command:
+;;   d $IDX
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
@@ -351,13 +367,15 @@ EXECUTE:
 	push TEMP
 
 	; Empty command
-	cpi TEMP, 2
-	brlo EXECUTE_INVALID
+	cpi TEMP, 0
+	breq EXECUTE_INVALID
 
 	; Load Command Address
 	ldd ZH, Y+(STACK_OFFSET + 4)
 	ldd ZL, Y+(STACK_OFFSET + 3)
 
+	cpi TEMP, 1
+	breq SKIP_SPACE_CHECK
 	; Get second character
 	push ZH
 	push ZL
@@ -368,6 +386,8 @@ EXECUTE:
 	
 	cpi TEMP, ASCII_SPACE
 	brne EXECUTE_INVALID
+
+	SKIP_SPACE_CHECK:
 
 	; Remove Dummy Pushes
 	pop TEMP
@@ -404,8 +424,20 @@ EXECUTE:
 
 	EXECUTE_P:
 		cpi TEMP, ASCII_LOWER_P
-		brne EXECUTE_INVALID
+		brne EXECUTE_L
 		rcall REPEAT_CMD
+		rjmp  EXECUTE_RET
+
+	EXECUTE_L:
+		cpi TEMP, ASCII_LOWER_L
+		brne EXECUTE_D
+		rcall LIST_REPEAT_CMD
+		rjmp  EXECUTE_RET
+
+	EXECUTE_D:
+		cpi TEMP, ASCII_LOWER_D
+		brne EXECUTE_INVALID
+		rcall DEL_REPEAT_CMD
 		rjmp  EXECUTE_RET
 	
 	EXECUTE_INVALID:
@@ -432,4 +464,493 @@ EXECUTE:
 	
 		ret
 
+	.undef TEMP
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Repeat Command (Add)
+;;
+;; Inputs:
+;; - Command Length           <- SP + 5
+;; - Command String Pointer H <- SP + 4
+;; - Command String Pointer L <- SP + 3 (First Byte Before Return Address)
+;;
+;; Outputs:
+;; - No Output                -> SP + 5
+;; - No Output                -> SP + 4
+;; - No Output                -> SP + 3 (First Byte Before Return Address)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+REPEAT_CMD_ERR_MSG: .db "ERROR: Invalid Input For `RepeatCommand`", ASCII_NEW_LINE, 0
+REPEAT_CMD_SUC_MSG: .db "Periodic Command Added", ASCII_NEW_LINE, 0
+
+
+REPEAT_CMD:
+	.def IDX  = R16
+	.def LEN  = R17
+	.def ITRV = R18
+	.def TEMP = R19
+
+	; Number of pushes
+	.set STACK_OFFSET = 10
+	; Backup Registers
+	push IDX
+	push LEN
+	push ITRV
+	push TEMP
+	push XH
+	push XL
+	push YH
+	push YL
+	push ZH
+	push ZL
+
+	; Load Stack Pointer
+	; Y <- SP
+	in YH, SPH
+	in YL, SPL
+
+	; Load Command Length
+	ldd LEN, Y+(STACK_OFFSET + 5)
+
+	; p TT r X+
+	cpi LEN, 8
+	brlo REPEAT_CMD_ERR
+
+	ldi ZH, HIGH(REPEAT_IDX)
+	ldi ZL, LOW (REPEAT_IDX)
+
+	; Make Sure We Have Enough Space
+	ld IDX, Z
+	cpi IDX, MAX_REPEAT_CMDS
+	brsh REPEAT_CMD_ERR
+
+	; Get Interval
+	ldd XH, Y+(STACK_OFFSET + 4)
+	ldd XL, Y+(STACK_OFFSET + 3)
+	adiw XH:XL, 2
+
+	ldi TEMP, 0
+	push TEMP
+	push XH
+	push XL
+	rcall ASCII_WORD_TO_HEX
+	pop ITRV
+	pop TEMP
+	pop TEMP
+	; IF (SUBROUTINE ERR != 0) THEN ERR
+	cpi TEMP, 0
+	brne REPEAT_CMD_ERR
+
+	; Increment Index
+	inc IDX
+	st Z, IDX
+
+	; Get Command To Repeat
+	adiw XH:XL, 3
+	subi LEN, 5
+
+	; Get SRAM location to store
+	ldi ZH, HIGH(REPEAT_CMDS)
+	ldi ZL, LOW (REPEAT_CMDS)
+	dec IDX
+
+	REPEAT_CMD_PTR_LOOP:
+		cpi IDX, 0
+		breq REPEAT_CMD_PTR_LOOP_EXIT
+		subi ZL, -REPEAT_CMD_LEN
+		sbci ZH, 0
+		dec IDX
+		rjmp REPEAT_CMD_PTR_LOOP
+
+	REPEAT_CMD_PTR_LOOP_EXIT:
+	
+	st Z+, ITRV
+	st Z+, ITRV
+	st Z+, LEN
+
+	; Use ITRV As Loop Counter
+	ldi ITRV, 0
+
+	REPEAT_CMD_COPY:
+		ld TEMP, X+
+		st Z+, TEMP
+		inc ITRV
+		cp ITRV, LEN
+		brlo REPEAT_CMD_COPY
+
+	ldi TEMP, HIGH(REPEAT_CMD_SUC_MSG << 1)
+	push TEMP
+	ldi TEMP, LOW (REPEAT_CMD_SUC_MSG << 1)
+	push TEMP
+	rcall PUTSTR
+	pop TEMP
+	pop TEMP
+
+	rjmp REPEAT_CMD_RET
+
+	REPEAT_CMD_ERR:
+		ldi TEMP, HIGH(REPEAT_CMD_ERR_MSG << 1)
+		push TEMP
+		ldi TEMP, LOW (REPEAT_CMD_ERR_MSG << 1)
+		push TEMP
+		rcall PUTSTR
+		pop TEMP
+		pop TEMP
+
+	REPEAT_CMD_RET:
+		; Restore Registers
+		pop ZL
+		pop ZH
+		pop YL
+		pop YH
+		pop XL
+		pop XH
+		pop TEMP
+		pop ITRV
+		pop LEN
+		pop IDX
+
+		ret
+
+	.undef IDX
+	.undef LEN
+	.undef ITRV
+	.undef TEMP
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Repeat Command (List)
+;;
+;; Inputs:
+;; - Command Length           <- SP + 5
+;; - Command String Pointer H <- SP + 4
+;; - Command String Pointer L <- SP + 3 (First Byte Before Return Address)
+;;
+;; Outputs:
+;; - No Output                -> SP + 5
+;; - No Output                -> SP + 4
+;; - No Output                -> SP + 3 (First Byte Before Return Address)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+LIST_REPEAT_CMD_INTERVAL: .db   "SEC -> ", 0
+LIST_REPEAT_CMD_CMD     : .db ", CMD -> ", 0
+LIST_REPEAT_CMD_ERR_MSG : .db "ERROR: `ListRepeatedCommands` Does Not Take Input", ASCII_NEW_LINE, 0, 0
+
+
+LIST_REPEAT_CMD:
+	.def IDX  = R16
+	.def LEN  = R17
+	.def CNTR = R18
+	.def TEMP = R19
+
+	; Number of pushes
+	.set STACK_OFFSET = 6
+	; Backup Registers
+	push IDX
+	push LEN
+	push CNTR
+	push TEMP
+	push YH
+	push YL
+
+	; Load Stack Pointer
+	; Y <- SP
+	in YH, SPH
+	in YL, SPL
+
+	; Load Command Length
+	ldd LEN, Y+(STACK_OFFSET + 5)
+
+	; l
+	cpi LEN, 1
+	brne LIST_REPEAT_CMD_ERR
+
+	ldi YH, HIGH(REPEAT_IDX)
+	ldi YL, LOW (REPEAT_IDX)
+
+	; Get Commands Count
+	ld IDX, Y
+
+	cpi IDX, 0
+	breq LIST_REPEAT_CMD_RET
+
+	; Get Data Location
+	ldi YH, HIGH(REPEAT_CMDS)
+	ldi YL, LOW (REPEAT_CMDS)
+
+	ldi CNTR, 0
+
+	LIST_REPEAT_CMD_PRINT_LOOP:
+		ldi TEMP, HIGH(LIST_REPEAT_CMD_INTERVAL << 1)
+		push TEMP
+		ldi TEMP, LOW (LIST_REPEAT_CMD_INTERVAL << 1)
+		push TEMP
+		rcall PUTSTR
+		pop TEMP
+		pop TEMP
+
+		; Get Interval
+		adiw YH:YL, 1
+		ld TEMP, Y+
+
+		; Print Interval
+		push TEMP
+		push TEMP
+		rcall HEX_BYTE_TO_ASCII
+		; Get Least Significant Char
+		pop TEMP
+		rcall PUTCHAR
+		push TEMP
+		rcall PUTCHAR
+		pop TEMP
+		pop TEMP
+
+		ldi TEMP, HIGH(LIST_REPEAT_CMD_CMD << 1)
+		push TEMP
+		ldi TEMP, LOW (LIST_REPEAT_CMD_CMD << 1)
+		push TEMP
+		rcall PUTSTR
+		pop TEMP
+		pop TEMP
+
+		; Get Command Length
+		ld LEN, Y+
+
+		push CNTR
+		ldi CNTR, 0
+
+		LIST_REPEAT_CMD_PRINT_LOOP_INNER:
+			ld TEMP, Y+
+			push TEMP
+			rcall PUTCHAR
+			pop TEMP
+			inc CNTR
+			cp CNTR, LEN
+			brlo LIST_REPEAT_CMD_PRINT_LOOP_INNER
+
+		ldi TEMP, ASCII_NEW_LINE
+		push TEMP
+		rcall PUTCHAR
+		pop TEMP
+
+		ldi TEMP, (-1 * CMD_MAX_LEN)
+		add TEMP, LEN
+		sub YL, TEMP
+		sbci YH, 0
+
+		pop CNTR
+		inc CNTR
+		cp CNTR, IDX
+		brlo LIST_REPEAT_CMD_PRINT_LOOP
+
+	rjmp LIST_REPEAT_CMD_RET
+
+	LIST_REPEAT_CMD_ERR:
+		ldi TEMP, HIGH(LIST_REPEAT_CMD_ERR_MSG << 1)
+		push TEMP
+		ldi TEMP, LOW (LIST_REPEAT_CMD_ERR_MSG << 1)
+		push TEMP
+		rcall PUTSTR
+		pop TEMP
+		pop TEMP
+
+	LIST_REPEAT_CMD_RET:
+		; Restore Registers
+		pop YL
+		pop YH
+		pop TEMP
+		pop CNTR
+		pop LEN
+		pop IDX
+
+		ret
+
+	.undef IDX
+	.undef LEN
+	.undef CNTR
+	.undef TEMP
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Repeat Command (Delete)
+;;
+;; Inputs:
+;; - Command Length           <- SP + 5
+;; - Command String Pointer H <- SP + 4
+;; - Command String Pointer L <- SP + 3 (First Byte Before Return Address)
+;;
+;; Outputs:
+;; - No Output                -> SP + 5
+;; - No Output                -> SP + 4
+;; - No Output                -> SP + 3 (First Byte Before Return Address)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+DEL_REPEAT_CMD_ERR_MSG: .db "ERROR: Invalid Input For `DeleteRepeatedCommands`", ASCII_NEW_LINE, 0, 0
+DEL_REPEAT_CMD_SUC_MSG: .db "Periodic Command Deleted", ASCII_NEW_LINE, 0
+
+
+DEL_REPEAT_CMD:
+	.def IDX  = R16
+	.def LEN  = R17
+	.def TEMP = R18
+
+	; Number of pushes
+	.set STACK_OFFSET = 7
+	; Backup Registers
+	push IDX
+	push LEN
+	push TEMP
+	push YH
+	push YL
+	push ZH
+	push ZL
+
+	; Load Stack Pointer
+	; Y <- SP
+	in YH, SPH
+	in YL, SPL
+
+	; Load Command Length
+	ldd LEN, Y+(STACK_OFFSET + 5)
+
+	; d II
+	cpi LEN, 4
+	brne DEL_REPEAT_CMD_ERR
+
+	; Load Command Pointer
+	ldd ZH, Y+(STACK_OFFSET + 4)
+	ldd ZL, Y+(STACK_OFFSET + 3)
+
+	adiw ZH:ZL, 2
+
+	ldi TEMP, 0
+	push TEMP
+	push ZH
+	push ZL
+	rcall ASCII_WORD_TO_HEX
+	pop IDX
+	pop TEMP
+	pop TEMP
+	; IF (SUBROUTINE ERR != 0) THEN ERR
+	cpi TEMP, 0
+	brne DEL_REPEAT_CMD_ERR
+
+	ldi YH, HIGH(REPEAT_IDX)
+	ldi YL, LOW (REPEAT_IDX)
+
+	; Get Commands Count
+	ld TEMP, Y
+
+	; Can't Delete Command That Does Not Exist
+	cp IDX, TEMP
+	brlo DEL_REPEAT_CMD_NO_ERR
+
+	DEL_REPEAT_CMD_ERR:
+		ldi TEMP, HIGH(DEL_REPEAT_CMD_ERR_MSG << 1)
+		push TEMP
+		ldi TEMP, LOW (DEL_REPEAT_CMD_ERR_MSG << 1)
+		push TEMP
+		rcall PUTSTR
+		pop TEMP
+		pop TEMP
+		rjmp DEL_REPEAT_CMD_RET
+
+	DEL_REPEAT_CMD_NO_ERR:
+
+	dec TEMP
+	st Y, TEMP
+
+	; Done If Deleting Last Command
+	cp IDX, TEMP
+	breq DEL_REPEAT_CMD_RET_PRINT
+
+	; Get Location Of Deleted Element
+	ldi YH, HIGH(REPEAT_CMDS)
+	ldi YL, LOW (REPEAT_CMDS)
+
+	push TEMP
+	push IDX
+
+	DEL_REPEAT_CMD_PTR_LOOP:
+		cpi IDX, 0
+		breq DEL_REPEAT_CMD_PTR_LOOP_EXIT
+		subi YL, -REPEAT_CMD_LEN
+		sbci YH, 0
+		dec IDX
+		rjmp DEL_REPEAT_CMD_PTR_LOOP
+
+	DEL_REPEAT_CMD_PTR_LOOP_EXIT:
+
+	; How Many Times To Copy
+	pop IDX
+	pop TEMP
+	sub TEMP, IDX
+	mov IDX, TEMP
+
+	; Get Location Of Next Element
+	mov ZH, YH
+	mov ZL, YL
+	subi ZL, -REPEAT_CMD_LEN
+	sbci ZH, 0
+
+	DEL_REPEAT_CMD_COPY_LOOP:
+		cpi IDX, 0
+		breq DEL_REPEAT_CMD_RET_PRINT
+
+		ld TEMP, Z+
+		st Y+, TEMP
+		ld TEMP, Z+
+		st Y+, TEMP
+		ld LEN, Z+
+		st Y+, LEN
+
+		push LEN
+
+		DEL_REPEAT_CMD_COPY_LOOP_INNER:
+			cpi LEN, 0
+			breq DEL_REPEAT_CMD_COPY_LOOP_INNER_EXIT
+			ld TEMP, Z+
+			st Y+, TEMP
+			dec LEN
+			rjmp DEL_REPEAT_CMD_COPY_LOOP_INNER
+
+		DEL_REPEAT_CMD_COPY_LOOP_INNER_EXIT:
+
+		pop LEN
+
+		dec IDX
+		ldi TEMP, (-1 * CMD_MAX_LEN)
+		add TEMP, LEN
+		sub YL, TEMP
+		sbci YH, 0
+		sub ZL, TEMP
+		sbci ZH, 0
+		rjmp DEL_REPEAT_CMD_COPY_LOOP
+
+	DEL_REPEAT_CMD_RET_PRINT:
+		ldi TEMP, HIGH(DEL_REPEAT_CMD_SUC_MSG << 1)
+		push TEMP
+		ldi TEMP, LOW (DEL_REPEAT_CMD_SUC_MSG << 1)
+		push TEMP
+		rcall PUTSTR
+		pop TEMP
+		pop TEMP
+
+	DEL_REPEAT_CMD_RET:
+		; Restore Registers
+		pop ZL
+		pop ZH
+		pop YL
+		pop YH
+		pop TEMP
+		pop LEN
+		pop IDX
+
+		ret
+
+	.undef IDX
+	.undef LEN
 	.undef TEMP
