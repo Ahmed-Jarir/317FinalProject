@@ -29,10 +29,10 @@
   <FILE>Future Gadget 29, 2nd Edition Ver. 2.31.lss</FILE>
  </OUTPUT_FILES>
  <LABELS>
-  <CMD><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm</FILE><LINE>61</LINE></CMD>
-  <CMD_IDX><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm</FILE><LINE>62</LINE></CMD_IDX>
-  <RESET><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm</FILE><LINE>101</LINE></RESET>
-  <USART_RX_COMPLETE><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm</FILE><LINE>148</LINE></USART_RX_COMPLETE>
+  <CMD><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm</FILE><LINE>67</LINE></CMD>
+  <CMD_IDX><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm</FILE><LINE>68</LINE></CMD_IDX>
+  <RESET><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm</FILE><LINE>114</LINE></RESET>
+  <USART_RX_COMPLETE><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm</FILE><LINE>163</LINE></USART_RX_COMPLETE>
   <ASCII_BYTE_TO_HEX><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\ascii.inc</FILE><LINE>52</LINE></ASCII_BYTE_TO_HEX>
   <ASCII_TO_HEX_LOOKUP_TABLE><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\ascii.inc</FILE><LINE>432</LINE></ASCII_TO_HEX_LOOKUP_TABLE>
   <ASCII_BYTE_TO_HEX_ERR><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\ascii.inc</FILE><LINE>87</LINE></ASCII_BYTE_TO_HEX_ERR>
@@ -243,23 +243,19 @@
   <WRITE_IO><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\write-io.inc</FILE><LINE>42</LINE></WRITE_IO>
   <WRITE_IO_ERR><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\write-io.inc</FILE><LINE>117</LINE></WRITE_IO_ERR>
   <WRITE_IO_RET><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\write-io.inc</FILE><LINE>126</LINE></WRITE_IO_RET>
-  <PROMPT><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm</FILE><LINE>92</LINE></PROMPT>
-  <EXEC_INVALID_CMD><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm</FILE><LINE>94</LINE></EXEC_INVALID_CMD>
-  <RESET_LOOP><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm</FILE><LINE>138</LINE></RESET_LOOP>
-  <USART_RX_COMPLETE_NOT_DONE><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm</FILE><LINE>207</LINE></USART_RX_COMPLETE_NOT_DONE>
-  <EXECUTE><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm</FILE><LINE>286</LINE></EXECUTE>
-  <USART_RX_COMPLETE_RET><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm</FILE><LINE>257</LINE></USART_RX_COMPLETE_RET>
-  <USART_RX_COMPLETE_NOT_BACKSPACE><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm</FILE><LINE>231</LINE></USART_RX_COMPLETE_NOT_BACKSPACE>
-  <EXECUTE_INVALID><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm</FILE><LINE>375</LINE></EXECUTE_INVALID>
-  <EXECUTE_W><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm</FILE><LINE>324</LINE></EXECUTE_W>
-  <EXECUTE_RET><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm</FILE><LINE>385</LINE></EXECUTE_RET>
-  <EXECUTE_G><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm</FILE><LINE>335</LINE></EXECUTE_G>
-  <EXECUTE_S><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm</FILE><LINE>340</LINE></EXECUTE_S>
-  <READ_REGISTER><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm</FILE><LINE>407</LINE></READ_REGISTER>
-  <EXECUTE_O><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm</FILE><LINE>345</LINE></EXECUTE_O>
-  <WRITE_REGISTER><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm</FILE><LINE>410</LINE></WRITE_REGISTER>
-  <EXECUTE_I><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm</FILE><LINE>357</LINE></EXECUTE_I>
-  <EXECUTE_P><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm</FILE><LINE>369</LINE></EXECUTE_P>
-  <REPEAT_CMD><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm</FILE><LINE>413</LINE></REPEAT_CMD>
+  <PROMPT><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm</FILE><LINE>103</LINE></PROMPT>
+  <EXEC_INVALID_CMD><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm</FILE><LINE>105</LINE></EXEC_INVALID_CMD>
+  <RESET_LOOP><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm</FILE><LINE>151</LINE></RESET_LOOP>
+  <USART_RX_COMPLETE_NOT_DONE><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm</FILE><LINE>222</LINE></USART_RX_COMPLETE_NOT_DONE>
+  <EXECUTE><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm</FILE><LINE>324</LINE></EXECUTE>
+  <USART_RX_COMPLETE_RET><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm</FILE><LINE>272</LINE></USART_RX_COMPLETE_RET>
+  <USART_RX_COMPLETE_NOT_BACKSPACE><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm</FILE><LINE>246</LINE></USART_RX_COMPLETE_NOT_BACKSPACE>
+  <EXECUTE_INVALID><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm</FILE><LINE>408</LINE></EXECUTE_INVALID>
+  <EXECUTE_W><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm</FILE><LINE>384</LINE></EXECUTE_W>
+  <EXECUTE_RET><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm</FILE><LINE>418</LINE></EXECUTE_RET>
+  <EXECUTE_O><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm</FILE><LINE>390</LINE></EXECUTE_O>
+  <EXECUTE_I><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm</FILE><LINE>396</LINE></EXECUTE_I>
+  <EXECUTE_P><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm</FILE><LINE>402</LINE></EXECUTE_P>
+  <REPEAT_CMD><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm</FILE><LINE>434</LINE></REPEAT_CMD>
  </LABELS>
 </ASSEMBLER_INFO>

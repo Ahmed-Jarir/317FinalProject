@@ -29,16 +29,20 @@
 ; region or setting the mode of an I/O pin.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; # Code Style
 ;;
 ;;   - No global register aliases.
 ;;   - Capitalize all user-defined names (constants, register aliases, labels).
+;;   - Pass subroutine parameters using the stack.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; # Constants
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 
 ; Baud Rate in Bits Per Second (bps)
 .equ BAUD_RATE = 9600
@@ -51,9 +55,11 @@
 ; Maximum Command Length
 .equ CMD_MAX_LEN = 100
 
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; # Data Segment
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 
 ; Data Segment Start
 .dseg
@@ -61,9 +67,11 @@
 CMD    : .byte CMD_MAX_LEN
 CMD_IDX: .byte 1
 
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; # Interrupt Vector Table
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 
 ; Code Segment Start
 .cseg
@@ -73,9 +81,11 @@ CMD_IDX: .byte 1
 .org 0x001A 
 	jmp USART_RX_COMPLETE
 
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; # Imports
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 
 .INCLUDE "ascii.inc"
 .INCLUDE "io.inc"
@@ -83,6 +93,7 @@ CMD_IDX: .byte 1
 .INCLUDE "write-mem.inc"
 .INCLUDE "read-io.inc"
 .INCLUDE "write-io.inc"
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; # Program Memory Constants
@@ -94,9 +105,11 @@ PROMPT:
 EXEC_INVALID_CMD:
 	.db "ERROR: Invalid Command", ASCII_NEW_LINE, 0
 
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; # Main Routine
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 
 RESET:
 	; Set Register Aliases
@@ -141,9 +154,11 @@ RESET:
 	; Clear Register Aliases
 	.undef TEMP
 
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; # Interrupt Handlers
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 
 USART_RX_COMPLETE:
 	; Set Register Aliases
@@ -179,24 +194,24 @@ USART_RX_COMPLETE:
 	rcall PUTCHAR
 	pop R16
 	
-	; r $begaddress $endaddress					-- read from sram
-	; w $begaddress $endaddress $bytestowrite	-- write to sram
-	; g $regname								-- read from register
-	; s $regname $byte							-- write to register
-	; o $name									-- read from io
-	; i $name $byte								-- write to io
-	; p $seconds $anyoftheabovecommands			-- repeat command
-	; TODO: dont forget to pass parameter
-	push R16
-	push R17
-	
-	ldi R16, LOW(CMD)
-	ldi R17, HIGH(CMD)
-	
+	push IDX
+	ldi TEMP, HIGH(CMD)
+	push TEMP
+	ldi TEMP, LOW (CMD)
+	push TEMP
 	rcall EXECUTE
+	pop TEMP
+	pop TEMP
+	pop TEMP
 
-	pop R17
-	pop R16
+	; Print Prompt
+	ldi TEMP, HIGH(PROMPT << 1)
+	push TEMP
+	ldi TEMP, LOW (PROMPT << 1)
+	push TEMP
+	rcall PUTSTR
+	pop TEMP
+	pop TEMP
 
 	; Reset index
 	clr IDX
@@ -279,95 +294,113 @@ USART_RX_COMPLETE:
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
-; Inputs:
-; - ADDRL: R16
-; - ADDRH: R17
-; - IDX  : R18
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Execute Command
+;;
+;; Inputs:
+;; - Command Length           <- SP + 5
+;; - Command String Pointer H <- SP + 4
+;; - Command String Pointer L <- SP + 3 (First Byte Before Return Address)
+;;
+;; Outputs:
+;; - No Output                -> SP + 5
+;; - No Output                -> SP + 4
+;; - No Output                -> SP + 3 (First Byte Before Return Address)
+;;
+;; Supported Commands:
+;; - Read Memory:
+;;   r $BEG_ADDR $END_ADDR
+;; - Write Memory:
+;;   w $BEG_ADDR $BYTES_TO_WRITE
+;; - Read IO Register:
+;;   o $IO_REG_NAME
+;; - Write IO Register:
+;;   i $IO_REG_NAME $BYTE
+;; - Repeat Command:
+;;   p $SECONDS $COMMAND
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
 EXECUTE:
-	.def ADDRL = R16
-	.def ADDRH = R17
-	.def IDX   = R18
-	.def CHAR  = R19
-	.def TEMP  = R20
+	.def TEMP = R16
 	
+	; Number of pushes
+	.set STACK_OFFSET = 5
+	; Backup Registers
 	push TEMP
-	push YL
 	push YH
+	push YL
+	push ZH
+	push ZL
+
+	; Load Stack Pointer
+	; Y <- SP
+	in YH, SPH
+	in YL, SPL
+
+	; Load Command Length
+	ldd TEMP, Y+(STACK_OFFSET + 5)
+	; Push Command Length (Prepare Subroutine Call)
+	push TEMP
+
+	; Two Dummy Pushes In Case Error
+	push TEMP
+	push TEMP
 
 	; Empty command
-	cpi IDX, 2
+	cpi TEMP, 2
 	brlo EXECUTE_INVALID
 
-	mov YH, ADDRH
-	mov YL,	ADDRL
-	ld	CHAR, Y
-	
-	inc YL
-	clr TEMP
-	adc YH, TEMP
-	ld	TEMP, Y
+	; Load Command Address
+	ldd ZH, Y+(STACK_OFFSET + 4)
+	ldd ZL, Y+(STACK_OFFSET + 3)
 
+	; Get second character
+	push ZH
+	push ZL
+	adiw ZH:ZL, 1
+	ld TEMP, Z
+	pop ZL
+	pop ZH
+	
 	cpi TEMP, ASCII_SPACE
 	brne EXECUTE_INVALID
 
-	cpi CHAR, ASCII_LOWER_R
+	; Remove Dummy Pushes
+	pop TEMP
+	pop TEMP
+
+	; Push Command Length (Prepare Subroutine Call)
+	push ZH
+	push ZL
+	
+	ld TEMP, Z
+
+	cpi TEMP, ASCII_LOWER_R
 	brne EXECUTE_W
-	push IDX
-	push ADDRH
-	push ADDRL
 	rcall READ_MEM
-	pop TEMP
-	pop TEMP
-	pop TEMP
 	rjmp  EXECUTE_RET
 
 	EXECUTE_W:
-		cpi CHAR, ASCII_LOWER_W
-		brne EXECUTE_G
-		push IDX
-		push ADDRH
-		push ADDRL
-		rcall WRITE_MEM
-		pop TEMP
-		pop TEMP
-		pop TEMP
-		rjmp  EXECUTE_RET
-	EXECUTE_G:
-		cpi CHAR, ASCII_LOWER_G
-		brne EXECUTE_S
-		rcall READ_REGISTER
-		rjmp  EXECUTE_RET
-	EXECUTE_S:
-		cpi CHAR, ASCII_LOWER_S
+		cpi TEMP, ASCII_LOWER_W
 		brne EXECUTE_O
-		rcall WRITE_REGISTER
+		rcall WRITE_MEM
 		rjmp  EXECUTE_RET
+
 	EXECUTE_O:
-		cpi CHAR, ASCII_LOWER_O
+		cpi TEMP, ASCII_LOWER_O
 		brne EXECUTE_I
-		push IDX
-		push ADDRH
-		push ADDRL
 		rcall READ_IO
-		pop TEMP
-		pop TEMP
-		pop TEMP
 		rjmp  EXECUTE_RET
 
 	EXECUTE_I:
-		cpi CHAR, ASCII_LOWER_I
+		cpi TEMP, ASCII_LOWER_I
 		brne EXECUTE_P
-		push IDX
-		push ADDRH
-		push ADDRL
 		rcall WRITE_IO
-		pop TEMP
-		pop TEMP
-		pop TEMP
 		rjmp  EXECUTE_RET
 
 	EXECUTE_P:
-		cpi CHAR, ASCII_LOWER_P
+		cpi TEMP, ASCII_LOWER_P
 		brne EXECUTE_INVALID
 		rcall REPEAT_CMD
 		rjmp  EXECUTE_RET
@@ -383,32 +416,20 @@ EXECUTE:
 		pop TEMP
 
 	EXECUTE_RET:
-		; Print Prompt
-		ldi TEMP, HIGH(PROMPT << 1)
-		push TEMP
-		ldi TEMP, LOW (PROMPT << 1)
-		push TEMP
-		rcall PUTSTR
+		pop TEMP
 		pop TEMP
 		pop TEMP
 
-		pop YH
+		; Restore Registers
+		pop ZL
+		pop ZH
 		pop YL
+		pop YH
 		pop TEMP
 	
 		ret
 
-	.undef ADDRL
-	.undef ADDRH
-	.undef CHAR
-	.undef IDX
 	.undef TEMP
-
-READ_REGISTER:
-ret
-
-WRITE_REGISTER:
-ret
 
 REPEAT_CMD:
 ret
