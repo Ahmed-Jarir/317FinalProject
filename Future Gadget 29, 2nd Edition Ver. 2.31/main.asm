@@ -9,9 +9,8 @@
 ; - Ahmed Jareer (0074982)
 ;
 ; Resources Usage:
-; - Program Size: TODO
-; - Data    Size: TODO
-; - Registers   : TODO
+; - Program Size: 4238 Bytes
+; - Data    Size: 174  Bytes
 ;
 ; Summary:
 ;
@@ -116,8 +115,12 @@ REPEAT_IDX : .byte 1
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
+.equ PROMPT_LEN = 6
+
 PROMPT:
 	.db "FG>>> ", 0, 0
+REPEATED_COMMAND_NOTIFICATION:
+	.db "PERIODIC CMD: ", 0, 0
 EXEC_INVALID_CMD:
 	.db "ERROR: Invalid Command", ASCII_NEW_LINE, 0
 
@@ -332,6 +335,7 @@ T1_COMPA:
 	.def TEMP = R16
 	.def CNTR = R17
 	.def IDX  = R18
+	.def FLAG = R19
 
 	; Backup Registers
 	push TEMP
@@ -339,6 +343,7 @@ T1_COMPA:
 	push TEMP
 	push CNTR
 	push IDX
+	push FLAG
 	push YH
 	push YL
 
@@ -353,6 +358,9 @@ T1_COMPA:
 	ldi YH, HIGH(REPEAT_CMDS)
 	ldi YL, LOW (REPEAT_CMDS)
 
+	; No Command Executed Yet
+	ldi FLAG, 0
+
 	ldi CNTR, 0
 
 	T1_COMPA_EXEC:
@@ -363,6 +371,23 @@ T1_COMPA:
 		brne T1_COMPA_NO_EXEC
 
 		; Execute Command
+
+		cpi FLAG, 0
+		brne NO_CLEAR
+
+		rcall CLEAR_LINE
+		ldi FLAG, 1
+
+		NO_CLEAR:
+
+		; Print Notification
+		ldi TEMP, HIGH(REPEATED_COMMAND_NOTIFICATION << 1)
+		push TEMP
+		ldi TEMP, LOW (REPEATED_COMMAND_NOTIFICATION << 1)
+		push TEMP
+		rcall PUTSTR
+		pop TEMP
+		pop TEMP
 
 		; Get Interval
 		adiw YH:YL, 1
@@ -398,10 +423,16 @@ T1_COMPA:
 			cp CNTR, IDX
 			brne T1_COMPA_EXEC
 
+	cpi FLAG, 0
+	breq T1_COMPA_RET
+
+	rcall DIRTY_LINE
+
 	T1_COMPA_RET:
 		; Restore Registers
 		pop YL
 		pop YH
+		pop FLAG
 		pop IDX
 		pop CNTR
 		pop TEMP
@@ -414,6 +445,7 @@ T1_COMPA:
 	.undef TEMP
 	.undef CNTR
 	.undef IDX
+	.undef FLAG
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -1069,3 +1101,118 @@ DEL_REPEAT_CMD:
 	.undef IDX
 	.undef LEN
 	.undef TEMP
+
+CLEAR_LINE:
+	.def TEMP = R16
+	.def LEN  = R17
+
+	; Backup Registers
+	push TEMP
+	push LEN
+	push YH
+	push YL
+
+	ldi YH, HIGH(CMD_IDX)
+	ldi YL, LOW (CMD_IDX)
+	ld LEN, Y
+	subi LEN, -PROMPT_LEN
+
+	ldi TEMP, ASCII_BACKSPACE
+	push TEMP
+
+	mov TEMP, LEN
+
+	CLEAR_LINE_BACKSPACE_LOOP_1:
+		rcall PUTCHAR
+		dec TEMP
+		cpi TEMP, 0
+		brne CLEAR_LINE_BACKSPACE_LOOP_1
+
+	pop TEMP
+
+	ldi TEMP, ASCII_SPACE
+	push TEMP
+
+	mov TEMP, LEN
+
+	CLEAR_LINE_SPACE_LOOP:
+		rcall PUTCHAR
+		dec TEMP
+		cpi TEMP, 0
+		brne CLEAR_LINE_SPACE_LOOP
+
+	pop TEMP
+
+	ldi TEMP, ASCII_BACKSPACE
+	push TEMP
+
+	mov TEMP, LEN
+
+	CLEAR_LINE_BACKSPACE_LOOP_2:
+		rcall PUTCHAR
+		dec TEMP
+		cpi TEMP, 0
+		brne CLEAR_LINE_BACKSPACE_LOOP_2
+
+	pop TEMP
+	
+	; Restore Registers
+	pop YL
+	pop YH
+	pop LEN
+	pop TEMP
+	
+	ret
+
+	.undef TEMP
+	.undef LEN
+
+DIRTY_LINE:
+	.def TEMP = R16
+	.def LEN  = R17
+
+	; Backup Registers
+	push TEMP
+	push LEN
+	push YH
+	push YL
+
+	; Print Prompt
+	ldi TEMP, HIGH(PROMPT << 1)
+	push TEMP
+	ldi TEMP, LOW (PROMPT << 1)
+	push TEMP
+	rcall PUTSTR
+	pop TEMP
+	pop TEMP
+
+	ldi YH, HIGH(CMD_IDX)
+	ldi YL, LOW (CMD_IDX)
+	ld LEN, Y
+
+	cpi LEN, 0
+	breq DIRTY_LINE_RET
+
+	ldi YH, HIGH(CMD)
+	ldi YL, LOW (CMD)
+
+	DIRTY_LINE_LOOP:
+		ld TEMP, Y+
+		push TEMP
+		rcall PUTCHAR
+		pop TEMP
+		dec LEN
+		cpi LEN, 0
+		brne DIRTY_LINE_LOOP
+
+	DIRTY_LINE_RET:
+		; Restore Registers
+		pop YL
+		pop YH
+		pop LEN
+		pop TEMP
+	
+		ret
+
+	.undef TEMP
+	.undef LEN
