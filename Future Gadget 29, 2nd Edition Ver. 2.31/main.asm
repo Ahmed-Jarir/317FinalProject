@@ -46,11 +46,16 @@
 
 ; Baud Rate in Bits Per Second (bps)
 .equ BAUD_RATE = 9600
+; System Clock Frequency
+.equ F_CLK     = 4 * 1024 * 1024
 ; System Oscillator Clock Frequency
 .equ F_OSC     = 4 * 1000 * 1000
 ; Contents of the UBRRH and UBRRL Registers (0 - 4095)
 ; Asynchronous Normal Mode (U2X = 0)
 .equ BAUD_UBRR = (F_OSC / (16 * BAUD_RATE)) - 1
+
+.equ T1_PRESCALE = 1024
+.equ T1_MAX_VAL  = (F_CLK / T1_PRESCALE) - 1
 
 ; Maximum Command Length
 .equ CMD_MAX_LEN     = 32
@@ -87,6 +92,8 @@ REPEAT_IDX : .byte 1
 
 .org 0x0000
 	jmp RESET
+.org 0x000E
+	jmp T1_COMPA
 .org 0x001A 
 	jmp USART_RX_COMPLETE
 
@@ -159,6 +166,22 @@ RESET:
 	ldi ZL, LOW (REPEAT_IDX)
 	clr TEMP
 	st Z, TEMP
+
+	; Set Timer 1 Max Value
+	ldi TEMP, HIGH(T1_MAX_VAL)
+	out OCR1AH, TEMP
+	ldi TEMP, LOW(T1_MAX_VAL)
+	out OCR1AL, TEMP
+
+	; Enable Timer 1 Output Compare Interrupt
+	ldi TEMP, 1 << OCIE1A
+	out TIMSK, TEMP
+	ldi TEMP, 0
+	out TCCR1A, TEMP
+
+	; Set Timer 1 Prescale
+	ldi TEMP, (1 << WGM12) | (1 << CS12) | (1 << CS10)
+	out TCCR1B, TEMP
 
 	; Enable Global Interrupts
     sei
@@ -301,6 +324,95 @@ USART_RX_COMPLETE:
 	; Clear Register Aliases
 	.undef TEMP
 	.undef CHAR
+	.undef IDX
+
+
+T1_COMPA:
+	; Set Register Aliases
+	.def TEMP = R16
+	.def CNTR = R17
+	.def IDX  = R18
+
+	; Backup Registers
+	push TEMP
+	in TEMP, SREG
+	push TEMP
+	push CNTR
+	push IDX
+	push YH
+	push YL
+
+	; Get Commands Count
+	ldi YH, HIGH(REPEAT_IDX)
+	ldi YL, LOW (REPEAT_IDX)
+	ld IDX, Y
+
+	cpi IDX, 0
+	breq T1_COMPA_RET
+
+	ldi YH, HIGH(REPEAT_CMDS)
+	ldi YL, LOW (REPEAT_CMDS)
+
+	ldi CNTR, 0
+
+	T1_COMPA_EXEC:
+		; Get Count
+		ld TEMP, Y
+		dec TEMP
+		cpi TEMP, 0
+		brne T1_COMPA_NO_EXEC
+
+		; Execute Command
+
+		; Get Interval
+		adiw YH:YL, 1
+		ld TEMP, Y
+		; Set Count To Interval
+		st -Y, TEMP
+
+		; Get Command Length
+		adiw YH:YL, 2
+		ld TEMP, Y+
+
+		; Execute Command
+		push TEMP
+		push YH
+		push YL
+		rcall EXECUTE
+		pop TEMP
+		pop TEMP
+		pop TEMP
+
+		sbiw YH:YL, 3
+
+		rjmp T1_COMPA_COMMON
+
+		T1_COMPA_NO_EXEC:
+			; Set Decreased Count
+			st Y, TEMP
+
+		T1_COMPA_COMMON:
+			subi YL, -REPEAT_CMD_LEN
+			sbci YH, 0
+			inc CNTR
+			cp CNTR, IDX
+			brne T1_COMPA_EXEC
+
+	T1_COMPA_RET:
+		; Restore Registers
+		pop YL
+		pop YH
+		pop IDX
+		pop CNTR
+		pop TEMP
+		out SREG, TEMP
+		pop TEMP
+
+		reti
+
+	; Clear Register Aliases
+	.undef TEMP
+	.undef CNTR
 	.undef IDX
 
 
@@ -542,6 +654,9 @@ REPEAT_CMD:
 	; IF (SUBROUTINE ERR != 0) THEN ERR
 	cpi TEMP, 0
 	brne REPEAT_CMD_ERR
+
+	cpi ITRV, 0
+	breq REPEAT_CMD_ERR
 
 	; Increment Index
 	inc IDX
