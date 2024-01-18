@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.8  C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm Thu Jan 18 16:49:37 2024
+AVRASM ver. 2.2.8  C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm Thu Jan 18 16:54:22 2024
 
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m32def.inc'
 C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm(90): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\ascii.inc'
@@ -18,6 +18,7 @@ C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29,
 C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\write-io.inc(18): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\ascii.inc'
 C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\write-io.inc(19): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\io.inc'
 C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\write-io.inc(20): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\io-name-to-addr.inc'
+C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm(96): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\repeat-cmd.inc'
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m32def.inc'
 C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm(90): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\ascii.inc'
 C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm(91): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\io.inc'
@@ -35,6 +36,7 @@ C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29,
 C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\write-io.inc(18): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\ascii.inc'
 C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\write-io.inc(19): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\io.inc'
 C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\write-io.inc(20): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\io-name-to-addr.inc'
+C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\main.asm(96): Including file 'C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\repeat-cmd.inc'
                                  
                                  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
                                  
@@ -930,9 +932,9 @@ C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29,
                                  .cseg
                                  
                                  .org 0x0000
-000000 940c 05aa                 	jmp RESET
+000000 940c 05ab                 	jmp RESET
                                  .org 0x001A 
-00001a 940c 05ba                 	jmp USART_RX_COMPLETE
+00001a 940c 05bb                 	jmp USART_RX_COMPLETE
                                  
                                  
                                  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -3320,31 +3322,35 @@ C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29,
 000599 9508                      		ret
                                  	
                                  	.undef TEMP
+                                 .INCLUDE "repeat-cmd.inc"
                                  
+00059a 9508                      
                                  
                                  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
                                  ;; # Program Memory Constants
                                  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
                                  
                                  
+                                 .cseg
+                                 
                                  PROMPT:
-00059a 4746
-00059b 3e3e
-00059c 203e
-00059d 0000                      	.db "FG>>> ", 0, 0
+00059b 4746
+00059c 3e3e
+00059d 203e
+00059e 0000                      	.db "FG>>> ", 0, 0
                                  EXEC_INVALID_CMD:
-00059e 5245
-00059f 4f52
-0005a0 3a52
-0005a1 4920
-0005a2 766e
-0005a3 6c61
-0005a4 6469
-0005a5 4320
-0005a6 6d6f
-0005a7 616d
-0005a8 646e
-0005a9 000d                      	.db "ERROR: Invalid Command", ASCII_NEW_LINE, 0
+00059f 5245
+0005a0 4f52
+0005a1 3a52
+0005a2 4920
+0005a3 766e
+0005a4 6c61
+0005a5 6469
+0005a6 4320
+0005a7 6d6f
+0005a8 616d
+0005a9 646e
+0005aa 000d                      	.db "ERROR: Invalid Command", ASCII_NEW_LINE, 0
                                  
                                  
                                  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -3357,40 +3363,40 @@ C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29,
                                  	.def TEMP = R16
                                  
                                  	; Initialize Stack Pointer
-0005aa e008                      	ldi TEMP, HIGH(RAMEND)
-0005ab bf0e                      	out SPH, TEMP
-0005ac e50f                      	ldi TEMP, LOW(RAMEND)
-0005ad bf0d                      	out SPL, TEMP
+0005ab e008                      	ldi TEMP, HIGH(RAMEND)
+0005ac bf0e                      	out SPH, TEMP
+0005ad e50f                      	ldi TEMP, LOW(RAMEND)
+0005ae bf0d                      	out SPL, TEMP
                                  
                                  	; Initialize USART BEGIN
                                  
                                  	; Set Baud Rate
-0005ae e000                      	ldi TEMP, HIGH(BAUD_UBRR)
-0005af bd00                      	out UBRRH, TEMP
-0005b0 e109                      	ldi TEMP, LOW(BAUD_UBRR)
-0005b1 b909                      	out UBRRL, TEMP
+0005af e000                      	ldi TEMP, HIGH(BAUD_UBRR)
+0005b0 bd00                      	out UBRRH, TEMP
+0005b1 e109                      	ldi TEMP, LOW(BAUD_UBRR)
+0005b2 b909                      	out UBRRL, TEMP
                                  
                                  	; TXEN  -> Enable Transmitter
                                  	; RXEN  -> Enable Receiver
                                  	; RXCIE -> Enable Rx Complete Interrupt
-0005b2 e908                      	ldi TEMP, (1 << RXCIE) | (1 << RXEN) | (1 << TXEN)
-0005b3 b90a                      	out UCSRB, TEMP
+0005b3 e908                      	ldi TEMP, (1 << RXCIE) | (1 << RXEN) | (1 << TXEN)
+0005b4 b90a                      	out UCSRB, TEMP
                                  
                                  	; Set Frame Format:	; - 8 Data Bits	; - 2 Stop Bits	ldi TEMP, (1 << URSEL) | (1 << USBS) | (1 << UCSZ0) | (1 << UCSZ1)	out UCSRC, TEMP
                                  
                                  	; Initialize USART END
                                  
                                  	; Initialie command index to 0
-0005b4 e0f0                      	ldi ZH, HIGH(CMD_IDX)
-0005b5 ece4                      	ldi ZL, LOW (CMD_IDX)
-0005b6 2700                      	clr TEMP
-0005b7 8300                      	st Z, TEMP
+0005b5 e0f0                      	ldi ZH, HIGH(CMD_IDX)
+0005b6 ece4                      	ldi ZL, LOW (CMD_IDX)
+0005b7 2700                      	clr TEMP
+0005b8 8300                      	st Z, TEMP
                                  
                                  	; Enable Global Interrupts
-0005b8 9478                          sei
+0005b9 9478                          sei
                                  
                                  	RESET_LOOP:
-0005b9 cfff                      		rjmp RESET_LOOP
+0005ba cfff                      		rjmp RESET_LOOP
                                  
                                  	; Clear Register Aliases
                                  	.undef TEMP
@@ -3408,121 +3414,121 @@ C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29,
                                  	.def IDX  = R18
                                  
                                  	; Backup Registers
-0005ba 930f                      	push TEMP
-0005bb b70f                      	in TEMP, SREG
-0005bc 930f                      	push TEMP
-0005bd 93ff                      	push ZH
-0005be 93ef                      	push ZL
-0005bf 93df                      	push YH
-0005c0 93cf                      	push YL
-0005c1 931f                      	push CHAR
-0005c2 932f                      	push IDX
+0005bb 930f                      	push TEMP
+0005bc b70f                      	in TEMP, SREG
+0005bd 930f                      	push TEMP
+0005be 93ff                      	push ZH
+0005bf 93ef                      	push ZL
+0005c0 93df                      	push YH
+0005c1 93cf                      	push YL
+0005c2 931f                      	push CHAR
+0005c3 932f                      	push IDX
                                  
                                  	; Read ASCII Character
-0005c3 b11c                      	in CHAR, UDR
+0005c4 b11c                      	in CHAR, UDR
                                  
                                  	; Read command index
-0005c4 e0f0                      	ldi ZH, HIGH(CMD_IDX)
-0005c5 ece4                      	ldi ZL, LOW (CMD_IDX)
-0005c6 8120                      	ld IDX, Z
+0005c5 e0f0                      	ldi ZH, HIGH(CMD_IDX)
+0005c6 ece4                      	ldi ZL, LOW (CMD_IDX)
+0005c7 8120                      	ld IDX, Z
                                  
-0005c7 301d                      	cpi CHAR, ASCII_NEW_LINE
+0005c8 301d                      	cpi CHAR, ASCII_NEW_LINE
                                  
-0005c8 f4b9                      	brne USART_RX_COMPLETE_NOT_DONE
+0005c9 f4b9                      	brne USART_RX_COMPLETE_NOT_DONE
                                  
-0005c9 e00d                      	ldi R16, ASCII_NEW_LINE
-0005ca 930f                      	push R16
-0005cb db6c                      	rcall PUTCHAR
-0005cc 910f                      	pop R16
+0005ca e00d                      	ldi R16, ASCII_NEW_LINE
+0005cb 930f                      	push R16
+0005cc db6b                      	rcall PUTCHAR
+0005cd 910f                      	pop R16
                                  	
-0005cd 932f                      	push IDX
-0005ce e000                      	ldi TEMP, HIGH(CMD)
-0005cf 930f                      	push TEMP
-0005d0 e600                      	ldi TEMP, LOW (CMD)
-0005d1 930f                      	push TEMP
-0005d2 d035                      	rcall EXECUTE
-0005d3 910f                      	pop TEMP
+0005ce 932f                      	push IDX
+0005cf e000                      	ldi TEMP, HIGH(CMD)
+0005d0 930f                      	push TEMP
+0005d1 e600                      	ldi TEMP, LOW (CMD)
+0005d2 930f                      	push TEMP
+0005d3 d035                      	rcall EXECUTE
 0005d4 910f                      	pop TEMP
 0005d5 910f                      	pop TEMP
+0005d6 910f                      	pop TEMP
                                  
                                  	; Print Prompt
-0005d6 e00b                      	ldi TEMP, HIGH(PROMPT << 1)
-0005d7 930f                      	push TEMP
-0005d8 e304                      	ldi TEMP, LOW (PROMPT << 1)
-0005d9 930f                      	push TEMP
-0005da db6a                      	rcall PUTSTR
-0005db 910f                      	pop TEMP
+0005d7 e00b                      	ldi TEMP, HIGH(PROMPT << 1)
+0005d8 930f                      	push TEMP
+0005d9 e306                      	ldi TEMP, LOW (PROMPT << 1)
+0005da 930f                      	push TEMP
+0005db db69                      	rcall PUTSTR
 0005dc 910f                      	pop TEMP
+0005dd 910f                      	pop TEMP
                                  
                                  	; Reset index
-0005dd 2722                      	clr IDX
-0005de 8320                      	st Z, IDX
+0005de 2722                      	clr IDX
+0005df 8320                      	st Z, IDX
                                  
-0005df c01e                      	rjmp USART_RX_COMPLETE_RET
+0005e0 c01e                      	rjmp USART_RX_COMPLETE_RET
                                  
                                  	USART_RX_COMPLETE_NOT_DONE:
-0005e0 3018                      		cpi CHAR, ASCII_BACKSPACE
+0005e1 3018                      		cpi CHAR, ASCII_BACKSPACE
                                  
-0005e1 f471                      		brne USART_RX_COMPLETE_NOT_BACKSPACE
+0005e2 f471                      		brne USART_RX_COMPLETE_NOT_BACKSPACE
                                  
-0005e2 3020                      		cpi IDX, 0
-0005e3 f0d1                      		breq USART_RX_COMPLETE_RET
+0005e3 3020                      		cpi IDX, 0
+0005e4 f0d1                      		breq USART_RX_COMPLETE_RET
                                  
-0005e4 952a                      		dec IDX
-0005e5 8320                      		st Z, IDX
+0005e5 952a                      		dec IDX
+0005e6 8320                      		st Z, IDX
                                  		; Echo backspace back
                                  		; Backspace -> Space -> Backspace
-0005e6 e008                      		ldi R16, ASCII_BACKSPACE
-0005e7 930f                      		push R16
-0005e8 db4f                      		rcall PUTCHAR
-0005e9 e200                      		ldi R16, ASCII_SPACE
-0005ea 930f                      		push R16
-0005eb db4c                      		rcall PUTCHAR
-0005ec 910f                      		pop R16
-0005ed db4a                      		rcall PUTCHAR
-0005ee 910f                      		pop R16
+0005e7 e008                      		ldi R16, ASCII_BACKSPACE
+0005e8 930f                      		push R16
+0005e9 db4e                      		rcall PUTCHAR
+0005ea e200                      		ldi R16, ASCII_SPACE
+0005eb 930f                      		push R16
+0005ec db4b                      		rcall PUTCHAR
+0005ed 910f                      		pop R16
+0005ee db49                      		rcall PUTCHAR
+0005ef 910f                      		pop R16
                                  
-0005ef c00e                      		rjmp USART_RX_COMPLETE_RET
+0005f0 c00e                      		rjmp USART_RX_COMPLETE_RET
                                  
                                  	USART_RX_COMPLETE_NOT_BACKSPACE:
                                  		; Handle full command buffer
-0005f0 3624                      		cpi IDX, CMD_MAX_LEN
+0005f1 3624                      		cpi IDX, CMD_MAX_LEN
                                  
-0005f1 f061                      		breq USART_RX_COMPLETE_RET
+0005f2 f061                      		breq USART_RX_COMPLETE_RET
                                  
                                  		; Get next-character index
-0005f2 e0d0                      		ldi YH, HIGH(CMD)
-0005f3 e6c0                      		ldi YL, LOW(CMD)
-0005f4 0fc2                      		add YL, IDX
-0005f5 2700                      		clr TEMP
-0005f6 1fd0                      		adc YH, TEMP
+0005f3 e0d0                      		ldi YH, HIGH(CMD)
+0005f4 e6c0                      		ldi YL, LOW(CMD)
+0005f5 0fc2                      		add YL, IDX
+0005f6 2700                      		clr TEMP
+0005f7 1fd0                      		adc YH, TEMP
                                  
                                  		; Store character
-0005f7 8318                      		st Y, CHAR
+0005f8 8318                      		st Y, CHAR
                                  	
                                  		; Increment index
-0005f8 9523                      		inc IDX
-0005f9 8320                      		st Z, IDX
+0005f9 9523                      		inc IDX
+0005fa 8320                      		st Z, IDX
                                  
                                  		; Echo character back
-0005fa 2f01                      		mov R16, CHAR
-0005fb 930f                      		push R16
-0005fc db3b                      		rcall PUTCHAR
-0005fd 910f                      		pop R16
+0005fb 2f01                      		mov R16, CHAR
+0005fc 930f                      		push R16
+0005fd db3a                      		rcall PUTCHAR
+0005fe 910f                      		pop R16
                                  
                                  	USART_RX_COMPLETE_RET:
                                  		; Restore Registers
-0005fe 912f                      		pop IDX
-0005ff 911f                      		pop CHAR
-000600 91cf                      		pop YL
-000601 91df                      		pop YH
-000602 91ef                      		pop ZL
-000603 91ff                      		pop ZH
-000604 910f                      		pop TEMP
-000605 bf0f                      		out SREG, TEMP
-000606 910f                      		pop TEMP
+0005ff 912f                      		pop IDX
+000600 911f                      		pop CHAR
+000601 91cf                      		pop YL
+000602 91df                      		pop YH
+000603 91ef                      		pop ZL
+000604 91ff                      		pop ZH
+000605 910f                      		pop TEMP
+000606 bf0f                      		out SREG, TEMP
+000607 910f                      		pop TEMP
                                  
-000607 9518                      		reti
+000608 9518                      		reti
                                  
                                  	; Clear Register Aliases
                                  	.undef TEMP
@@ -3568,111 +3574,108 @@ C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29,
                                  	; Number of pushes
                                  	.set STACK_OFFSET = 5
                                  	; Backup Registers
-000608 930f                      	push TEMP
-000609 93df                      	push YH
-00060a 93cf                      	push YL
-00060b 93ff                      	push ZH
-00060c 93ef                      	push ZL
+000609 930f                      	push TEMP
+00060a 93df                      	push YH
+00060b 93cf                      	push YL
+00060c 93ff                      	push ZH
+00060d 93ef                      	push ZL
                                  
                                  	; Load Stack Pointer
                                  	; Y <- SP
-00060d b7de                      	in YH, SPH
-00060e b7cd                      	in YL, SPL
+00060e b7de                      	in YH, SPH
+00060f b7cd                      	in YL, SPL
                                  
                                  	; Load Command Length
-00060f 850a                      	ldd TEMP, Y+(STACK_OFFSET + 5)
+000610 850a                      	ldd TEMP, Y+(STACK_OFFSET + 5)
                                  	; Push Command Length (Prepare Subroutine Call)
-000610 930f                      	push TEMP
+000611 930f                      	push TEMP
                                  
                                  	; Two Dummy Pushes In Case Error
-000611 930f                      	push TEMP
 000612 930f                      	push TEMP
+000613 930f                      	push TEMP
                                  
                                  	; Empty command
-000613 3002                      	cpi TEMP, 2
-000614 f118                      	brlo EXECUTE_INVALID
+000614 3002                      	cpi TEMP, 2
+000615 f118                      	brlo EXECUTE_INVALID
                                  
                                  	; Load Command Address
-000615 85f9                      	ldd ZH, Y+(STACK_OFFSET + 4)
-000616 85e8                      	ldd ZL, Y+(STACK_OFFSET + 3)
+000616 85f9                      	ldd ZH, Y+(STACK_OFFSET + 4)
+000617 85e8                      	ldd ZL, Y+(STACK_OFFSET + 3)
                                  
                                  	; Get second character
-000617 93ff                      	push ZH
-000618 93ef                      	push ZL
-000619 9631                      	adiw ZH:ZL, 1
-00061a 8100                      	ld TEMP, Z
-00061b 91ef                      	pop ZL
-00061c 91ff                      	pop ZH
+000618 93ff                      	push ZH
+000619 93ef                      	push ZL
+00061a 9631                      	adiw ZH:ZL, 1
+00061b 8100                      	ld TEMP, Z
+00061c 91ef                      	pop ZL
+00061d 91ff                      	pop ZH
                                  	
-00061d 3200                      	cpi TEMP, ASCII_SPACE
-00061e f4c9                      	brne EXECUTE_INVALID
+00061e 3200                      	cpi TEMP, ASCII_SPACE
+00061f f4c9                      	brne EXECUTE_INVALID
                                  
                                  	; Remove Dummy Pushes
-00061f 910f                      	pop TEMP
 000620 910f                      	pop TEMP
+000621 910f                      	pop TEMP
                                  
                                  	; Push Command Length (Prepare Subroutine Call)
-000621 93ff                      	push ZH
-000622 93ef                      	push ZL
+000622 93ff                      	push ZH
+000623 93ef                      	push ZL
                                  	
-000623 8100                      	ld TEMP, Z
+000624 8100                      	ld TEMP, Z
                                  
-000624 3702                      	cpi TEMP, ASCII_LOWER_R
-000625 f411                      	brne EXECUTE_W
-000626 db47                      	rcall READ_MEM
-000627 c017                      	rjmp  EXECUTE_RET
+000625 3702                      	cpi TEMP, ASCII_LOWER_R
+000626 f411                      	brne EXECUTE_W
+000627 db46                      	rcall READ_MEM
+000628 c017                      	rjmp  EXECUTE_RET
                                  
                                  	EXECUTE_W:
-000628 3707                      		cpi TEMP, ASCII_LOWER_W
-000629 f411                      		brne EXECUTE_O
-00062a dbb8                      		rcall WRITE_MEM
-00062b c013                      		rjmp  EXECUTE_RET
+000629 3707                      		cpi TEMP, ASCII_LOWER_W
+00062a f411                      		brne EXECUTE_O
+00062b dbb7                      		rcall WRITE_MEM
+00062c c013                      		rjmp  EXECUTE_RET
                                  
                                  	EXECUTE_O:
-00062c 360f                      		cpi TEMP, ASCII_LOWER_O
-00062d f411                      		brne EXECUTE_I
-00062e dedd                      		rcall READ_IO
-00062f c00f                      		rjmp  EXECUTE_RET
+00062d 360f                      		cpi TEMP, ASCII_LOWER_O
+00062e f411                      		brne EXECUTE_I
+00062f dedc                      		rcall READ_IO
+000630 c00f                      		rjmp  EXECUTE_RET
                                  
                                  	EXECUTE_I:
-000630 3609                      		cpi TEMP, ASCII_LOWER_I
-000631 f411                      		brne EXECUTE_P
-000632 df2c                      		rcall WRITE_IO
-000633 c00b                      		rjmp  EXECUTE_RET
+000631 3609                      		cpi TEMP, ASCII_LOWER_I
+000632 f411                      		brne EXECUTE_P
+000633 df2b                      		rcall WRITE_IO
+000634 c00b                      		rjmp  EXECUTE_RET
                                  
                                  	EXECUTE_P:
-000634 3700                      		cpi TEMP, ASCII_LOWER_P
-000635 f411                      		brne EXECUTE_INVALID
-000636 d011                      		rcall REPEAT_CMD
-000637 c007                      		rjmp  EXECUTE_RET
+000635 3700                      		cpi TEMP, ASCII_LOWER_P
+000636 f411                      		brne EXECUTE_INVALID
+000637 df62                      		rcall REPEAT_CMD
+000638 c007                      		rjmp  EXECUTE_RET
                                  	
                                  	EXECUTE_INVALID:
                                  		; Print Error
-000638 e00b                      		ldi TEMP, HIGH(EXEC_INVALID_CMD << 1)
-000639 930f                      		push TEMP
-00063a e30c                      		ldi TEMP, LOW (EXEC_INVALID_CMD << 1)
-00063b 930f                      		push TEMP
-00063c db08                      		rcall PUTSTR
-00063d 910f                      		pop TEMP
+000639 e00b                      		ldi TEMP, HIGH(EXEC_INVALID_CMD << 1)
+00063a 930f                      		push TEMP
+00063b e30e                      		ldi TEMP, LOW (EXEC_INVALID_CMD << 1)
+00063c 930f                      		push TEMP
+00063d db07                      		rcall PUTSTR
 00063e 910f                      		pop TEMP
+00063f 910f                      		pop TEMP
                                  
                                  	EXECUTE_RET:
-00063f 910f                      		pop TEMP
 000640 910f                      		pop TEMP
 000641 910f                      		pop TEMP
+000642 910f                      		pop TEMP
                                  
                                  		; Restore Registers
-000642 91ef                      		pop ZL
-000643 91ff                      		pop ZH
-000644 91cf                      		pop YL
-000645 91df                      		pop YH
-000646 910f                      		pop TEMP
+000643 91ef                      		pop ZL
+000644 91ff                      		pop ZH
+000645 91cf                      		pop YL
+000646 91df                      		pop YH
+000647 910f                      		pop TEMP
                                  	
-000647 9508                      		ret
+000648 9508                      		ret
                                  
-                                 	.undef TEMP
-                                 
-                                 REPEAT_CMD:
 
 
 RESOURCE USE INFORMATION

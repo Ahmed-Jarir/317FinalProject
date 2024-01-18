@@ -93,12 +93,15 @@ CMD_IDX: .byte 1
 .INCLUDE "write-mem.inc"
 .INCLUDE "read-io.inc"
 .INCLUDE "write-io.inc"
+.INCLUDE "repeat-cmd.inc"
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; # Program Memory Constants
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+
+.cseg
 
 PROMPT:
 	.db "FG>>> ", 0, 0
@@ -430,6 +433,3 @@ EXECUTE:
 		ret
 
 	.undef TEMP
-
-REPEAT_CMD:
-ret
