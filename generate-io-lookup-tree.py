@@ -1,60 +1,27 @@
-import csv
-from collections import defaultdict
+def ascii_to_int(i):
+    ASCII_ZERO  = 0x30
+    ASCII_NINE  = 0x39
+    ASCII_A_UPR = 0x41
+    ASCII_F_UPR = 0x46
+    ASCII_A_LWR = 0x61
+    ASCII_F_LWR = 0x66
+    INVALID     = 0xFF
 
+    if i >= ASCII_ZERO and i <= ASCII_NINE:
+        return i - ASCII_ZERO
 
-END = ".END"
+    if i >= ASCII_A_UPR and i <= ASCII_F_UPR:
+        return i - ASCII_A_UPR + 10
 
+    if i >= ASCII_A_LWR and i <= ASCII_F_LWR:
+        return i - ASCII_A_LWR + 10
 
-def read_csv():
-    with open("io-table.csv", "r") as file:
-        reader = csv.reader(file)
-        header = next(reader)
-        rows   = tuple((row[2], int(row[0], base = 16), int(row[1], base = 16)) for row in reader)
-        return rows
+    return INVALID
 
+def ascii_to_hex(i):
+    return f"0x{ascii_to_int(i):02X}"
 
-def make_trie(rows):
-    root = {}
-
-    for name, io_addr, mem_addr in rows:
-        current_dict = root
-        for letter in name:
-            if letter not in current_dict:
-                current_dict[letter] = {}
-            current_dict = current_dict[letter]
-        current_dict[END] = mem_addr
-
-    return root
-
-
-def HEX(i):
-    return f"0x{i:02X}"
-
-
-def print_assembly(trie, label = "IO_LOOKUP_TREE", depth = 0):
-    # Base Case
-    if type(trie) != dict:
-        return
-
-    keys = sorted([key for key in trie.keys()])
-    end  = trie[END] if keys[0] == END else 0
-    keys = keys[1:]  if keys[0] == END else keys
-
-    print(f"{label}:")
-    print(f"\t.db HIGH({HEX(end)}), LOW({HEX(end)})")
-
-    for key in keys:
-        l = f"{label}_{key}" if depth == 0 else f"{label}{key}"
-        print(f"\t.db \"{key}\", 0, HIGH({l} << 1), LOW({l} << 1)")
-
-    print(f"\t.db 0, 0")
-
-    for key in keys:
-        l = f"{label}_{key}" if depth == 0 else f"{label}{key}"
-        print_assembly(trie[key], l, depth + 1)
-
-
-rows = read_csv()
-trie = make_trie(rows)
-
-print_assembly(trie)
+for i in range(0, 256, 2):
+    a = ascii_to_hex(i)
+    b = ascii_to_hex(i + 1)
+    print(f".db {a}, {b}")
