@@ -1,31 +1,31 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;
-; Future Gadget 29, 2nd Edition Ver. 2.31
-;
-; COMP317 Final Project
-;
-; Authors:
-; - Ameer Taweel (0077340)
-; - Ahmed Jareer (0074982)
-;
-; Resources Usage:
-; - Program Size: 4238 Bytes
-; - Data    Size: 174  Bytes
-;
-; Summary:
-;
-; Multiple times during this course, we faced a situation where the code works
-; in the debugger/simulator but not on the physical microcontroller. Debugging
-; and fixing such issues was hard because we couldn't inspect the system's
-; internal state.
-;
-; Therefore, built a system that is easy to inspect. It exposes a shell using
-; the ANSI standard over USART. The system has commands to check the system's
-; state, like memory regions and I/O pin values. Moreover, the system supports
-; periodic tasks, like logging a memory region every two minutes.
-;
-; It also has commands for modifying the system's state, like setting a memory
-; region or setting the mode of an I/O pin.
+;;
+;; Future Gadget 29, 2nd Edition Ver. 2.31
+;;
+;; COMP317 Final Project
+;;
+;; Authors:
+;; - Ameer Taweel (0077340)
+;; - Ahmed Jareer (0074982)
+;;
+;; Resources Usage:
+;; - Program Size: 4238 Bytes
+;; - Data    Size: 174  Bytes
+;;
+;; Summary:
+;;
+;; Multiple times during this course, we faced a situation where the code works
+;; in the debugger/simulator but not on the physical microcontroller. Debugging
+;; and fixing such issues was hard because we couldn't inspect the system's
+;; internal state.
+;;
+;; Therefore, built a system that is easy to inspect. It exposes a shell using
+;; the ANSI standard over USART. The system has commands to check the system's
+;; state, like memory regions and I/O pin values. Moreover, the system supports
+;; periodic tasks, like logging a memory region every two minutes.
+;;
+;; It also has commands for modifying the system's state, like setting a memory
+;; region or setting the mode of an I/O pin.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
@@ -154,7 +154,11 @@ RESET:
 	ldi TEMP, (1 << RXCIE) | (1 << RXEN) | (1 << TXEN)
 	out UCSRB, TEMP
 
-	; Set Frame Format:	; - 8 Data Bits	; - 2 Stop Bits	ldi TEMP, (1 << URSEL) | (1 << USBS) | (1 << UCSZ0) | (1 << UCSZ1)	out UCSRC, TEMP
+	; Set Frame Format:
+	; - 8 Data Bits
+	; - 2 Stop Bits
+	ldi TEMP, (1 << URSEL) | (1 << USBS) | (1 << UCSZ0) | (1 << UCSZ1)
+	out UCSRC, TEMP
 
 	; Initialize USART END
 
@@ -187,7 +191,7 @@ RESET:
 	out TCCR1B, TEMP
 
 	; Enable Global Interrupts
-    sei
+	sei
 
 	RESET_LOOP:
 		rjmp RESET_LOOP
@@ -765,6 +769,7 @@ REPEAT_CMD:
 	.undef LEN
 	.undef ITRV
 	.undef TEMP
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Repeat Command (List)
