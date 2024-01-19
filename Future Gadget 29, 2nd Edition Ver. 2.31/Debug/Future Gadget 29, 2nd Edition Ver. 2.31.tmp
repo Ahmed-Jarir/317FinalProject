@@ -65,10 +65,11 @@
   <WRITE_MEM_ERR_MSG><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\write-mem.inc</FILE><LINE>37</LINE></WRITE_MEM_ERR_MSG>
   <WRITE_MEM_SUC_MSG><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\write-mem.inc</FILE><LINE>38</LINE></WRITE_MEM_SUC_MSG>
   <WRITE_MEM><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\write-mem.inc</FILE><LINE>41</LINE></WRITE_MEM>
-  <WRITE_MEM_ERR><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\write-mem.inc</FILE><LINE>155</LINE></WRITE_MEM_ERR>
-  <WRITE_MEM_VALIDATE_LOOP><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\write-mem.inc</FILE><LINE>110</LINE></WRITE_MEM_VALIDATE_LOOP>
-  <WRITE_MEM_WRITE><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\write-mem.inc</FILE><LINE>130</LINE></WRITE_MEM_WRITE>
-  <WRITE_MEM_RET><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\write-mem.inc</FILE><LINE>164</LINE></WRITE_MEM_RET>
+  <WRITE_MEM_ERR><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\write-mem.inc</FILE><LINE>112</LINE></WRITE_MEM_ERR>
+  <WRITE_MEM_VALIDATE_LOOP><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\write-mem.inc</FILE><LINE>122</LINE></WRITE_MEM_VALIDATE_LOOP>
+  <WRITE_MEM_RET><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\write-mem.inc</FILE><LINE>172</LINE></WRITE_MEM_RET>
+  <WRITE_MEM_VALIDATE_LOOP_NO_ERROR><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\write-mem.inc</FILE><LINE>138</LINE></WRITE_MEM_VALIDATE_LOOP_NO_ERROR>
+  <WRITE_MEM_WRITE><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\write-mem.inc</FILE><LINE>149</LINE></WRITE_MEM_WRITE>
   <ASCII_IO_REG_TO_MEM_ADDR><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\io-name-to-addr.inc</FILE><LINE>28</LINE></ASCII_IO_REG_TO_MEM_ADDR>
   <IO_LOOKUP_TREE><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\io-name-to-addr.inc</FILE><LINE>142</LINE></IO_LOOKUP_TREE>
   <ASCII_IO_REG_TO_MEM_ADDR_LOOP><FILE>C:\Users\ahmed\Desktop\Future Gadget 29, 2nd Edition Ver. 2.31\Future Gadget 29, 2nd Edition Ver. 2.31\io-name-to-addr.inc</FILE><LINE>64</LINE></ASCII_IO_REG_TO_MEM_ADDR_LOOP>

@@ -107,6 +107,18 @@ WRITE_MEM:
 	lsr LEN
 	ldi COUNT, 0
 
+	rjmp WRITE_MEM_VALIDATE_LOOP
+
+	WRITE_MEM_ERR:
+		ldi TEMP, HIGH(WRITE_MEM_ERR_MSG << 1)
+		push TEMP
+		ldi TEMP, LOW (WRITE_MEM_ERR_MSG << 1)
+		push TEMP
+		rcall PUTSTR
+		pop TEMP
+		pop TEMP
+		rjmp WRITE_MEM_RET
+
 	WRITE_MEM_VALIDATE_LOOP:
 		ldi TEMP, 0
 		push TEMP
@@ -117,7 +129,14 @@ WRITE_MEM:
 		pop TEMP
 		; IF (SUBROUTINE ERR != 0) THEN ERR
 		cpi TEMP, 0
-		brne WRITE_MEM_ERR
+		breq WRITE_MEM_VALIDATE_LOOP_NO_ERROR
+		; Error
+		pop TEMP
+		pop TEMP
+		rjmp WRITE_MEM_ERR
+
+		WRITE_MEM_VALIDATE_LOOP_NO_ERROR:
+
 		inc COUNT
 		; Get Next Byte
 		adiw ZH:ZL, 1
@@ -149,17 +168,6 @@ WRITE_MEM:
 	rcall PUTSTR
 	pop TEMP
 	pop TEMP
-
-	rjmp WRITE_MEM_RET
-
-	WRITE_MEM_ERR:
-		ldi TEMP, HIGH(WRITE_MEM_ERR_MSG << 1)
-		push TEMP
-		ldi TEMP, LOW (WRITE_MEM_ERR_MSG << 1)
-		push TEMP
-		rcall PUTSTR
-		pop TEMP
-		pop TEMP
 
 	WRITE_MEM_RET:
 		; Restore Registers
