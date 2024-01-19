@@ -9,7 +9,7 @@
 ;; - Ahmed Jareer (0074982)
 ;;
 ;; Resources Usage:
-;; - Program Size: 4238 Bytes
+;; - Program Size: 4250 Bytes
 ;; - Data    Size: 174  Bytes
 ;;
 ;; Summary:
